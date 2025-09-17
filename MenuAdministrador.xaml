@@ -9,10 +9,14 @@
         Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Icon="C:\Users\CaioA\source\repos\evecorpfy\Resources\logo.png"
+        Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
         WindowStyle="SingleBorderWindow" Background="#FFF4F4F4">
     <Grid>
-        <StackPanel x:Name="PainelLateral" Margin="0,0,1019,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel x:Name="PainelLateral" Grid.Column="0">
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF71C4F3" Offset="1"/>
@@ -20,7 +24,14 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
 
-            <Image x:Name="Logo" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\logo.png" Stretch="Uniform" Height="125" Width="186" Margin="0,10,0,0"/>
+            <Grid x:Name="GridLogo"
+                Height="180"
+                Width="250"
+                MouseLeftButtonUp="GridLogo_MouseLeftButtonUp"
+                Cursor="Hand"
+                Background="Transparent">
+                <Image x:Name="Logo" Stretch="Uniform" Margin="39,19,39,20" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"/>
+            </Grid>
 
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
 
@@ -33,7 +44,7 @@
                 MouseEnter="GridButtonPerfil_MouseEnter"
                 MouseLeave="GridButtonPerfil_MouseLeave">
                 <Label Content="PERFIL DO USUÁRIO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
-                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\user.png"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
             <Grid x:Name="GridButtonTipoEvento"
@@ -45,7 +56,7 @@
                 MouseEnter="GridButtonTipoEvento_MouseEnter"
                 MouseLeave="GridButtonTipoEvento_MouseLeave">
                 <Label Content="TIPO DE EVENTO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
-                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\balloon.png"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
             <Grid x:Name="GridButtonTipoServico"
@@ -57,7 +68,7 @@
                 MouseEnter="GridButtonTipoServico_MouseEnter"
                 MouseLeave="GridButtonTipoServico_MouseLeave">
                 <Label Content="TIPO DE SERVIÇO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
-                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\truck.png"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
             <Grid x:Name="GridButtonGestaoEvento"
@@ -69,9 +80,11 @@
                 MouseEnter="GridButtonGestaoEvento_MouseEnter"
                 MouseLeave="GridButtonGestaoEvento_MouseLeave">
                 <Label Content="GESTÃO DE EVENTOS" Margin="67,21,29,21" FontWeight="Bold" FontSize="14"/>
-                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\group.png"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
             </Grid>
-
         </StackPanel>
+        <ContentControl x:Name="ContentArea" Grid.Column="1">
+            <Button Content="CONCTAR COM BANCO" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+        </ContentControl>
     </Grid>
 </Window>

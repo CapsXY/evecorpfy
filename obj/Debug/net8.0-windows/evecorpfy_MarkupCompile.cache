@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\CaioA\source\repos\evecorpfy\obj\Debug\net8.0-windows\
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\
 evecorpfy
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\CaioA\source\repos\evecorpfy\App.xaml
-3-434703181
+C:\Users\CaioA\Documents\GitHub\evecorpfy\App.xaml
+6-2090489936
 
-61736021022
-198-192518753
-Login.xaml;MenuAdministrador.xaml;PerfilAdministrador.xaml;
+10611285247
+218-1471212189
+Login.xaml;MenuAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;
 
 False
 

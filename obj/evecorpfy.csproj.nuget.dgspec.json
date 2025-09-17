@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CaioA\\source\\repos\\evecorpfy\\evecorpfy.csproj": {}
+    "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\evecorpfy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CaioA\\source\\repos\\evecorpfy\\evecorpfy.csproj": {
+    "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\evecorpfy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CaioA\\source\\repos\\evecorpfy\\evecorpfy.csproj",
+        "projectUniqueName": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\evecorpfy.csproj",
         "projectName": "evecorpfy",
-        "projectPath": "C:\\Users\\CaioA\\source\\repos\\evecorpfy\\evecorpfy.csproj",
+        "projectPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\evecorpfy.csproj",
         "packagesPath": "C:\\Users\\CaioA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CaioA\\source\\repos\\evecorpfy\\obj\\",
+        "outputPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,20 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

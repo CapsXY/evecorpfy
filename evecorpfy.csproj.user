@@ -8,5 +8,17 @@
     <Compile Update="MenuAdministrador.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ViewsAdministrador\GestaoEventos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsAdministrador\PerfilAdministrador.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsAdministrador\TipoEvento.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsAdministrador\TipoServico.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
