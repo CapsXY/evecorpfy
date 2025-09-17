@@ -1,0 +1,77 @@
+﻿<Window x:Class="evecorpfy.MenuAdministrador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:evecorpfy"
+        mc:Ignorable="d"
+        Title="EVECORPFY - Menu do Administrador"
+        Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="C:\Users\CaioA\source\repos\evecorpfy\Resources\logo.png"
+        WindowStyle="SingleBorderWindow" Background="#FFF4F4F4">
+    <Grid>
+        <StackPanel x:Name="PainelLateral" Margin="0,0,1019,0">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF71C4F3" Offset="1"/>
+                    <GradientStop Color="White" Offset="0.84"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Image x:Name="Logo" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\logo.png" Stretch="Uniform" Height="125" Width="186" Margin="0,10,0,0"/>
+
+            <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+
+            <Grid x:Name="GridButtonPerfil"
+                Height="68"
+                Width="250"
+                MouseLeftButtonUp="GridButtonPerfil_MouseLeftButtonUp"
+                Cursor="Hand"
+                Background="Transparent"
+                MouseEnter="GridButtonPerfil_MouseEnter"
+                MouseLeave="GridButtonPerfil_MouseLeave">
+                <Label Content="PERFIL DO USUÁRIO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\user.png"/>
+            </Grid>
+            <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+            <Grid x:Name="GridButtonTipoEvento"
+                Height="68"
+                Width="250"
+                MouseLeftButtonUp="GridButtonTipoEvento_MouseLeftButtonUp"
+                Cursor="Hand"
+                Background="Transparent"
+                MouseEnter="GridButtonTipoEvento_MouseEnter"
+                MouseLeave="GridButtonTipoEvento_MouseLeave">
+                <Label Content="TIPO DE EVENTO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\balloon.png"/>
+            </Grid>
+            <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+            <Grid x:Name="GridButtonTipoServico"
+                Height="68"
+                Width="250"
+                MouseLeftButtonUp="GridButtonTipoServico_MouseLeftButtonUp"
+                Cursor="Hand"
+                Background="Transparent"
+                MouseEnter="GridButtonTipoServico_MouseEnter"
+                MouseLeave="GridButtonTipoServico_MouseLeave">
+                <Label Content="TIPO DE SERVIÇO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\truck.png"/>
+            </Grid>
+            <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+            <Grid x:Name="GridButtonGestaoEvento"
+                Height="68"
+                Width="250"
+                MouseLeftButtonUp="GridButtonGestaoEvento_MouseLeftButtonUp"
+                Cursor="Hand"
+                Background="Transparent"
+                MouseEnter="GridButtonGestaoEvento_MouseEnter"
+                MouseLeave="GridButtonGestaoEvento_MouseLeave">
+                <Label Content="GESTÃO DE EVENTOS" Margin="67,21,29,21" FontWeight="Bold" FontSize="14"/>
+                <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\source\repos\evecorpfy\Resources\group.png"/>
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</Window>
