@@ -8,83 +8,79 @@
         Title="EVECORPFY - Menu do Administrador"
         Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
+        ResizeMode="CanMinimize"
         Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
-        WindowStyle="SingleBorderWindow" Background="#FFF4F4F4">
+        Background="#FFF4F4F4">
+    <!--Grid Principal-->
     <Grid>
+        <!--Definição de tamanho do Menu Lateral-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel x:Name="PainelLateral" Grid.Column="0">
+        <!--Menu Lateral-->
+        <StackPanel Grid.Column="0">
+            <!--Background do Menu Lateral-->
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF71C4F3" Offset="1"/>
                     <GradientStop Color="White" Offset="0.84"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-
+            <!--Logo-->
             <Grid x:Name="GridLogo"
                 Height="180"
                 Width="250"
                 MouseLeftButtonUp="GridLogo_MouseLeftButtonUp"
-                Cursor="Hand"
                 Background="Transparent">
-                <Image x:Name="Logo" Stretch="Uniform" Margin="39,19,39,20" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"/>
+                <Image x:Name="Logo" Stretch="Uniform" Margin="39,19,39,20" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo-blue.png" Cursor="Hand"/>
             </Grid>
-
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
-
+            <!--Opção de Perfil -->
             <Grid x:Name="GridButtonPerfil"
                 Height="68"
                 Width="250"
                 MouseLeftButtonUp="GridButtonPerfil_MouseLeftButtonUp"
                 Cursor="Hand"
-                Background="Transparent"
-                MouseEnter="GridButtonPerfil_MouseEnter"
-                MouseLeave="GridButtonPerfil_MouseLeave">
+                Background="Transparent">
                 <Label Content="PERFIL DO USUÁRIO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
                 <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+            <!--Opção de Tipo de Evento -->
             <Grid x:Name="GridButtonTipoEvento"
                 Height="68"
                 Width="250"
                 MouseLeftButtonUp="GridButtonTipoEvento_MouseLeftButtonUp"
                 Cursor="Hand"
-                Background="Transparent"
-                MouseEnter="GridButtonTipoEvento_MouseEnter"
-                MouseLeave="GridButtonTipoEvento_MouseLeave">
+                Background="Transparent">
                 <Label Content="TIPO DE EVENTO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
                 <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+            <!--Opção de Tipo de Serviço -->
             <Grid x:Name="GridButtonTipoServico"
                 Height="68"
                 Width="250"
                 MouseLeftButtonUp="GridButtonTipoServico_MouseLeftButtonUp"
                 Cursor="Hand"
-                Background="Transparent"
-                MouseEnter="GridButtonTipoServico_MouseEnter"
-                MouseLeave="GridButtonTipoServico_MouseLeave">
+                Background="Transparent">
                 <Label Content="TIPO DE SERVIÇO" Margin="67,21,37,21" FontWeight="Bold" FontSize="14"/>
                 <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
+            <!--Opção de Gestão de Evento -->
             <Grid x:Name="GridButtonGestaoEvento"
                 Height="68"
                 Width="250"
                 MouseLeftButtonUp="GridButtonGestaoEvento_MouseLeftButtonUp"
                 Cursor="Hand"
-                Background="Transparent"
-                MouseEnter="GridButtonGestaoEvento_MouseEnter"
-                MouseLeave="GridButtonGestaoEvento_MouseLeave">
+                Background="Transparent">
                 <Label Content="GESTÃO DE EVENTOS" Margin="67,21,29,21" FontWeight="Bold" FontSize="14"/>
                 <Image HorizontalAlignment="Left" Height="40" Margin="28,0,0,0" VerticalAlignment="Center" Width="39" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
             </Grid>
         </StackPanel>
-        <ContentControl x:Name="ContentArea" Grid.Column="1">
-            <Button Content="CONCTAR COM BANCO" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
-        </ContentControl>
+        <!--Área de Conteúdo Principal-->
+        <ContentControl x:Name="ContentArea" Grid.Column="1"/>
     </Grid>
 </Window>

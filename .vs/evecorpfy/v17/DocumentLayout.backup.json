@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\app.config||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:app.config||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsadministrador\\perfiladministrador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsadministrador\\perfiladministrador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\menuadministrador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:menuadministrador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsadministrador\\perfiladministrador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsadministrador\\perfiladministrador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\menuadministrador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:menuadministrador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositorioautenticacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositorioautenticacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +30,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 135,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DbConnection.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\DbConnection.cs",
-              "RelativeDocumentMoniker": "DbConnection.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\DbConnection.cs",
-              "RelativeToolTip": "DbConnection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T02:39:27.678Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-09-17T02:37:25.736Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MenuAdministrador.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\MenuAdministrador.xaml.cs",
-              "RelativeDocumentMoniker": "MenuAdministrador.xaml.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\MenuAdministrador.xaml.cs",
-              "RelativeToolTip": "MenuAdministrador.xaml.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAwwGEAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T02:34:46.027Z",
+              "Title": "PerfilAdministrador.xaml",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml",
+              "RelativeDocumentMoniker": "ViewsAdministrador\\PerfilAdministrador.xaml",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml",
+              "RelativeToolTip": "ViewsAdministrador\\PerfilAdministrador.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-18T03:17:21.75Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MenuAdministrador.xaml",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\MenuAdministrador.xaml",
-              "RelativeDocumentMoniker": "MenuAdministrador.xaml",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\MenuAdministrador.xaml",
-              "RelativeToolTip": "MenuAdministrador.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-17T01:19:29.525Z",
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T02:30:31.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RepositorioAutenticacao.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioAutenticacao.cs",
+              "RelativeDocumentMoniker": "Data\\RepositorioAutenticacao.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioAutenticacao.cs",
+              "RelativeToolTip": "Data\\RepositorioAutenticacao.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T02:26:45.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RepositorioUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioUsuario.cs",
+              "RelativeDocumentMoniker": "Data\\RepositorioUsuario.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioUsuario.cs",
+              "RelativeToolTip": "Data\\RepositorioUsuario.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAwE0AAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T02:26:37.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PerfilAdministrador.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml.cs",
+              "RelativeDocumentMoniker": "ViewsAdministrador\\PerfilAdministrador.xaml.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml.cs",
+              "RelativeToolTip": "ViewsAdministrador\\PerfilAdministrador.xaml.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAgwDsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T02:10:23.429Z",
               "EditorCaption": ""
             }
           ]

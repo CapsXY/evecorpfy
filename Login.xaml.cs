@@ -1,21 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using evecorpfy.Data;
+using evecorpfy.Models;
 
 namespace evecorpfy
 {
     /// <summary>
-    /// Lógica interna para Login.xaml
+    /// Interação lógica para Login.xaml
     /// </summary>
     public partial class Login : Window
     {
@@ -26,24 +17,52 @@ namespace evecorpfy
 
         private void ButtonAcessar_Click(object sender, RoutedEventArgs e)
         {
+            string usuario = TextBoxUsuario.Text.Trim();
+            string senha = PasswordboxSenha.Password.Trim();
+
+            // 🔹 Validação básica
+            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
             {
-                string usuario = TextBoxUsuario.Text;
-                string senha = PasswordBoxSenha.Password;
+                MessageBox.Show("Preencha usuário e senha!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
 
-                // Exemplo de validação simples
-                if (usuario == "admin" && senha == "123")
+            try
+            {
+                var repo = new RepositorioUsuario();
+                var user = repo.Autenticar(usuario, senha);
+
+                if (user != null)
                 {
-                    MessageBox.Show("Login realizado com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (!user.Ativo)
+                    {
+                        MessageBox.Show("Usuário está desabilitado.", "Acesso negado", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
 
-                    // Aqui você pode abrir a tela principal do sistema:
-                    MenuAdministrador main = new MenuAdministrador();
-                    main.Show();
+                    // 🔹 Salvar dados na sessão
+                    Sessao.UsuarioId = user.Id;
+                    Sessao.Username = user.Username;
+                    Sessao.Role = user.Role;
+
+                    // 🔹 Mensagem opcional de boas-vindas
+                    MessageBox.Show($"Bem-vindo, {user.Username}!", "Login realizado", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    // 🔹 Abrir menu principal
+                    var menu = new MenuAdministrador();
+                    menu.Show();
+
+                    // 🔹 Fechar tela de login
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Usuário ou senha inválidos.", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Usuário ou senha inválidos!", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao acessar banco: {ex.Message}", "Erro crítico", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

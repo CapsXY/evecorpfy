@@ -4,14 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:evecorpfy.ViewsAdministrador"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             mc:Ignorable="d"
+             d:DesignHeight="684"
+             d:DesignWidth="1010"
              Background="White">
     <Grid>
-        <TextBlock Text="Tela Tipos de Eventos"
-                   FontSize="22"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-
+        <!--Background-->
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF71C4F3" Offset="1"/>
+                <GradientStop Color="White" Offset="0.84"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!--Logo-->
+        <Image HorizontalAlignment="Center" Height="155" Margin="0,34,0,0" VerticalAlignment="Top" Width="153" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
+        <!--Título e Subtítulo-->
+        <Label Content="EVENTO" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
+        <Label Content="Cadastre, altere ou pesquise o nome dos seus eventos" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <!--Nome do Evento-->
+        <Label Content="Nome do evento" Margin="309,308,547,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <TextBox x:Name="TextBoxNomeEvento" HorizontalAlignment="Center" Margin="0,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" FontSize="16" Height="28"/>
+        <!--Botão Cadastrar-->
+        <Button x:Name="ButtonCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="597,375,0,0" VerticalAlignment="Top" FontSize="16" BorderBrush="{x:Null}" Background="#FF71C4F3" FontWeight="Bold" Height="33" Width="98"/>
+        <!--Pesquisar Evento-->
+        <Label Content="Pesquisar evento" HorizontalAlignment="Left" Margin="315,409,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <ComboBox x:Name="ComboBoxPesquisarEvento" HorizontalAlignment="Center" Margin="0,448,0,0" VerticalAlignment="Top" Width="380" Height="28" FontSize="16" IsEditable="True" IsTextSearchEnabled="True" IsTextSearchCaseSensitive="False"/>
     </Grid>
 </UserControl>

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\CaioA\Documents\GitHub\evecorpfy\App.xaml
-6-2090489936
+7-1121781809
 
-12-1562453538
+18-165232336
 218-1471212189
-Login.xaml;MenuAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;
+Login.xaml;MenuAdministrador.xaml;ViewsAdministrador\DashboardAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;
 
-False
+True
 

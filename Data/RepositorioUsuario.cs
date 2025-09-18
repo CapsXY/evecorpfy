@@ -1,0 +1,101 @@
+﻿using evecorpfy.Models;
+using Microsoft.Data.SqlClient;
+
+namespace evecorpfy.Data
+{
+    public class RepositorioUsuario
+    {
+        //  Obter usuário pelo ID
+        public Usuario ObterUsuarioPorId(int id)
+        {
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = "SELECT ID, USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO, FOTO_PERFIL " +
+                             "FROM USUARIOS WHERE ID = @ID";
+
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@ID", id);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Usuario
+                            {
+                                Id = reader.GetInt32(0),
+                                Username = reader.GetString(1),
+                                SenhaHash = reader.GetString(2),
+                                Email = reader.GetString(3),
+                                Role = reader.GetString(4),
+                                Ativo = reader.GetBoolean(5),
+                                DataCriacao = reader.GetDateTime(6),
+                                FotoPerfil = reader.IsDBNull(7) ? null : (byte[])reader["FOTO_PERFIL"]
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        //  Autenticar usuário pelo login
+        public Usuario Autenticar(string username, string senha)
+        {
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = @"SELECT ID, USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO
+                               FROM USUARIOS 
+                               WHERE USERNAME = @USERNAME AND SENHA_HASH = @SENHA AND ATIVO = 1";
+
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@USERNAME", username);
+                    command.Parameters.AddWithValue("@SENHA", senha); // ⚠️ ideal: hash
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Usuario
+                            {
+                                Id = reader.GetInt32(0),
+                                Username = reader.GetString(1),
+                                SenhaHash = reader.GetString(2),
+                                Email = reader.GetString(3),
+                                Role = reader.GetString(4),
+                                Ativo = reader.GetBoolean(5),
+                                DataCriacao = reader.GetDateTime(6)
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        //  Atualizar dados do usuário
+        public void AtualizarUsuario(Usuario usuario)
+        {
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = @"UPDATE USUARIOS 
+                       SET USERNAME=@USERNAME, SENHA_HASH=@SENHA, EMAIL=@EMAIL, 
+                           ATIVO=@ATIVO, FOTO_PERFIL=@FOTO_PERFIL
+                       WHERE ID=@ID";
+
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@USERNAME", usuario.Username);
+                    command.Parameters.AddWithValue("@SENHA", usuario.SenhaHash);
+                    command.Parameters.AddWithValue("@EMAIL", usuario.Email);
+                    command.Parameters.AddWithValue("@ATIVO", usuario.Ativo);
+                    command.Parameters.AddWithValue("@FOTO_PERFIL", (object)usuario.FotoPerfil ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@ID", usuario.Id);
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+    }
+}
