@@ -11,9 +11,12 @@
     <Grid>
         <!--Background-->
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF71C4F3" Offset="1"/>
-                <GradientStop Color="White" Offset="0.84"/>
+            <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                <GradientStop Color="#FF71C4F3"
+                              Offset="1"/>
+                <GradientStop Color="White"
+                              Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
         <!--Logo-->
@@ -23,7 +26,6 @@
             VerticalAlignment="Top"
             Width="153"
             Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
-
         <!--Título e Subtítulo-->
         <Label Content="TIPO DE SERVIÇO"
             HorizontalAlignment="Left"
@@ -36,7 +38,6 @@
             Margin="0,239,0,0"
             VerticalAlignment="Top"
             FontSize="16"/>
-
         <!--Nome do Serviço-->
         <Label Content="Nome do tipo de serviço"
             HorizontalAlignment="Left"
@@ -52,7 +53,6 @@
             Width="434"
             FontSize="16"
             Height="28"/>
-
         <!--Botão Cadastrar-->
         <Button x:Name="ButtonCadastrar"
             Content="Cadastrar/Atualizar"
@@ -66,7 +66,6 @@
             Height="33"
             Width="158"
             Click="ButtonCadastrar_Click"/>
-
         <!--Pesquisar Serviço-->
         <Label Content="Pesquisar tipo de serviço"
             HorizontalAlignment="Left"
@@ -74,7 +73,6 @@
             VerticalAlignment="Top"
             FontWeight="Bold"
             FontSize="18"/>
-
         <!-- ComboBox + Botão Excluir -->
         <StackPanel Orientation="Horizontal"
             HorizontalAlignment="Center"
@@ -93,14 +91,16 @@
                 <ComboBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ComboBoxItem}">
                         <Style.Triggers>
-                            <DataTrigger Binding="{Binding Ativo}" Value="False">
-                                <Setter Property="Foreground" Value="Gray"/>
-                                <Setter Property="FontStyle" Value="Italic"/>
+                            <DataTrigger Binding="{Binding Ativo}"
+                                         Value="False">
+                                <Setter Property="Foreground"
+                                        Value="Gray"/>
+                                <Setter Property="FontStyle"
+                                        Value="Italic"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </ComboBox.ItemContainerStyle>
-
             </ComboBox>
             <Button Content="✖"
                 Width="28"
@@ -111,7 +111,6 @@
                 FontWeight="Bold"
                 ToolTip="Inativar serviço selecionado"
                 Click="ButtonExcluir_Click"/>
-
             <Button Content="✅"
                 Width="28"
                 Height="28"

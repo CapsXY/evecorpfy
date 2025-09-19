@@ -1,6 +1,5 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
-
 namespace evecorpfy.Data
 {
     public class RepositorioTipoEvento
@@ -14,11 +13,30 @@ namespace evecorpfy.Data
                 {
                     command.Parameters.AddWithValue("@NOME", tipoEvento.Nome);
                     command.Parameters.AddWithValue("@ATIVO", tipoEvento.Ativo);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627 || ex.Number == 2601)
+                    {
+                        throw new Exception("Já existe um tipo de evento com esse nome.");
+                    }
                 }
             }
         }
-
+        public bool NomeExiste(string nome)
+        {
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = "SELECT COUNT(*) FROM TIPO_EVENTOS WHERE NOME = @NOME";
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@NOME", nome);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
         public List<TipoEvento> ListarTodos()
         {
             var lista = new List<TipoEvento>();
@@ -41,7 +59,6 @@ namespace evecorpfy.Data
             }
             return lista;
         }
-
         public void Atualizar(TipoEvento tipoEvento)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())

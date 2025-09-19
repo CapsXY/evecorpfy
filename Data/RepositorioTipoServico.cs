@@ -1,6 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
 using evecorpfy.Models;
-
 namespace evecorpfy.Data
 {
     public class RepositorioTipoServico
@@ -14,11 +13,30 @@ namespace evecorpfy.Data
                 {
                     command.Parameters.AddWithValue("@NOME", tipoServico.Nome);
                     command.Parameters.AddWithValue("@ATIVO", tipoServico.Ativo);
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627 || ex.Number == 2601)
+                    {
+                        throw new Exception("Já existe um tipo de serviço com esse nome.");
+                    }
                 }
             }
         }
-
+        public bool NomeExiste(string nome)
+        {
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = "SELECT COUNT(*) FROM TIPO_SERVICOS WHERE NOME = @NOME";
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@NOME", nome);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
         public List<TipoServico> ListarTodos()
         {
             var lista = new List<TipoServico>();
@@ -41,7 +59,6 @@ namespace evecorpfy.Data
             }
             return lista;
         }
-
         public void Atualizar(TipoServico tipoServico)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())

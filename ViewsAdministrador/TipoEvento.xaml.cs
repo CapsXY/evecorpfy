@@ -1,8 +1,6 @@
 ﻿using evecorpfy.Data;
 using System.Windows;
 using System.Windows.Controls;
-using evecorpfy.Models;
-
 namespace evecorpfy.ViewsAdministrador
 {
     /// <summary>
@@ -12,24 +10,20 @@ namespace evecorpfy.ViewsAdministrador
     {
         private readonly RepositorioTipoEvento repo = new RepositorioTipoEvento();
         private Models.TipoEvento eventoSelecionado;
-
         public TipoEvento()
         {
             InitializeComponent();
             CarregarTipos();
         }
-
         private void CarregarTipos()
         {
             ComboBoxPesquisarEvento.ItemsSource = repo.ListarTodos();
             ComboBoxPesquisarEvento.DisplayMemberPath = "Nome";
             ComboBoxPesquisarEvento.SelectedValuePath = "Id";
             ComboBoxPesquisarEvento.SelectedIndex = -1;
-
             TextBoxNomeEvento.Clear();
             eventoSelecionado = null;
         }
-
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TextBoxNomeEvento.Text))
@@ -42,51 +36,54 @@ namespace evecorpfy.ViewsAdministrador
                 MessageBox.Show("O nome do tipo de evento deve ter pelo menos 3 caracteres.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            if (eventoSelecionado == null)
+            var nomeDigitado = TextBoxNomeEvento.Text.Trim();
+            try
             {
-                // Inserir novo
-                var tipo = new Models.TipoEvento
+                if (eventoSelecionado == null)
                 {
-                    Nome = TextBoxNomeEvento.Text.Trim(),
-                    Ativo = true
-                };
-
-                repo.Inserir(tipo);
-                MessageBox.Show("Tipo de evento cadastrado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (repo.NomeExiste(nomeDigitado))
+                    {
+                        MessageBox.Show("Já existe um tipo de evento com esse nome!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+                    var tipo = new Models.TipoEvento
+                    {
+                        Nome = nomeDigitado,
+                        Ativo = true
+                    };
+                    repo.Inserir(tipo);
+                    MessageBox.Show("Tipo de evento cadastrado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    eventoSelecionado.Nome = nomeDigitado;
+                    repo.Atualizar(eventoSelecionado);
+                    MessageBox.Show("Tipo de evento atualizado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                CarregarTipos();
             }
-            else
+            catch (Exception ex)
             {
-                // Atualizar existente
-                eventoSelecionado.Nome = TextBoxNomeEvento.Text.Trim();
-                repo.Atualizar(eventoSelecionado);
-                MessageBox.Show("Tipo de evento atualizado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            CarregarTipos();
         }
-
         private void ButtonExcluir_Click(object sender, RoutedEventArgs e)
         {
             if (eventoSelecionado != null)
             {
-                if (MessageBox.Show($"Deseja realmente inativar o evento '{eventoSelecionado.Nome}'?",
-                                    "Confirmação", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                if (MessageBox.Show($"Deseja realmente inativar o evento '{eventoSelecionado.Nome}'?", "Confirmação", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 {
                     eventoSelecionado.Ativo = false;
                     repo.Atualizar(eventoSelecionado);
-                    MessageBox.Show("Evento inativado com sucesso!", "Confirmação",
-                                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Evento inativado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
                     CarregarTipos();
                 }
             }
             else
             {
-                MessageBox.Show("Selecione um evento na lista para inativar.", "Aviso",
-                                MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Selecione um evento na lista para inativar.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
         private void ComboBoxPesquisarEvento_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ComboBoxPesquisarEvento.SelectedItem is Models.TipoEvento selecionado)
@@ -95,7 +92,6 @@ namespace evecorpfy.ViewsAdministrador
                 TextBoxNomeEvento.Text = selecionado.Nome;
             }
         }
-
         private void ButtonReativar_Click(object sender, RoutedEventArgs e)
         {
             if (eventoSelecionado != null)

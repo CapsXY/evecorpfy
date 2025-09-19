@@ -1,22 +1,18 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
-
 namespace evecorpfy.Data
 {
     public class RepositorioUsuario
     {
-        //  Obter usuário pelo ID
         public Usuario ObterUsuarioPorId(int id)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
             {
                 string sql = "SELECT ID, USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO, FOTO_PERFIL " +
                              "FROM USUARIOS WHERE ID = @ID";
-
                 using (var command = new SqlCommand(sql, conectaDataBase))
                 {
                     command.Parameters.AddWithValue("@ID", id);
-
                     using (var reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -38,8 +34,6 @@ namespace evecorpfy.Data
             }
             return null;
         }
-
-        //  Autenticar usuário pelo login
         public Usuario Autenticar(string username, string senha)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
@@ -47,12 +41,10 @@ namespace evecorpfy.Data
                 string sql = @"SELECT ID, USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO
                                FROM USUARIOS 
                                WHERE USERNAME = @USERNAME AND SENHA_HASH = @SENHA AND ATIVO = 1";
-
                 using (var command = new SqlCommand(sql, conectaDataBase))
                 {
                     command.Parameters.AddWithValue("@USERNAME", username);
-                    command.Parameters.AddWithValue("@SENHA", senha); // ⚠️ ideal: hash
-
+                    command.Parameters.AddWithValue("@SENHA", senha);
                     using (var reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -73,8 +65,6 @@ namespace evecorpfy.Data
             }
             return null;
         }
-
-        //  Atualizar dados do usuário
         public void AtualizarUsuario(Usuario usuario)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
@@ -83,7 +73,6 @@ namespace evecorpfy.Data
                        SET USERNAME=@USERNAME, SENHA_HASH=@SENHA, EMAIL=@EMAIL, 
                            ATIVO=@ATIVO, FOTO_PERFIL=@FOTO_PERFIL
                        WHERE ID=@ID";
-
                 using (var command = new SqlCommand(sql, conectaDataBase))
                 {
                     command.Parameters.AddWithValue("@USERNAME", usuario.Username);
@@ -92,7 +81,6 @@ namespace evecorpfy.Data
                     command.Parameters.AddWithValue("@ATIVO", usuario.Ativo);
                     command.Parameters.AddWithValue("@FOTO_PERFIL", (object)usuario.FotoPerfil ?? DBNull.Value);
                     command.Parameters.AddWithValue("@ID", usuario.Id);
-
                     command.ExecuteNonQuery();
                 }
             }

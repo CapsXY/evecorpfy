@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:evecorpfy"
         mc:Ignorable="d"
         Title="EVECORPFY - Login"
-        Height="542" Width="767"
+        Height="542"
+        Width="767"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
@@ -15,27 +16,86 @@
     <Grid>
         <!--Background-->
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF71C4F3" Offset="0.909"/>
-                <GradientStop Color="White" Offset="0.799"/>
+            <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                <GradientStop Color="#FF71C4F3"
+                              Offset="0.909"/>
+                <GradientStop Color="White"
+                              Offset="0.799"/>
             </LinearGradientBrush>
         </Grid.Background>
         <!--Logo-->
-        <Image Margin="282,30,277,337" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo-blue.png" Stretch="Fill"/>
+        <Image Margin="282,30,277,337"
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo-blue.png"
+               Stretch="Fill"/>
         <!--Título-->
-        <Label Content="Acesso ao Sistema" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="304,195,0,0" FontSize="18" FontWeight="Bold"/>
+        <Label Content="Acesso ao Sistema"
+               HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="304,195,0,0"
+               FontSize="18"
+               FontWeight="Bold"/>
         <!--Usuario-->
-        <Image HorizontalAlignment="Left" Height="26" Margin="256,239,0,0" VerticalAlignment="Top" Width="28" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user.png"/>
-        <TextBox x:Name="TextBoxUsuario" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" FontSize="18" Margin="287,239,0,0"/>
+        <Image HorizontalAlignment="Left"
+               Height="26"
+               Margin="256,239,0,0"
+               VerticalAlignment="Top"
+               Width="28"
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user.png"/>
+        <TextBox x:Name="TextBoxUsuario"
+                 HorizontalAlignment="Left"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="205"
+                 FontSize="18"
+                 Margin="287,239,0,0"/>
         <!--Senha-->
-        <Image HorizontalAlignment="Left" Height="26" Margin="256,276,0,0" VerticalAlignment="Top" Width="26" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\lock.png"/>
-        <PasswordBox x:Name="PasswordboxSenha" HorizontalAlignment="Left" Margin="287,276,0,0" VerticalAlignment="Top" Width="204" FontSize="18"/>
+        <Image HorizontalAlignment="Left"
+               Height="26"
+               Margin="256,276,0,0"
+               VerticalAlignment="Top"
+               Width="26"
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\lock.png"/>
+        <PasswordBox x:Name="PasswordboxSenha"
+                     HorizontalAlignment="Left"
+                     Margin="287,276,0,0"
+                     VerticalAlignment="Top"
+                     Width="204"
+                     FontSize="18"/>
         <!--Novo por Aqui? Cadastre-se-->
-        <Label Content="Novo por aqui?" HorizontalAlignment="Left" Margin="295,307,0,0" VerticalAlignment="Top" FontSize="14"/>
-        <Label Content="Cadastre-se" HorizontalAlignment="Left" Margin="395,307,0,0" VerticalAlignment="Top" Foreground="#FF71C4F3" FontWeight="Bold" FontSize="14" Cursor="Hand"/>
+        <Label Content="Novo por aqui?"
+               HorizontalAlignment="Left"
+               Margin="295,307,0,0"
+               VerticalAlignment="Top"
+               FontSize="14"/>
+        <Label Content="Cadastre-se"
+               HorizontalAlignment="Left"
+               Margin="395,307,0,0"
+               VerticalAlignment="Top"
+               Foreground="#FF71C4F3"
+               FontWeight="Bold"
+               FontSize="14"
+               Cursor="Hand"/>
         <!--Esqueceu a sua Senha?-->
-        <Label Content="Esqueceu a sua senha?" HorizontalAlignment="Left" Margin="312,333,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" Cursor="Hand"/>
+        <Label Content="Esqueceu a sua senha?"
+               HorizontalAlignment="Left"
+               Margin="312,333,0,0"
+               VerticalAlignment="Top"
+               FontSize="14"
+               FontWeight="Bold"
+               Cursor="Hand"/>
         <!--Botão Acessasr-->
-        <Button x:Name="ButtonAcessar" Content="Acessar" HorizontalAlignment="Left" Margin="286,371,0,0" VerticalAlignment="Top" Click="ButtonAcessar_Click" FontSize="16" Height="40" Width="206" BorderBrush="{x:Null}" Background="#FF71C4F3" FontWeight="Bold"/>
+        <Button x:Name="ButtonAcessar"
+                Content="Acessar"
+                HorizontalAlignment="Left"
+                Margin="286,371,0,0"
+                VerticalAlignment="Top"
+                Click="ButtonAcessar_Click"
+                FontSize="16"
+                Height="40"
+                Width="206"
+                BorderBrush="{x:Null}"
+                Background="#FF71C4F3"
+                FontWeight="Bold"/>
     </Grid>
 </Window>

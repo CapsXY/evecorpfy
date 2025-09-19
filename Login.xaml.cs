@@ -9,8 +9,7 @@ namespace evecorpfy
     /// Interação lógica para Login.xaml
     /// </summary>
     public partial class Login : Window
-    {
-        public Login()
+    {        public Login()
         {
             InitializeComponent();
         }
@@ -20,7 +19,6 @@ namespace evecorpfy
             string usuario = TextBoxUsuario.Text.Trim();
             string senha = PasswordboxSenha.Password.Trim();
 
-            // 🔹 Validação básica
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(senha))
             {
                 MessageBox.Show("Preencha usuário e senha!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -40,19 +38,15 @@ namespace evecorpfy
                         return;
                     }
 
-                    // 🔹 Salvar dados na sessão
                     Sessao.UsuarioId = user.Id;
                     Sessao.Username = user.Username;
                     Sessao.Role = user.Role;
 
-                    // 🔹 Mensagem opcional de boas-vindas
                     MessageBox.Show($"Bem-vindo, {user.Username}!", "Login realizado", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    // 🔹 Abrir menu principal
                     var menu = new MenuAdministrador();
                     menu.Show();
 
-                    // 🔹 Fechar tela de login
                     this.Close();
                 }
                 else

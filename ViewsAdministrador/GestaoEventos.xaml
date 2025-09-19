@@ -11,17 +11,35 @@
     <Grid>
         <!--Background-->
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FF71C4F3" Offset="1"/>
-                <GradientStop Color="White" Offset="0.84"/>
+            <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                <GradientStop Color="#FF71C4F3"
+                              Offset="1"/>
+                <GradientStop Color="White"
+                              Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
         <!--Logo-->
-        <Image HorizontalAlignment="Center" Height="81" Margin="0,13,0,0" VerticalAlignment="Top" Width="82" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
+        <Image HorizontalAlignment="Center"
+               Height="81"
+               Margin="0,13,0,0"
+               VerticalAlignment="Top"
+               Width="82"
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
         <!--Título e Subtítulo-->
-        <Label Content="GESTÃO DE EVENTOS" HorizontalAlignment="Center" Margin="0,62,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="36"/>
-        <Label Content="Administre seus eventos" HorizontalAlignment="Center" Margin="0,108,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,144,10,106">
+        <Label Content="GESTÃO DE EVENTOS"
+               HorizontalAlignment="Center"
+               Margin="0,62,0,0"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="36"/>
+        <Label Content="Administre seus eventos"
+               HorizontalAlignment="Center"
+               Margin="0,108,0,0"
+               VerticalAlignment="Top"
+               FontSize="16"/>
+        <ListView d:ItemsSource="{d:SampleData ItemCount=5}"
+                  Margin="10,144,10,106">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>

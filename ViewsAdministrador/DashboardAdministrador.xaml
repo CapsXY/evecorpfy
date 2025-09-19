@@ -8,7 +8,4 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Background="White">
-    <Grid>
-        <Button Content="TESTAR CONEXÃO COM O DB!" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
-    </Grid>
 </UserControl>

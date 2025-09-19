@@ -1,7 +1,6 @@
 ﻿using evecorpfy.Data;
 using System.Windows;
 using System.Windows.Controls;
-
 namespace evecorpfy.ViewsAdministrador
 {
     /// <summary>
@@ -11,24 +10,20 @@ namespace evecorpfy.ViewsAdministrador
     {
         private readonly RepositorioTipoServico repo = new RepositorioTipoServico();
         private Models.TipoServico servicoSelecionado;
-
         public TipoServico()
         {
             InitializeComponent();
             CarregarTipos();
         }
-
         private void CarregarTipos()
         {
             ComboBoxPesquisarServico.ItemsSource = repo.ListarTodos();
             ComboBoxPesquisarServico.DisplayMemberPath = "Nome";
             ComboBoxPesquisarServico.SelectedValuePath = "Id";
             ComboBoxPesquisarServico.SelectedIndex = -1;
-
             TextBoxNomeServico.Clear();
             servicoSelecionado = null;
         }
-
         private void ButtonCadastrar_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(TextBoxNomeServico.Text))
@@ -41,30 +36,37 @@ namespace evecorpfy.ViewsAdministrador
                 MessageBox.Show("O nome do tipo de serviço deve ter pelo menos 3 caracteres.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            if (servicoSelecionado == null)
+            var nomeDigitado = TextBoxNomeServico.Text.Trim();
+            try
             {
-                // Inserir novo
-                var tipo = new Models.TipoServico
+                if (servicoSelecionado == null)
                 {
-                    Nome = TextBoxNomeServico.Text.Trim(),
-                    Ativo = true
-                };
-
-                repo.Inserir(tipo);
-                MessageBox.Show("Tipo de serviço cadastrado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (repo.NomeExiste(nomeDigitado))
+                    {
+                        MessageBox.Show("Já existe um tipo de serviço com esse nome!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return;
+                    }
+                    var tipo = new Models.TipoServico
+                    {
+                        Nome = nomeDigitado,
+                        Ativo = true
+                    };
+                    repo.Inserir(tipo);
+                    MessageBox.Show("Tipo de serviço cadastrado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    servicoSelecionado.Nome = nomeDigitado;
+                    repo.Atualizar(servicoSelecionado);
+                    MessageBox.Show("Tipo de serviço atualizado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                CarregarTipos();
             }
-            else
+            catch (Exception ex)
             {
-                // Atualizar existente
-                servicoSelecionado.Nome = TextBoxNomeServico.Text.Trim();
-                repo.Atualizar(servicoSelecionado);
-                MessageBox.Show("Tipo de serviço atualizado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            CarregarTipos();
         }
-
         private void ButtonExcluir_Click(object sender, RoutedEventArgs e)
         {
             if (servicoSelecionado != null)
@@ -82,7 +84,6 @@ namespace evecorpfy.ViewsAdministrador
                 MessageBox.Show("Selecione um serviço na lista para inativar.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
         private void ComboBoxPesquisarServico_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ComboBoxPesquisarServico.SelectedItem is Models.TipoServico selecionado)
@@ -91,7 +92,6 @@ namespace evecorpfy.ViewsAdministrador
                 TextBoxNomeServico.Text = selecionado.Nome;
             }
         }
-
         private void ButtonReativar_Click(object sender, RoutedEventArgs e)
         {
             if (servicoSelecionado != null)

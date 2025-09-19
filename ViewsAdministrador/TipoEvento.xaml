@@ -16,7 +16,6 @@
                 <GradientStop Color="White" Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-
         <!--Logo-->
         <Image HorizontalAlignment="Center"
                Height="155"
@@ -24,7 +23,6 @@
                VerticalAlignment="Top"
                Width="153"
                Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
-
         <!--Título e Subtítulo-->
         <Label Content="TIPO DE EVENTO"
                HorizontalAlignment="Left"
@@ -37,7 +35,6 @@
                Margin="0,239,0,0"
                VerticalAlignment="Top"
                FontSize="16"/>
-
         <!--Nome do Evento-->
         <Label Content="Nome do tipo de evento"
                HorizontalAlignment="Left"
@@ -53,7 +50,6 @@
                  Width="434"
                  FontSize="16"
                  Height="28"/>
-
         <!--Botão Cadastrar-->
         <Button x:Name="ButtonCadastrar"
                 Content="Cadastrar/Atualizar"
@@ -67,7 +63,6 @@
                 Height="33"
                 Width="158"
                 Click="ButtonCadastrar_Click"/>
-
         <!--Pesquisar Evento-->
         <Label Content="Pesquisar tipo de evento"
                HorizontalAlignment="Left"
@@ -75,7 +70,6 @@
                VerticalAlignment="Top"
                FontWeight="Bold"
                FontSize="18"/>
-
         <!-- ComboBox + Botão Excluir -->
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Center"
@@ -101,7 +95,6 @@
                         </Style.Triggers>
                     </Style>
                 </ComboBox.ItemContainerStyle>
-
             </ComboBox>
             <Button Content="✖"
                     Width="28"
@@ -112,7 +105,6 @@
                     FontWeight="Bold"
                     ToolTip="Inativar evento selecionado"
                     Click="ButtonExcluir_Click"/>
-
             <Button Content="✅"
                     Width="28"
                     Height="28"
