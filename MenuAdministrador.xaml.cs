@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using evecorpfy.ViewsAdministrador;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
-using evecorpfy.ViewsAdministrador;
+using System.Windows.Media.Animation;
 
 namespace evecorpfy
 {
@@ -10,42 +12,57 @@ namespace evecorpfy
     /// </summary>
     public partial class MenuAdministrador : Window
     {
+        private void EfeitoTrocaTela(UserControl novoUC)
+        {
+            novoUC.RenderTransform = new TranslateTransform();
+            novoUC.Opacity = 0;
+            ContentArea.Content = novoUC;
+
+            var fade = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(300));
+            var slide = new DoubleAnimation(100, 0, TimeSpan.FromMilliseconds(300))
+            {
+                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            novoUC.BeginAnimation(OpacityProperty, fade);
+            novoUC.RenderTransform.BeginAnimation(TranslateTransform.XProperty, slide);
+        }
+
         public MenuAdministrador()
         {
             InitializeComponent();
 
             // Tela inicial ao abrir
-            ContentArea.Content = new DashboardAdministrador();
+            EfeitoTrocaTela(new DashboardAdministrador());
         }
 
         private void GridLogo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             // Volta sempre para o dashboard
-            ContentArea.Content = new DashboardAdministrador();
+            EfeitoTrocaTela(new DashboardAdministrador());
         }
 
         private void GridButtonPerfil_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             // Carrega o perfil do usuário logado
-            ContentArea.Content = new PerfilAdministrador(Sessao.UsuarioId);
+            EfeitoTrocaTela(new PerfilAdministrador(Sessao.UsuarioId));
         }
 
         private void GridButtonTipoEvento_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ContentArea.Content = new TipoEvento();
+            EfeitoTrocaTela(new TipoEvento());
         }
 
         private void GridButtonTipoServico_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ContentArea.Content = new TipoServico();
+            EfeitoTrocaTela(new TipoServico());
         }
 
         private void GridButtonGestaoEvento_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ContentArea.Content = new GestaoEventos();
+            EfeitoTrocaTela(new GestaoEventos());
         }
 
-        // 🔹 Métodos auxiliares para hover (evitam repetição de código)
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
             if (sender is System.Windows.Controls.Grid grid)

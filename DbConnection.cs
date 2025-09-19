@@ -17,9 +17,9 @@ namespace evecorpfy.Data
 
         public static SqlConnection GetOpenConnection()
         {
-            var conn = new SqlConnection(GetConnectionString());
-            conn.Open();
-            return conn;
+            var conectaDataBase = new SqlConnection(GetConnectionString());
+            conectaDataBase.Open();
+            return conectaDataBase;
         }
     }
 }

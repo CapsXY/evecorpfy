@@ -17,17 +17,110 @@
             </LinearGradientBrush>
         </Grid.Background>
         <!--Logo-->
-        <Image HorizontalAlignment="Center" Height="155" Margin="0,34,0,0" VerticalAlignment="Top" Width="153" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
+        <Image HorizontalAlignment="Center"
+            Height="155"
+            Margin="0,34,0,0"
+            VerticalAlignment="Top"
+            Width="153"
+            Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
+
         <!--Título e Subtítulo-->
-        <Label Content="SERVIÇO" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
-        <Label Content="Cadastre, altere ou pesquise o nome dos seus serviços" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="TIPO DE SERVIÇO"
+            HorizontalAlignment="Left"
+            Margin="304,165,0,0"
+            VerticalAlignment="Top"
+            FontWeight="Bold"
+            FontSize="48"/>
+        <Label Content="Cadastre, altere ou pesquise o nome dos seus serviços"
+            HorizontalAlignment="Center"
+            Margin="0,239,0,0"
+            VerticalAlignment="Top"
+            FontSize="16"/>
+
         <!--Nome do Serviço-->
-        <Label Content="Nome do serviço" Margin="309,308,547,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <TextBox x:Name="TextBoxNomeServico" HorizontalAlignment="Center" Margin="0,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" FontSize="16" Height="28"/>
+        <Label Content="Nome do tipo de serviço"
+            HorizontalAlignment="Left"
+            Margin="288,303,0,0"
+            VerticalAlignment="Top"
+            FontWeight="Bold"
+            FontSize="18"/>
+        <TextBox x:Name="TextBoxNomeServico"
+            HorizontalAlignment="Center"
+            Margin="0,342,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="434"
+            FontSize="16"
+            Height="28"/>
+
         <!--Botão Cadastrar-->
-        <Button x:Name="ButtonCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="597,375,0,0" VerticalAlignment="Top" FontSize="16" BorderBrush="{x:Null}" Background="#FF71C4F3" FontWeight="Bold" Height="33" Width="98"/>
+        <Button x:Name="ButtonCadastrar"
+            Content="Cadastrar/Atualizar"
+            HorizontalAlignment="Left"
+            Margin="564,375,0,0"
+            VerticalAlignment="Top"
+            FontSize="16"
+            BorderBrush="{x:Null}"
+            Background="#FF71C4F3"
+            FontWeight="Bold"
+            Height="33"
+            Width="158"
+            Click="ButtonCadastrar_Click"/>
+
         <!--Pesquisar Serviço-->
-        <Label Content="Pesquisar serviço" HorizontalAlignment="Left" Margin="315,409,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <ComboBox x:Name="ComboBoxPesquisarServico" HorizontalAlignment="Center" Margin="0,448,0,0" VerticalAlignment="Top" Width="380" Height="28" FontSize="16" IsEditable="True" IsTextSearchEnabled="True" IsTextSearchCaseSensitive="False"/>
+        <Label Content="Pesquisar tipo de serviço"
+            HorizontalAlignment="Left"
+            Margin="288,414,0,0"
+            VerticalAlignment="Top"
+            FontWeight="Bold"
+            FontSize="18"/>
+
+        <!-- ComboBox + Botão Excluir -->
+        <StackPanel Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Margin="0,453,0,0"
+            VerticalAlignment="Top">
+            <ComboBox x:Name="ComboBoxPesquisarServico"
+                Width="377"
+                Height="28"
+                FontSize="16"
+                IsEditable="True"
+                IsTextSearchEnabled="True"
+                IsTextSearchCaseSensitive="False"
+                DisplayMemberPath="Nome"
+                SelectedValuePath="Id"
+                SelectionChanged="ComboBoxPesquisarServico_SelectionChanged">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Ativo}" Value="False">
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter Property="FontStyle" Value="Italic"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+
+            </ComboBox>
+            <Button Content="✖"
+                Width="28"
+                Height="28"
+                Background="Transparent"
+                BorderThickness="0"
+                Foreground="Red"
+                FontWeight="Bold"
+                ToolTip="Inativar serviço selecionado"
+                Click="ButtonExcluir_Click"/>
+
+            <Button Content="✅"
+                Width="28"
+                Height="28"
+                Background="Transparent"
+                BorderThickness="0"
+                Foreground="Green"
+                FontWeight="Bold"
+                ToolTip="Ativar serviço selecionado"
+                Click="ButtonReativar_Click"/>
+        </StackPanel>
     </Grid>
 </UserControl>

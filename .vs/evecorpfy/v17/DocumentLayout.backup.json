@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsadministrador\\perfiladministrador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsadministrador\\perfiladministrador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositoriotiposervico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositoriotiposervico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsadministrador\\perfiladministrador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsadministrador\\perfiladministrador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsadministrador\\tiposervico.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsadministrador\\tiposervico.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsadministrador\\tiposervico.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsadministrador\\tiposervico.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositoriotipoevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositoriotipoevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositorioautenticacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositorioautenticacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\tipoevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\tipoevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\tiposervico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\tiposervico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,71 +33,84 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 135,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 128,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PerfilAdministrador.xaml",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml",
-              "RelativeDocumentMoniker": "ViewsAdministrador\\PerfilAdministrador.xaml",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml",
-              "RelativeToolTip": "ViewsAdministrador\\PerfilAdministrador.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-18T03:17:21.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Usuario.cs",
-              "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAnAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "TipoServico.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\TipoServico.cs",
+              "RelativeDocumentMoniker": "Models\\TipoServico.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\TipoServico.cs",
+              "RelativeToolTip": "Models\\TipoServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T02:30:31.108Z",
+              "WhenOpened": "2025-09-19T01:44:13.44Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RepositorioAutenticacao.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioAutenticacao.cs",
-              "RelativeDocumentMoniker": "Data\\RepositorioAutenticacao.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioAutenticacao.cs",
-              "RelativeToolTip": "Data\\RepositorioAutenticacao.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
+              "Title": "TipoEvento.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\TipoEvento.cs",
+              "RelativeDocumentMoniker": "Models\\TipoEvento.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\TipoEvento.cs",
+              "RelativeToolTip": "Models\\TipoEvento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T02:26:45.171Z",
+              "WhenOpened": "2025-09-19T01:44:12.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RepositorioTipoEvento.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioTipoEvento.cs",
+              "RelativeDocumentMoniker": "Data\\RepositorioTipoEvento.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioTipoEvento.cs",
+              "RelativeToolTip": "Data\\RepositorioTipoEvento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T01:42:06.979Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RepositorioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioUsuario.cs",
-              "RelativeDocumentMoniker": "Data\\RepositorioUsuario.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioUsuario.cs",
-              "RelativeToolTip": "Data\\RepositorioUsuario.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAwE0AAAA1AAAAAAAAAA==",
+              "Title": "TipoServico.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\TipoServico.xaml.cs",
+              "RelativeDocumentMoniker": "ViewsAdministrador\\TipoServico.xaml.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\TipoServico.xaml.cs",
+              "RelativeToolTip": "ViewsAdministrador\\TipoServico.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T02:26:37.289Z",
+              "WhenOpened": "2025-09-19T01:28:21.16Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PerfilAdministrador.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml.cs",
-              "RelativeDocumentMoniker": "ViewsAdministrador\\PerfilAdministrador.xaml.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\PerfilAdministrador.xaml.cs",
-              "RelativeToolTip": "ViewsAdministrador\\PerfilAdministrador.xaml.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAgwDsAAAAvAAAAAAAAAA==",
+              "Title": "TipoServico.xaml",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\TipoServico.xaml",
+              "RelativeDocumentMoniker": "ViewsAdministrador\\TipoServico.xaml",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsAdministrador\\TipoServico.xaml",
+              "RelativeToolTip": "ViewsAdministrador\\TipoServico.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-19T01:22:00.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RepositorioTipoServico.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioTipoServico.cs",
+              "RelativeDocumentMoniker": "Data\\RepositorioTipoServico.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioTipoServico.cs",
+              "RelativeToolTip": "Data\\RepositorioTipoServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T02:10:23.429Z",
+              "WhenOpened": "2025-09-19T01:21:23.996Z",
               "EditorCaption": ""
             }
           ]

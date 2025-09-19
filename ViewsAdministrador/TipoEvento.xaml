@@ -16,18 +16,112 @@
                 <GradientStop Color="White" Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
+
         <!--Logo-->
-        <Image HorizontalAlignment="Center" Height="155" Margin="0,34,0,0" VerticalAlignment="Top" Width="153" Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
+        <Image HorizontalAlignment="Center"
+               Height="155"
+               Margin="0,34,0,0"
+               VerticalAlignment="Top"
+               Width="153"
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
+
         <!--Título e Subtítulo-->
-        <Label Content="EVENTO" HorizontalAlignment="Center" Margin="0,165,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="48"/>
-        <Label Content="Cadastre, altere ou pesquise o nome dos seus eventos" HorizontalAlignment="Center" Margin="0,239,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="TIPO DE EVENTO"
+               HorizontalAlignment="Left"
+               Margin="304,165,0,0"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="48"/>
+        <Label Content="Cadastre, altere ou pesquise o nome dos seus eventos"
+               HorizontalAlignment="Center"
+               Margin="0,239,0,0"
+               VerticalAlignment="Top"
+               FontSize="16"/>
+
         <!--Nome do Evento-->
-        <Label Content="Nome do evento" Margin="309,308,547,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <TextBox x:Name="TextBoxNomeEvento" HorizontalAlignment="Center" Margin="0,342,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="380" FontSize="16" Height="28"/>
+        <Label Content="Nome do tipo de evento"
+               HorizontalAlignment="Left"
+               Margin="288,303,0,0"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="18"/>
+        <TextBox x:Name="TextBoxNomeEvento"
+                 HorizontalAlignment="Center"
+                 Margin="0,342,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="434"
+                 FontSize="16"
+                 Height="28"/>
+
         <!--Botão Cadastrar-->
-        <Button x:Name="ButtonCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="597,375,0,0" VerticalAlignment="Top" FontSize="16" BorderBrush="{x:Null}" Background="#FF71C4F3" FontWeight="Bold" Height="33" Width="98"/>
+        <Button x:Name="ButtonCadastrar"
+                Content="Cadastrar/Atualizar"
+                HorizontalAlignment="Left"
+                Margin="564,375,0,0"
+                VerticalAlignment="Top"
+                FontSize="16"
+                BorderBrush="{x:Null}"
+                Background="#FF71C4F3"
+                FontWeight="Bold"
+                Height="33"
+                Width="158"
+                Click="ButtonCadastrar_Click"/>
+
         <!--Pesquisar Evento-->
-        <Label Content="Pesquisar evento" HorizontalAlignment="Left" Margin="315,409,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
-        <ComboBox x:Name="ComboBoxPesquisarEvento" HorizontalAlignment="Center" Margin="0,448,0,0" VerticalAlignment="Top" Width="380" Height="28" FontSize="16" IsEditable="True" IsTextSearchEnabled="True" IsTextSearchCaseSensitive="False"/>
+        <Label Content="Pesquisar tipo de evento"
+               HorizontalAlignment="Left"
+               Margin="288,414,0,0"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="18"/>
+
+        <!-- ComboBox + Botão Excluir -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,453,0,0"
+                    VerticalAlignment="Top">
+            <ComboBox x:Name="ComboBoxPesquisarEvento"
+                      Width="377"
+                      Height="28"
+                      FontSize="16"
+                      IsEditable="True"
+                      IsTextSearchEnabled="True"
+                      IsTextSearchCaseSensitive="False"
+                      DisplayMemberPath="Nome"
+                      SelectedValuePath="Id"
+                      SelectionChanged="ComboBoxPesquisarEvento_SelectionChanged">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Ativo}" Value="False">
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter Property="FontStyle" Value="Italic"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+
+            </ComboBox>
+            <Button Content="✖"
+                    Width="28"
+                    Height="28"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Foreground="Red"
+                    FontWeight="Bold"
+                    ToolTip="Inativar evento selecionado"
+                    Click="ButtonExcluir_Click"/>
+
+            <Button Content="✅"
+                    Width="28"
+                    Height="28"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Foreground="Green"
+                    FontWeight="Bold"
+                    ToolTip="Ativar evento selecionado"
+                    Click="ButtonReativar_Click"/>
+        </StackPanel>
     </Grid>
 </UserControl>
