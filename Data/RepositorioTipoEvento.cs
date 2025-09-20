@@ -1,7 +1,6 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
-namespace evecorpfy.Data.Repositorios
-{
+namespace evecorpfy.Data;
     public class RepositorioTipoEvento
     {
         public void Inserir(TipoEvento tipoEvento)
@@ -74,4 +73,3 @@ namespace evecorpfy.Data.Repositorios
             }
         }
     }
-}

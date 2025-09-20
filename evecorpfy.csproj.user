@@ -11,9 +11,6 @@
     <Compile Update="MenuParticipante.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Login.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="ViewsAdministrador\DashboardAdministrador.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,6 +24,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewsAdministrador\TipoServico.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsOrganizador\CadastroEventos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsOrganizador\DashboardOrganizador.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsOrganizador\GestaoEventos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsOrganizador\Negociacoes.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsOrganizador\PerfilOrganizador.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

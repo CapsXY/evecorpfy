@@ -35,7 +35,7 @@
                                      SpreadMethod="Pad">
                     <GradientStop Color="White"
                                   Offset="0.435"/>
-                    <GradientStop Color="#FF0AB5E2"
+                    <GradientStop Color="#FF71C4F3"
                                   Offset="1"/>
                 </LinearGradientBrush>
             </Ellipse.Stroke>

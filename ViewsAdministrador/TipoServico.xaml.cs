@@ -1,4 +1,4 @@
-﻿using evecorpfy.Data.Repositorios;
+﻿using evecorpfy.Data;
 using System.Windows;
 using System.Windows.Controls;
 namespace evecorpfy.ViewsAdministrador

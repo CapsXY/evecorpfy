@@ -1,4 +1,4 @@
-﻿using evecorpfy.Data.Repositorios;
+﻿using evecorpfy.Data;
 using evecorpfy.Models;
 using Microsoft.Win32;
 using System.IO;
@@ -13,7 +13,7 @@ namespace evecorpfy.ViewsAdministrador
     /// </summary>
     public partial class PerfilAdministrador : UserControl
     {
-        private Usuario usuario;
+        private Usuario? usuario;
         public PerfilAdministrador(int usuarioId)
         {
             InitializeComponent();

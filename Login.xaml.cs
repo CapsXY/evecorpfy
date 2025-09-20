@@ -1,8 +1,5 @@
-﻿using System;
-using System.Windows;
-using evecorpfy.Data.Repositorios;
-using evecorpfy.Utils;
-
+﻿using System.Windows;
+using evecorpfy.Data;
 namespace evecorpfy
 {
     /// <summary>

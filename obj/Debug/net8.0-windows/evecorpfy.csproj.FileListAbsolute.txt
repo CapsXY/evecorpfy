@@ -120,3 +120,13 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuParticipa
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuFornecedor.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuOrganizador.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuParticipante.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\CadastroEventos.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\DashboardOrganizador.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\GestaoEventos.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\Negociacoes.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\PerfilOrganizador.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\CadastroEventos.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\DashboardOrganizador.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\GestaoEventos.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\Negociacoes.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\PerfilOrganizador.baml

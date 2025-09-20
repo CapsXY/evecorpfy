@@ -11,23 +11,40 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
         Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1"
+                          StartPoint="0.5,0">
+            <GradientStop Color="#FFDF800F"
+                       Offset="1"/>
+            <GradientStop Color="White"
+                       Offset="0.84"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <!--Grid Principal-->
     <Grid>
+        <!--Definição de tamanho do Menu Lateral-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <!--Menu Lateral-->
-        <StackPanel Grid.Column="0" Margin="0,0,1020,0">
+        <StackPanel Grid.Column="0">
             <!--Background do Menu Lateral-->
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1"
-                    StartPoint="0.5,0">
+                                     StartPoint="0.5,0">
                     <GradientStop Color="#FFDF800F"
-                        Offset="1"/>
+                                  Offset="1"/>
                     <GradientStop Color="White"
-                        Offset="0.84"/>
+                                  Offset="0.84"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
             <!--Logo-->
             <Grid x:Name="GridLogo"
                 Height="180"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
                 MouseLeftButtonUp="GridLogo_MouseLeftButtonUp"
                 Background="Transparent">
                 <Image x:Name="Logo"
@@ -43,6 +60,8 @@
             <Grid x:Name="GridButtonPerfil"
                 Height="68"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
                 MouseLeftButtonUp="GridButtonPerfil_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
@@ -60,11 +79,13 @@
             <Separator Height="8"
                 Background="#FFDF800F"
                 Opacity="0.5"/>
-            <!--Opção de Tipo de Evento -->
-            <Grid x:Name="GridButtonTipoEvento"
+            <!--Opção de Cadastro de Eventos -->
+            <Grid x:Name="GridButtonCadastroEventos"
                 Height="68"
                 Width="250"
-                MouseLeftButtonUp="GridButtonTipoEvento_MouseLeftButtonUp"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
+                MouseLeftButtonUp="GridButtonCadastroEventos_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
                 <Label Content="CADASTRO DE EVENTOS"
@@ -81,11 +102,13 @@
             <Separator Height="8"
                 Background="#FFDF800F"
                 Opacity="0.5"/>
-            <!--Opção de Tipo de Serviço -->
-            <Grid x:Name="GridButtonTipoServico"
+            <!--Opção de Negociações -->
+            <Grid x:Name="GridButtonNegociacoes"
                 Height="68"
                 Width="250"
-                MouseLeftButtonUp="GridButtonTipoServico_MouseLeftButtonUp"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
+                MouseLeftButtonUp="GridButtonNegociacoes_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
                 <Label Content="NEGOCIAÇÕES"
@@ -100,11 +123,13 @@
                     Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\handshake-orange.png"/>
             </Grid>
             <Separator Height="8" Background="#FFDF800F" Opacity="0.5"/>
-            <!--Opção de Gestão de Evento -->
-            <Grid x:Name="GridButtonGestaoEvento"
+            <!--Opção de Gestão de Eventos -->
+            <Grid x:Name="GridButtonGestaoEventos"
                 Height="68"
                 Width="250"
-                MouseLeftButtonUp="GridButtonGestaoEvento_MouseLeftButtonUp"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
+                MouseLeftButtonUp="GridButtonGestaoEventos_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
                 <Label Content="GESTÃO DE EVENTOS"
@@ -123,6 +148,8 @@
             <Grid x:Name="GridButtonSair"
                 Height="68"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
                 MouseLeftButtonUp="GridButtonSair_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
@@ -140,7 +167,6 @@
         </StackPanel>
         <!--Área de Conteúdo Principal-->
         <ContentControl x:Name="ContentArea"
-        Margin="262,0,0,0"/>
-
+                        Grid.Column="1"/>
     </Grid>
 </Window>

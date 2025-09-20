@@ -58,6 +58,8 @@
             <Grid x:Name="GridButtonPerfil"
                 Height="68"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
                 MouseLeftButtonUp="GridButtonPerfil_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
@@ -79,6 +81,8 @@
             <Grid x:Name="GridButtonTipoEvento"
                 Height="68"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"  
                 MouseLeftButtonUp="GridButtonTipoEvento_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
@@ -100,6 +104,8 @@
             <Grid x:Name="GridButtonTipoServico"
                 Height="68"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
                 MouseLeftButtonUp="GridButtonTipoServico_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
@@ -115,11 +121,13 @@
                        Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
-            <!--Opção de Gestão de Evento -->
-            <Grid x:Name="GridButtonGestaoEvento"
+            <!--Opção de Gestão de Eventos -->
+            <Grid x:Name="GridButtonGestaoEventos"
                 Height="68"
                 Width="250"
-                MouseLeftButtonUp="GridButtonGestaoEvento_MouseLeftButtonUp"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
+                MouseLeftButtonUp="GridButtonGestaoEventos_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
                 <Label Content="GESTÃO DE EVENTOS"
@@ -138,6 +146,8 @@
             <Grid x:Name="GridButtonSair"
                 Height="68"
                 Width="250"
+                MouseEnter="Grid_MouseEnter"
+                MouseLeave="Grid_MouseLeave"
                 MouseLeftButtonUp="GridButtonSair_MouseLeftButtonUp"
                 Cursor="Hand"
                 Background="Transparent">
