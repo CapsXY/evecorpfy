@@ -1,6 +1,6 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
-namespace evecorpfy.Data
+namespace evecorpfy.Data.Repositorios
 {
     public class RepositorioAutenticacao
     {

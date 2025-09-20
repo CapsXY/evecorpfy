@@ -1,4 +1,4 @@
-﻿namespace evecorpfy
+﻿namespace evecorpfy.Utils
 {
     public class Sessao
     {

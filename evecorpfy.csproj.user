@@ -2,10 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Login.xaml.cs">
+    <Compile Update="MenuFornecedor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MenuAdministrador.xaml.cs">
+    <Compile Update="MenuOrganizador.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MenuParticipante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Login.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewsAdministrador\DashboardAdministrador.xaml.cs">

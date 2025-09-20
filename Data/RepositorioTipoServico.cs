@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using evecorpfy.Models;
-namespace evecorpfy.Data
+namespace evecorpfy.Data.Repositorios
 {
     public class RepositorioTipoServico
     {

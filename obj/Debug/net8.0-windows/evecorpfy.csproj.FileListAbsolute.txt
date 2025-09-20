@@ -22,8 +22,6 @@ C:\Users\CaioA\source\repos\evecorpfy\obj\Debug\net8.0-windows\MenuAdministrador
 C:\Users\CaioA\source\repos\evecorpfy\obj\Debug\net8.0-windows\MenuAdministrador.baml
 C:\Users\CaioA\source\repos\evecorpfy\obj\Debug\net8.0-windows\PerfilAdministrador.g.cs
 C:\Users\CaioA\source\repos\evecorpfy\obj\Debug\net8.0-windows\PerfilAdministrador.baml
-C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\Login.g.cs
-C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuAdministrador.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsAdministrador\PerfilAdministrador.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy_MarkupCompile.cache
@@ -36,8 +34,6 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.dep
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.runtimeconfig.json
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.pdb
-C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\Login.baml
-C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuAdministrador.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsAdministrador\PerfilAdministrador.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy.g.resources
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy.GeneratedMSBuildEditorConfig.editorconfig
@@ -114,3 +110,13 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy.Pro
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy.csproj.GenerateResource.cache
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsAdministrador\DashboardAdministrador.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsAdministrador\DashboardAdministrador.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\Login.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuAdministrador.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\Login.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuAdministrador.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuFornecedor.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuOrganizador.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuParticipante.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuFornecedor.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuOrganizador.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuParticipante.baml

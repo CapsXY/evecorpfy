@@ -1,4 +1,5 @@
-﻿using evecorpfy.ViewsAdministrador;
+﻿using evecorpfy.Utils;
+using evecorpfy.ViewsAdministrador;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -11,6 +12,17 @@ namespace evecorpfy
     /// </summary>
     public partial class MenuAdministrador : Window
     {
+        // Efeito hover nos botões do menu
+        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (sender is System.Windows.Controls.Grid grid)
+                grid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#91D8FF"));
+        }
+        private void Grid_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (sender is System.Windows.Controls.Grid grid)
+                grid.Background = Brushes.Transparent;
+        }
         private void EfeitoTrocaTela(UserControl novoUC)
         {
             novoUC.RenderTransform = new TranslateTransform();
@@ -49,15 +61,11 @@ namespace evecorpfy
         {
             EfeitoTrocaTela(new GestaoEventos());
         }
-        private void Grid_MouseEnter(object sender, MouseEventArgs e)
+        private void GridButtonSair_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            if (sender is System.Windows.Controls.Grid grid)
-                grid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#91D8FF"));
-        }
-        private void Grid_MouseLeave(object sender, MouseEventArgs e)
-        {
-            if (sender is System.Windows.Controls.Grid grid)
-                grid.Background = Brushes.Transparent;
+            var login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

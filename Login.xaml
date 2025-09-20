@@ -14,19 +14,16 @@
         WindowStyle="SingleBorderWindow">
     <!--Grid Principal-->
     <Grid>
-        <!--Background-->
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1"
-                                 StartPoint="0.5,0">
-                <GradientStop Color="#FF71C4F3"
-                              Offset="0.909"/>
-                <GradientStop Color="White"
-                              Offset="0.799"/>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Offset="0.81" Color="White"/>
+                <GradientStop Offset="1" Color="#FF8E8E8E"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <!--Background-->
         <!--Logo-->
         <Image Margin="282,30,277,337"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo-blue.png"
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
                Stretch="Fill"/>
         <!--Título-->
         <Label Content="Acesso ao Sistema"
@@ -41,7 +38,7 @@
                Margin="256,239,0,0"
                VerticalAlignment="Top"
                Width="28"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user.png"/>
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user-gray.png"/>
         <TextBox x:Name="TextBoxUsuario"
                  HorizontalAlignment="Left"
                  TextWrapping="Wrap"
@@ -55,7 +52,7 @@
                Margin="256,276,0,0"
                VerticalAlignment="Top"
                Width="26"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\lock.png"/>
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\lock-gray.png"/>
         <PasswordBox x:Name="PasswordboxSenha"
                      HorizontalAlignment="Left"
                      Margin="287,276,0,0"
@@ -72,7 +69,6 @@
                HorizontalAlignment="Left"
                Margin="395,307,0,0"
                VerticalAlignment="Top"
-               Foreground="#FF71C4F3"
                FontWeight="Bold"
                FontSize="14"
                Cursor="Hand"/>
@@ -94,8 +90,10 @@
                 FontSize="16"
                 Height="40"
                 Width="206"
-                BorderBrush="{x:Null}"
-                Background="#FF71C4F3"
-                FontWeight="Bold"/>
+                FontWeight="Bold" Background="#FFEDEDED">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="White" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
     </Grid>
 </Window>

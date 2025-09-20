@@ -37,4 +37,14 @@
     <None Include="C:\Users\CaioA\Documents\GitHub\evecorpfy\.editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Views\Login.xaml">
+      <CopyToOutputDirectory></CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewsOrganizador\" />
+  </ItemGroup>
+
 </Project>
