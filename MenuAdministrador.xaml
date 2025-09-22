@@ -10,7 +10,7 @@
         Width="1280"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png">
+        Icon="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\logo.png">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1"
                              StartPoint="0.5,0">
@@ -48,7 +48,7 @@
                 <Image x:Name="Logo"
                        Stretch="Uniform"
                        Margin="39,19,39,20"
-                       Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo-blue.png"
+                       Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\logo-blue.png"
                        Cursor="Hand"/>
             </Grid>
             <Separator Height="8"
@@ -72,7 +72,7 @@
                        Margin="28,0,0,0"
                        VerticalAlignment="Center"
                        Width="39"
-                       Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user.png"/>
+                       Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\user.png"/>
             </Grid>
             <Separator Height="8"
                        Background="#FF71C4F3"
@@ -95,7 +95,7 @@
                        Margin="28,0,0,0"
                        VerticalAlignment="Center"
                        Width="39"
-                       Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
+                       Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
             </Grid>
             <Separator Height="8"
                        Background="#FF71C4F3"
@@ -118,7 +118,7 @@
                        Margin="28,0,0,0"
                        VerticalAlignment="Center"
                        Width="39"
-                       Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
+                       Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\truck.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
             <!--Opção de Gestão de Eventos -->
@@ -139,7 +139,7 @@
                        Margin="28,0,0,0"
                        VerticalAlignment="Center"
                        Width="39"
-                       Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
+                       Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\group.png"/>
             </Grid>
             <Separator Height="8" Background="#FF71C4F3" Opacity="0.5"/>
             <!--Opção de Sair -->
@@ -160,7 +160,7 @@
                        Margin="28,0,0,0"
                        VerticalAlignment="Center"
                        Width="39"
-                       Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logout.png"/>
+                       Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\logout.png"/>
             </Grid>
         </StackPanel>
         <!--Área de Conteúdo Principal-->

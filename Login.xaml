@@ -10,20 +10,20 @@
         Width="767"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
+        Icon="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\logo.png"
         WindowStyle="SingleBorderWindow">
     <!--Grid Principal-->
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Offset="0.81" Color="White"/>
-                <GradientStop Offset="1" Color="#FF8E8E8E"/>
+                <GradientStop Offset="0.84" Color="White"/>
+                <GradientStop Offset="1" Color="#FF5D5D5D"/>
             </LinearGradientBrush>
         </Grid.Background>
         <!--Background-->
         <!--Logo-->
         <Image Margin="282,30,277,337"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
+               Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\logo.png"
                Stretch="Fill"/>
         <!--Título-->
         <Label Content="Acesso ao Sistema"
@@ -38,7 +38,7 @@
                Margin="256,239,0,0"
                VerticalAlignment="Top"
                Width="28"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user-gray.png"/>
+               Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\user-gray.png"/>
         <TextBox x:Name="TextBoxUsuario"
                  HorizontalAlignment="Left"
                  TextWrapping="Wrap"
@@ -52,7 +52,7 @@
                Margin="256,276,0,0"
                VerticalAlignment="Top"
                Width="26"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\lock-gray.png"/>
+               Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\lock-gray.png"/>
         <PasswordBox x:Name="PasswordboxSenha"
                      HorizontalAlignment="Left"
                      Margin="287,276,0,0"

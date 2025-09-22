@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\",
+  "WorkspaceRootPath": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositoriousuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\lenovo\\documents\\github\\evecorpfy\\data\\repositorioevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositorioevento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\perfilorganizador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\perfilorganizador.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\lenovo\\documents\\github\\evecorpfy\\viewsorganizador\\cadastroeventos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\cadastroeventos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\perfilorganizador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\perfilorganizador.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\lenovo\\documents\\github\\evecorpfy\\viewsorganizador\\cadastroeventos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\cadastroeventos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 142,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RepositorioUsuario.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioUsuario.cs",
-              "RelativeDocumentMoniker": "Data\\RepositorioUsuario.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioUsuario.cs",
-              "RelativeToolTip": "Data\\RepositorioUsuario.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAwE8AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-20T16:55:05.39Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PerfilOrganizador.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\PerfilOrganizador.xaml.cs",
-              "RelativeDocumentMoniker": "ViewsOrganizador\\PerfilOrganizador.xaml.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\PerfilOrganizador.xaml.cs",
-              "RelativeToolTip": "ViewsOrganizador\\PerfilOrganizador.xaml.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAmwEYAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "RepositorioEvento.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioEvento.cs",
+              "RelativeDocumentMoniker": "Data\\RepositorioEvento.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioEvento.cs",
+              "RelativeToolTip": "Data\\RepositorioEvento.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAwwAEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-20T16:52:34.137Z",
+              "WhenOpened": "2025-09-22T00:29:54.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PerfilOrganizador.xaml",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\PerfilOrganizador.xaml",
-              "RelativeDocumentMoniker": "ViewsOrganizador\\PerfilOrganizador.xaml",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\PerfilOrganizador.xaml",
-              "RelativeToolTip": "ViewsOrganizador\\PerfilOrganizador.xaml",
+              "Title": "CadastroEventos.xaml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml",
+              "RelativeDocumentMoniker": "ViewsOrganizador\\CadastroEventos.xaml",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml",
+              "RelativeToolTip": "ViewsOrganizador\\CadastroEventos.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-20T16:52:24.015Z",
+              "WhenOpened": "2025-09-21T18:11:53.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CadastroEventos.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml.cs",
+              "RelativeDocumentMoniker": "ViewsOrganizador\\CadastroEventos.xaml.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml.cs",
+              "RelativeToolTip": "ViewsOrganizador\\CadastroEventos.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAACoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-21T20:02:50.262Z",
               "EditorCaption": ""
             }
           ]
