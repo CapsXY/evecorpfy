@@ -1,17 +1,16 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
+using System.Data;
 namespace evecorpfy.Data
 {
     public class RepositorioEvento
     {
+        // Método para inserir um novo evento no banco de dados
         public void Inserir(Evento evento)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
             {
-                string sql = @"INSERT INTO EVENTOS 
-                               (NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, BAIRRO, LOCALIDADE, UF, ESTADO, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS)
-                               VALUES (@NOME, @DATA_INICIO, @DATA_FIM, @CEP, @LOGRADOURO, @BAIRRO, @LOCALIDADE, @UF, @ESTADO, 
-                                       @OBSERVACOES, @CAPACIDADE, @ORCAMENTO_MAXIMO, @ORGANIZADOR_ID, @TIPO_EVENTO_ID, @STATUS)";
+                string sql = @"INSERT INTO EVENTOS (NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, NUMERO, BAIRRO, LOCALIDADE, UF, ESTADO, OBSERVACOES, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS) VALUES (@NOME, @DATA_INICIO, @DATA_FIM, @CEP, @LOGRADOURO, @NUMERO, @BAIRRO, @LOCALIDADE, @UF, @ESTADO, @OBSERVACOES, @CAPACIDADE, @ORCAMENTO_MAXIMO, @ORGANIZADOR_ID, @TIPO_EVENTO_ID, @STATUS)";
                 using (var command = new SqlCommand(sql, conectaDataBase))
                 {
                     command.Parameters.AddWithValue("@NOME", evento.Nome);
@@ -19,98 +18,129 @@ namespace evecorpfy.Data
                     command.Parameters.AddWithValue("@DATA_FIM", evento.DataFim);
                     command.Parameters.AddWithValue("@CEP", evento.Cep);
                     command.Parameters.AddWithValue("@LOGRADOURO", evento.Logradouro);
+                    command.Parameters.AddWithValue("@NUMERO", (object)evento.Numero ?? "S/N");
                     command.Parameters.AddWithValue("@BAIRRO", evento.Bairro);
                     command.Parameters.AddWithValue("@LOCALIDADE", evento.Localidade);
                     command.Parameters.AddWithValue("@UF", evento.Uf);
                     command.Parameters.AddWithValue("@ESTADO", evento.Estado);
+                    command.Parameters.AddWithValue("@OBSERVACOES", (object)evento.Observacoes ?? DBNull.Value);
                     command.Parameters.AddWithValue("@CAPACIDADE", evento.Capacidade);
                     command.Parameters.AddWithValue("@ORCAMENTO_MAXIMO", evento.OrcamentoMaximo);
                     command.Parameters.AddWithValue("@ORGANIZADOR_ID", evento.OrganizadorId);
                     command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
-                    command.Parameters.AddWithValue("@STATUS", evento.Status);
+                    var status = string.IsNullOrWhiteSpace(evento.Status) ? "EM CADASTRAMENTO" : evento.Status;
+                    command.Parameters.Add("@STATUS", SqlDbType.NVarChar, 20).Value = status;
                     command.ExecuteNonQuery();
                 }
             }
         }
-        private void PreencherCamposEndereco(string enderecoCompleto)
+        // Método para listar todos os eventos
+        public List<Evento> ListarTodos()
         {
-            try
+            var lista = new List<Evento>();
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
             {
-                // Exemplo: "Praça da Sé, 123 - Sé - São Paulo/SP - CEP:01001000"
-
-                // Primeiro pega o CEP
-                var cepPart = enderecoCompleto.Split("CEP:")[1];
-                TextBoxCEP.Text = cepPart.Trim();
-
-                // Remove o trecho do CEP
-                var semCep = enderecoCompleto.Split("- CEP:")[0];
-
-                // Quebra as partes principais
-                var partes = semCep.Split('-');
-                // [0] "Praça da Sé, 123 "
-                // [1] " Sé "
-                // [2] " São Paulo/SP "
-
-                // Logradouro e número
-                var logradouroNum = partes[0].Split(',');
-                TextBoxLogradouro.Text = logradouroNum[0].Trim();
-                TextBoxNumero.Text = logradouroNum.Length > 1 ? logradouroNum[1].Trim() : "";
-
-                // Bairro
-                TextBoxBairro.Text = partes.Length > 1 ? partes[1].Trim() : "";
-
-                // Cidade / UF
-                if (partes.Length > 2)
+                string sql = @"SELECT ID, NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, NUMERO, BAIRRO, LOCALIDADE, UF, ESTADO, OBSERVACOES, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS FROM EVENTOS";
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                using (var reader = command.ExecuteReader())
                 {
-                    var cidadeUf = partes[2].Split('/');
-                    TextBoxCidade.Text = cidadeUf[0].Trim();
-                    TextBoxUF.Text = cidadeUf.Length > 1 ? cidadeUf[1].Trim() : "";
+                    while (reader.Read())
+                    {
+                        lista.Add(new Evento
+                        {
+                            Id = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            DataInicio = reader.GetDateTime(2),
+                            DataFim = reader.GetDateTime(3),
+                            Cep = reader.GetString(4),
+                            Logradouro = reader.GetString(5),
+                            Numero = reader.IsDBNull(6) ? "S/N" : reader.GetString(6),
+                            Bairro = reader.GetString(7),
+                            Localidade = reader.GetString(8),
+                            Uf = reader.GetString(9),
+                            Estado = reader.GetString(10),
+                            Observacoes = reader.IsDBNull(11) ? null : reader.GetString(11),
+                            Capacidade = reader.GetInt32(12),
+                            OrcamentoMaximo = reader.GetDecimal(13),
+                            OrganizadorId = reader.GetInt32(14),
+                            TipoEventoId = reader.IsDBNull(15) ? 0 : reader.GetInt32(15),
+                            Status = reader.GetString(16)
+                        });
+                    }
                 }
             }
-            catch
-            {
-                // fallback caso o formato esteja estranho
-                TextBoxEndereco.Text = enderecoCompleto;
-            }
+            return lista;
         }
-
-        public Evento ObterPorId(int id)
+        public List<Evento> ListarPorOrganizador(int usuarioId)
         {
-            using (var conn = DbConnectionFactory.GetOpenConnection())
-            {
-                string sql = "SELECT ID, NOME, DATA_INICIO, DATA_FIM, CEP, ENDERECO, CAPACIDADE, ORCAMENTO_MAXIMO, TIPO_EVENTO_ID, STATUS FROM EVENTOS WHERE ID=@ID";
+            var lista = new List<Evento>();
 
-                using (var cmd = new SqlCommand(sql, conn))
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = @"SELECT ID, NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, NUMERO, BAIRRO, LOCALIDADE, UF, ESTADO, OBSERVACOES, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS
+                       FROM EVENTOS
+                       WHERE ORGANIZADOR_ID = @USUARIO_ID
+                       ORDER BY DATA_INICIO DESC";
+
+                using (var command = new SqlCommand(sql, conectaDataBase))
                 {
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    using (var reader = cmd.ExecuteReader())
+                    command.Parameters.AddWithValue("@USUARIO_ID", usuarioId);
+
+                    using (var reader = command.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            var evento = new Evento
+                            lista.Add(new Evento
                             {
                                 Id = reader.GetInt32(0),
                                 Nome = reader.GetString(1),
                                 DataInicio = reader.GetDateTime(2),
                                 DataFim = reader.GetDateTime(3),
                                 Cep = reader.GetString(4),
-                                Endereco = reader.GetString(5),
-                                Capacidade = reader.GetInt32(6),
-                                OrcamentoMaximo = reader.GetDecimal(7),
-                                TipoEventoId = reader.GetInt32(8),
-                                Status = reader.GetString(9)
-                            };
-
-                            // Quebrando o endereço para os campos
-                            PreencherCamposEndereco(evento.Endereco);
-
-                            return evento;
+                                Logradouro = reader.GetString(5),
+                                Numero = reader.IsDBNull(6) ? "S/N" : reader.GetString(6),
+                                Bairro = reader.GetString(7),
+                                Localidade = reader.GetString(8),
+                                Uf = reader.GetString(9),
+                                Estado = reader.GetString(10),
+                                Observacoes = reader.IsDBNull(11) ? "" : reader.GetString(11),
+                                Capacidade = reader.GetInt32(12),
+                                OrcamentoMaximo = reader.GetDecimal(13),
+                                OrganizadorId = reader.GetInt32(14),
+                                TipoEventoId = reader.IsDBNull(15) ? 0 : reader.GetInt32(15),
+                                Status = reader.GetString(16)
+                            });
                         }
                     }
                 }
             }
-            return null;
+            return lista;
         }
-
+        public void Atualizar(Evento evento)
+        {
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = @"UPDATE EVENTOS SET NOME=@NOME, DATA_INICIO=@DATA_INICIO, DATA_FIM=@DATA_FIM, CEP=@CEP, LOGRADOURO=@LOGRADOURO, NUMERO=@NUMERO, BAIRRO=@BAIRRO, LOCALIDADE=@LOCALIDADE, UF=@UF, ESTADO=@ESTADO, OBSERVACOES=@OBSERVACOES, CAPACIDADE=@CAPACIDADE, ORCAMENTO_MAXIMO=@ORCAMENTO_MAXIMO, TIPO_EVENTO_ID=@TIPO_EVENTO_ID WHERE ID=@ID";
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@ID", evento.Id);
+                    command.Parameters.AddWithValue("@NOME", evento.Nome);
+                    command.Parameters.AddWithValue("@DATA_INICIO", evento.DataInicio);
+                    command.Parameters.AddWithValue("@DATA_FIM", evento.DataFim);
+                    command.Parameters.AddWithValue("@CEP", evento.Cep);
+                    command.Parameters.AddWithValue("@LOGRADOURO", evento.Logradouro);
+                    command.Parameters.AddWithValue("@NUMERO", (object)evento.Numero ?? "S/N");
+                    command.Parameters.AddWithValue("@BAIRRO", evento.Bairro);
+                    command.Parameters.AddWithValue("@LOCALIDADE", evento.Localidade);
+                    command.Parameters.AddWithValue("@UF", evento.Uf);
+                    command.Parameters.AddWithValue("@ESTADO", evento.Estado);
+                    command.Parameters.AddWithValue("@OBSERVACOES", (object)evento.Observacoes ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@CAPACIDADE", evento.Capacidade);
+                    command.Parameters.AddWithValue("@ORCAMENTO_MAXIMO", evento.OrcamentoMaximo);
+                    command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

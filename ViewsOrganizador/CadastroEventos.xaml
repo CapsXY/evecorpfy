@@ -19,111 +19,99 @@
         <!--Logo-->
         <Image HorizontalAlignment="Center"
                Height="68"
-               Margin="0,16,0,0"
+               Margin="0,10,0,0"
                VerticalAlignment="Top"
                Width="70"
-               Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\table-orange.png"/>
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\table-orange.png"/>
         <!--Título e Subtítulo-->
         <Label Content="CADASTRO DE EVENTOS"
                HorizontalAlignment="Center"
-               Margin="0,59,0,0"
+               Margin="0,60,0,0"
                VerticalAlignment="Top"
                FontWeight="Bold"
                FontSize="36"/>
         <Label Content="Cadastre, altere ou pesquise os seus eventos"
                HorizontalAlignment="Center"
-               Margin="0,102,0,0"
+               Margin="0,101,0,0"
                VerticalAlignment="Top"
                FontSize="16"/>
         <Label Content="Nome do evento"
                HorizontalAlignment="Left"
-               Margin="277,143,0,0"
+               Margin="42,139,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBoxNomeEvento"
                  HorizontalAlignment="Left"
-                 Margin="282,174,0,0"
-                 TextWrapping="Wrap"
+                 Margin="42,173,0,0"         
+                 MaxLength="42"
                  VerticalAlignment="Top"
-                 Width="450"
+                 Width="440"
                  FontSize="16"/>
-        <Label Content="Status"
-               HorizontalAlignment="Left"
-               Margin="745,143,0,0"
-               VerticalAlignment="Top"
-               FontSize="18"
-               FontWeight="Bold"/>
-        <TextBlock HorizontalAlignment="Left"
-                   Margin="750,177,0,0"
-                   TextWrapping="Wrap"
-                   Text="Em Andamento"
-                   VerticalAlignment="Top"
-                   FontSize="16"/>
         <Label Content="Período do evento"
                HorizontalAlignment="Left"
-               Margin="277,201,0,0"
+               Margin="40,201,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <Label Content="Início"
                HorizontalAlignment="Left"
-               Margin="280,236,0,0"
+               Margin="42,227,0,0"
                VerticalAlignment="Top"
                FontSize="18"/>
         <DatePicker x:Name="DatePickerInicio"
                     HorizontalAlignment="Left"
-                    Margin="334,238,0,0"
+                    Margin="95,229,0,0"
                     VerticalAlignment="Top"
                     FontSize="16"/>
         <Label Content="Fim"
                HorizontalAlignment="Left"
-               Margin="520,236,0,0"
+               Margin="272,227,0,0"
                VerticalAlignment="Top"
                FontSize="18"/>
         <DatePicker x:Name="DatePickerFim"
                     HorizontalAlignment="Left"
-                    Margin="560,238,0,0"
+                    Margin="310,229,0,0"
                     VerticalAlignment="Top"
-                    FontSize="16"/>
+                    FontSize="16" SelectedDateChanged="DatePickerFim_SelectedDateChanged"/>
         <Label Content="Informações sobre o local do evento"
                HorizontalAlignment="Left"
-               Margin="277,346,0,0"
+               Margin="40,344,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <Label Content="CEP" 
                HorizontalAlignment="Left"
-               Margin="281,381,0,0"
+               Margin="40,372,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBoxCEP"
                  HorizontalAlignment="Left"
-                 Margin="328,384,0,0"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
+                 Margin="82,377,0,0"
+                 VerticalAlignment="Top"               
+                 MaxLength="9"
                  Width="120"
                  FontSize="16"
                  PreviewTextInput="TextBoxCEPPrevisualizar"
                  TextChanged="TextBoxCEPIdentador"/>
         <Label Content="Nº"
                HorizontalAlignment="Left"
-               Margin="453,379,0,0"
+               Margin="248,372,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBoxNumero"
                  HorizontalAlignment="Left"
-                 Margin="490,386,0,0"
-                 TextWrapping="Wrap"
+                 Margin="285,377,0,0"
                  VerticalAlignment="Top"
-                 Width="109"
+                 Width="109"             
+                 MaxLength="10"
                  FontSize="16"/>
         <Button Content="OK"
                 x:Name="ButtonBuscarCEP"           
                 HorizontalAlignment="Left"
-                Margin="607,385,0,0"
+                Margin="399,375,0,0"
                 VerticalAlignment="Top"
                 FontSize="16"
                 Background="#FFDF800F"
@@ -133,77 +121,191 @@
                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
             </Button.BorderBrush>
         </Button>
-        <TextBox x:Name="TextBoxEndereco" HorizontalAlignment="Left"
-                 Margin="285,420,0,0"
+        <TextBox x:Name="TextBoxEndereco"
                  TextWrapping="Wrap"
+                 HorizontalAlignment="Left"
+                 Margin="42,405,0,0"
                  VerticalAlignment="Top"
-                 Width="447"
-                 MaxLength="52"
-                 FontSize="16"/>
+                 Width="440"               
+                 MaxLength="208"
+                 FontSize="16"
+                 Height="56"/>
         <Label Content="Capacidade máx."
                HorizontalAlignment="Left"
-               Margin="277,276,0,0"
+               Margin="40,266,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBoxCapacidade"
                  HorizontalAlignment="Left"
-                 Margin="429,281,0,0"
-                 TextWrapping="Wrap"
-                 VerticalAlignment="Top"
+                 Margin="198,271,0,0"
+                 VerticalAlignment="Top"                
+                 MaxLength="8"
                  Width="77"
                  FontSize="16"/>
         <Label Content="Orçamento"
                HorizontalAlignment="Left"
-               Margin="560,276,0,0"
+               Margin="283,266,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBoxOrcamento"
                  HorizontalAlignment="Left"
-                 Margin="664,281,0,0"
-                 TextWrapping="Wrap"
+                 Margin="392,271,0,0"
+                 MaxLength="9"
                  VerticalAlignment="Top"
-                 Width="69"
-                 FontSize="16"/>
+                 Width="90"
+                 FontSize="16"
+                 PreviewTextInput="TextBoxOrcamento_PreviewTextInput"
+                 LostFocus="TextBoxOrcamento_LostFocus"/>
         <Label Content="Tipo do evento"
                HorizontalAlignment="Left"
-               Margin="280,312,0,0"
+               Margin="40,305,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
         <ComboBox x:Name="ComboBoxTipoEvento"
                   HorizontalAlignment="Left"
-                  Margin="427,319,0,0"
+                  Margin="183,308,0,0"
                   VerticalAlignment="Top"
-                  Width="305"
+                  Width="299"
                   FontSize="16"/>
-        <Label Content="Selecione um evento já cadastrado"
+        <Label Content="Observações" 
                HorizontalAlignment="Left"
-               Margin="355,490,0,0"
+               Margin="42,461,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
-        <ComboBox x:Name="ComboBoxEventos"
-                  HorizontalAlignment="Left"
-                  Margin="285,529,0,0"
-                  VerticalAlignment="Top"
-                  Width="448"
-                  FontSize="16"/>
+        <TextBox x:Name="TextBoxObservacoes"
+                 HorizontalAlignment="Left"
+                 TextWrapping="Wrap"
+                 Margin="42,495,0,0"
+                 VerticalAlignment="Top"
+                 MaxLength="165"
+                 Width="269"
+                 Height="71"/>
+        <Label Content="Status"
+               HorizontalAlignment="Left"
+               Margin="325,461,0,0"
+               VerticalAlignment="Top"
+               FontSize="18"
+               FontWeight="Bold"/>
+        <TextBlock x:Name="TextBlockStatus"                
+                   HorizontalAlignment="Left"
+                   Margin="332,490,0,0"
+                   VerticalAlignment="Top"
+                   FontSize="14" Width="150"/>
         <Button Content="Cadastrar evento"
                 x:Name="ButtonCadastrarEvento"           
-                HorizontalAlignment="Center"
-                Margin="0,448,0,0"
+                HorizontalAlignment="Left"
+                Margin="332,526,0,0"
                 Height="40"
-                Width="206"
+                Width="149"
                 VerticalAlignment="Top"
                 FontSize="16"
                 Background="#FFDF800F"
-                Click="ButtonCadastrarEvento_Click"
-                FontWeight="Bold">
+                FontWeight="Bold"
+                Click="ButtonCadastrarEvento_Click">
             <Button.BorderBrush>
                 <SolidColorBrush Color="#FF707070"
                                  Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Atualizar Evento"
+                x:Name="ButtonAtualizarEvento"           
+                HorizontalAlignment="Left"
+                Margin="332,526,0,0"
+                Height="40"
+                Width="149"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Background="#FFDF800F"
+                FontWeight="Bold"
+                Click="ButtonAtualizarEvento_Click"
+                Panel.ZIndex="-1">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070"
+                                 Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <Label Content="Selecione um evento já cadastrado"
+               HorizontalAlignment="Left"
+               Margin="598,139,0,0"
+               VerticalAlignment="Top"
+               FontSize="18"
+               FontWeight="Bold"/>
+
+        <ComboBox x:Name="ComboBoxEventos"
+                  HorizontalAlignment="Left"
+                  Margin="517,171,0,0"
+                  VerticalAlignment="Top"
+                  Width="448"
+                  FontSize="16"
+                  DisplayMemberPath="Nome"
+                  SelectedValuePath="Id"
+                  SelectionChanged="ComboBoxEventos_SelectionChanged"/>
+
+        <!-- ComboBox + Botão Excluir -->
+
+        <!--<StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="123,247,0,0"
+                    VerticalAlignment="Top"
+                    Width="481"
+                    Height="274">
+            <ComboBox
+              x:Name="ComboBoxEventos"
+              Margin="517,171,0,0"
+              VerticalAlignment="Top"
+              Width="448"
+              FontSize="16"
+              DisplayMemberPath="Nome"
+              SelectedValuePath="Id"
+              SelectionChanged="ComboBoxEventos_SelectionChanged"
+              IsEditable="True"
+              IsTextSearchEnabled="True"
+              IsTextSearchCaseSensitive="False" Height="100">
+                <ComboBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ComboBoxItem}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Ativo}" Value="False">
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter Property="FontStyle" Value="Italic"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ComboBox.ItemContainerStyle>
+            </ComboBox>
+            <Button Content="✖"
+            Width="28"
+            Height="28"
+            Background="Transparent"
+            BorderThickness="0"
+            Foreground="Red"
+            FontWeight="Bold"
+            ToolTip="Inativar evento selecionado"
+            Click="ButtonExcluir_Click"/>
+            <Button Content="✅"
+            Width="28"
+            Height="28"
+            Background="Transparent"
+            BorderThickness="0"
+            Foreground="Green"
+            FontWeight="Bold"
+            ToolTip="Ativar evento selecionado"
+            Click="ButtonReativar_Click"/>
+        </StackPanel>-->
+        <Button Content="🧹"
+            x:Name="ButtonLimpar"           
+            HorizontalAlignment="Center"
+            Margin="0,526,0,0"
+            VerticalAlignment="Top"
+            FontSize="16"
+            Background="#FFDF800F"
+            Width="38"
+            Click="ButtonLimpar_Click" Height="40">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
             </Button.BorderBrush>
         </Button>
     </Grid>

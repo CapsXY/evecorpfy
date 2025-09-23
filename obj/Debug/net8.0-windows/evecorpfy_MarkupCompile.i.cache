@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\
 evecorpfy
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-C:\Users\Lenovo\Documents\GitHub\evecorpfy\App.xaml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\App.xaml
 151355027771
 
 34-1563798897
-218212754318
+218-1471212189
 Login.xaml;MenuAdministrador.xaml;MenuFornecedor.xaml;MenuOrganizador.xaml;MenuParticipante.xaml;ViewsAdministrador\DashboardAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;ViewsOrganizador\CadastroEventos.xaml;ViewsOrganizador\DashboardOrganizador.xaml;ViewsOrganizador\GestaoEventos.xaml;ViewsOrganizador\Negociacoes.xaml;ViewsOrganizador\PerfilOrganizador.xaml;
 
-False
+True
 

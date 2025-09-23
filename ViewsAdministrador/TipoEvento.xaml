@@ -22,7 +22,7 @@
                Margin="0,34,0,0"
                VerticalAlignment="Top"
                Width="153"
-               Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\balloon.png"/>
         <!--Título e Subtítulo-->
         <Label Content="TIPO DE EVENTO"
                HorizontalAlignment="Left"

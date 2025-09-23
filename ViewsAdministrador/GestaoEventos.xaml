@@ -25,7 +25,7 @@
                Margin="0,13,0,0"
                VerticalAlignment="Top"
                Width="82"
-               Source="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\group.png"/>
+               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
         <!--Título e Subtítulo-->
         <Label Content="GESTÃO DE EVENTOS"
                HorizontalAlignment="Center"

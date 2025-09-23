@@ -38,7 +38,7 @@
             <Ellipse.Fill>
                 <!--Imagem do Perfil-->
                 <ImageBrush x:Name="ImagemPerfil"
-                    ImageSource="C:\Users\Lenovo\Documents\GitHub\evecorpfy\Resources\photo.png"
+                    ImageSource="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\photo.png"
                     Stretch="UniformToFill"/>
             </Ellipse.Fill>
         </Ellipse>

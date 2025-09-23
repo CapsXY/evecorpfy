@@ -13,11 +13,11 @@
         public string Localidade { get; set; }
         public string Uf { get; set; }
         public string Estado { get; set; }
+        public string Observacoes { get; set; }
         public int Capacidade { get; set; }
         public decimal OrcamentoMaximo { get; set; }
         public int OrganizadorId { get; set; }
         public int TipoEventoId { get; set; }
-        public string Status { get; set; } = "EM ANDAMENTO";
+        public string Status { get; set; }
     }
 }
-
