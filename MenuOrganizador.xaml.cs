@@ -58,11 +58,6 @@ namespace evecorpfy
         {
             EfeitoTrocaTela(new CadastroEventos());
         }
-        // Navegação entre telas ao clicar no botão de Negociações do menu
-        private void GridButtonNegociacoes_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            EfeitoTrocaTela(new Negociacoes());
-        }
         // Navegação entre telas ao clicar no botão de Gestão de Eventos do menu
         private void GridButtonGestaoEventos_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {

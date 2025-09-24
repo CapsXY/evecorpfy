@@ -1,40 +1,62 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
 using System.Data;
+
 namespace evecorpfy.Data
 {
     public class RepositorioEvento
     {
-        // Método para inserir um novo evento no banco de dados
         public void Inserir(Evento evento)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            using (var transactionDataBase = conectaDataBase.BeginTransaction())
             {
-                string sql = @"INSERT INTO EVENTOS (NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, NUMERO, BAIRRO, LOCALIDADE, UF, ESTADO, OBSERVACOES, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS) VALUES (@NOME, @DATA_INICIO, @DATA_FIM, @CEP, @LOGRADOURO, @NUMERO, @BAIRRO, @LOCALIDADE, @UF, @ESTADO, @OBSERVACOES, @CAPACIDADE, @ORCAMENTO_MAXIMO, @ORGANIZADOR_ID, @TIPO_EVENTO_ID, @STATUS)";
-                using (var command = new SqlCommand(sql, conectaDataBase))
+                try
                 {
-                    command.Parameters.AddWithValue("@NOME", evento.Nome);
-                    command.Parameters.AddWithValue("@DATA_INICIO", evento.DataInicio);
-                    command.Parameters.AddWithValue("@DATA_FIM", evento.DataFim);
-                    command.Parameters.AddWithValue("@CEP", evento.Cep);
-                    command.Parameters.AddWithValue("@LOGRADOURO", evento.Logradouro);
-                    command.Parameters.AddWithValue("@NUMERO", (object)evento.Numero ?? "S/N");
-                    command.Parameters.AddWithValue("@BAIRRO", evento.Bairro);
-                    command.Parameters.AddWithValue("@LOCALIDADE", evento.Localidade);
-                    command.Parameters.AddWithValue("@UF", evento.Uf);
-                    command.Parameters.AddWithValue("@ESTADO", evento.Estado);
-                    command.Parameters.AddWithValue("@OBSERVACOES", (object)evento.Observacoes ?? DBNull.Value);
-                    command.Parameters.AddWithValue("@CAPACIDADE", evento.Capacidade);
-                    command.Parameters.AddWithValue("@ORCAMENTO_MAXIMO", evento.OrcamentoMaximo);
-                    command.Parameters.AddWithValue("@ORGANIZADOR_ID", evento.OrganizadorId);
-                    command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
-                    var status = string.IsNullOrWhiteSpace(evento.Status) ? "EM CADASTRAMENTO" : evento.Status;
-                    command.Parameters.Add("@STATUS", SqlDbType.NVarChar, 20).Value = status;
-                    command.ExecuteNonQuery();
+                    string sql = @"
+                        INSERT INTO EVENTOS 
+                        (NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, NUMERO, BAIRRO, LOCALIDADE, UF, ESTADO, OBSERVACOES, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS) 
+                        OUTPUT INSERTED.ID
+                        VALUES 
+                        (@NOME, @DATA_INICIO, @DATA_FIM, @CEP, @LOGRADOURO, @NUMERO, @BAIRRO, @LOCALIDADE, @UF, @ESTADO, @OBSERVACOES, @CAPACIDADE, @ORCAMENTO_MAXIMO, @ORGANIZADOR_ID, @TIPO_EVENTO_ID, @STATUS)";
+
+                    int novoId;
+                    using (var command = new SqlCommand(sql, conectaDataBase, transactionDataBase))
+                    {
+                        command.Parameters.AddWithValue("@NOME", evento.Nome);
+                        command.Parameters.AddWithValue("@DATA_INICIO", evento.DataInicio);
+                        command.Parameters.AddWithValue("@DATA_FIM", evento.DataFim);
+                        command.Parameters.AddWithValue("@CEP", evento.Cep);
+                        command.Parameters.AddWithValue("@LOGRADOURO", evento.Logradouro);
+                        command.Parameters.AddWithValue("@NUMERO", (object)evento.Numero ?? "S/N");
+                        command.Parameters.AddWithValue("@BAIRRO", evento.Bairro);
+                        command.Parameters.AddWithValue("@LOCALIDADE", evento.Localidade);
+                        command.Parameters.AddWithValue("@UF", evento.Uf);
+                        command.Parameters.AddWithValue("@ESTADO", evento.Estado);
+                        command.Parameters.AddWithValue("@OBSERVACOES", (object)evento.Observacoes ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@CAPACIDADE", evento.Capacidade);
+                        command.Parameters.AddWithValue("@ORCAMENTO_MAXIMO", evento.OrcamentoMaximo);
+                        command.Parameters.AddWithValue("@ORGANIZADOR_ID", evento.OrganizadorId);
+                        command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
+                        var status = string.IsNullOrWhiteSpace(evento.Status) ? "EM CADASTRAMENTO" : evento.Status;
+                        command.Parameters.Add("@STATUS", SqlDbType.NVarChar, 20).Value = status;
+                        novoId = (int)command.ExecuteScalar();
+                    }
+                    // Insere serviços vinculados (se houver)
+                    if (evento.ServicosIds != null && evento.ServicosIds.Count > 0)
+                    {
+                        InserirServicosEvento(novoId, evento.ServicosIds, conectaDataBase, transactionDataBase);
+                    }
+
+                    transactionDataBase.Commit();
+                }
+                catch
+                {
+                    transactionDataBase.Rollback();
+                    throw;
                 }
             }
         }
-        // Método para listar todos os eventos
         public List<Evento> ListarTodos()
         {
             var lista = new List<Evento>();
@@ -78,9 +100,9 @@ namespace evecorpfy.Data
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
             {
                 string sql = @"SELECT ID, NOME, DATA_INICIO, DATA_FIM, CEP, LOGRADOURO, NUMERO, BAIRRO, LOCALIDADE, UF, ESTADO, OBSERVACOES, CAPACIDADE, ORCAMENTO_MAXIMO, ORGANIZADOR_ID, TIPO_EVENTO_ID, STATUS
-                       FROM EVENTOS
-                       WHERE ORGANIZADOR_ID = @USUARIO_ID
-                       ORDER BY DATA_INICIO DESC";
+                               FROM EVENTOS
+                               WHERE ORGANIZADOR_ID = @USUARIO_ID
+                               ORDER BY DATA_INICIO DESC";
 
                 using (var command = new SqlCommand(sql, conectaDataBase))
                 {
@@ -119,28 +141,113 @@ namespace evecorpfy.Data
         public void Atualizar(Evento evento)
         {
             using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            using (var transactionDataBase = conectaDataBase.BeginTransaction())
             {
-                string sql = @"UPDATE EVENTOS SET NOME=@NOME, DATA_INICIO=@DATA_INICIO, DATA_FIM=@DATA_FIM, CEP=@CEP, LOGRADOURO=@LOGRADOURO, NUMERO=@NUMERO, BAIRRO=@BAIRRO, LOCALIDADE=@LOCALIDADE, UF=@UF, ESTADO=@ESTADO, OBSERVACOES=@OBSERVACOES, CAPACIDADE=@CAPACIDADE, ORCAMENTO_MAXIMO=@ORCAMENTO_MAXIMO, TIPO_EVENTO_ID=@TIPO_EVENTO_ID WHERE ID=@ID";
-                using (var command = new SqlCommand(sql, conectaDataBase))
+                try
                 {
-                    command.Parameters.AddWithValue("@ID", evento.Id);
-                    command.Parameters.AddWithValue("@NOME", evento.Nome);
-                    command.Parameters.AddWithValue("@DATA_INICIO", evento.DataInicio);
-                    command.Parameters.AddWithValue("@DATA_FIM", evento.DataFim);
-                    command.Parameters.AddWithValue("@CEP", evento.Cep);
-                    command.Parameters.AddWithValue("@LOGRADOURO", evento.Logradouro);
-                    command.Parameters.AddWithValue("@NUMERO", (object)evento.Numero ?? "S/N");
-                    command.Parameters.AddWithValue("@BAIRRO", evento.Bairro);
-                    command.Parameters.AddWithValue("@LOCALIDADE", evento.Localidade);
-                    command.Parameters.AddWithValue("@UF", evento.Uf);
-                    command.Parameters.AddWithValue("@ESTADO", evento.Estado);
-                    command.Parameters.AddWithValue("@OBSERVACOES", (object)evento.Observacoes ?? DBNull.Value);
-                    command.Parameters.AddWithValue("@CAPACIDADE", evento.Capacidade);
-                    command.Parameters.AddWithValue("@ORCAMENTO_MAXIMO", evento.OrcamentoMaximo);
-                    command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
-                    command.ExecuteNonQuery();
+                    string sql = @"UPDATE EVENTOS 
+                                   SET NOME=@NOME, DATA_INICIO=@DATA_INICIO, DATA_FIM=@DATA_FIM, CEP=@CEP, LOGRADOURO=@LOGRADOURO, NUMERO=@NUMERO, BAIRRO=@BAIRRO, LOCALIDADE=@LOCALIDADE, UF=@UF, ESTADO=@ESTADO, OBSERVACOES=@OBSERVACOES, CAPACIDADE=@CAPACIDADE, ORCAMENTO_MAXIMO=@ORCAMENTO_MAXIMO, TIPO_EVENTO_ID=@TIPO_EVENTO_ID 
+                                   WHERE ID=@ID";
+
+                    using (var command = new SqlCommand(sql, conectaDataBase, transactionDataBase))
+                    {
+                        command.Parameters.AddWithValue("@ID", evento.Id);
+                        command.Parameters.AddWithValue("@NOME", evento.Nome);
+                        command.Parameters.AddWithValue("@DATA_INICIO", evento.DataInicio);
+                        command.Parameters.AddWithValue("@DATA_FIM", evento.DataFim);
+                        command.Parameters.AddWithValue("@CEP", evento.Cep);
+                        command.Parameters.AddWithValue("@LOGRADOURO", evento.Logradouro);
+                        command.Parameters.AddWithValue("@NUMERO", (object)evento.Numero ?? "S/N");
+                        command.Parameters.AddWithValue("@BAIRRO", evento.Bairro);
+                        command.Parameters.AddWithValue("@LOCALIDADE", evento.Localidade);
+                        command.Parameters.AddWithValue("@UF", evento.Uf);
+                        command.Parameters.AddWithValue("@ESTADO", evento.Estado);
+                        command.Parameters.AddWithValue("@OBSERVACOES", (object)evento.Observacoes ?? DBNull.Value);
+                        command.Parameters.AddWithValue("@CAPACIDADE", evento.Capacidade);
+                        command.Parameters.AddWithValue("@ORCAMENTO_MAXIMO", evento.OrcamentoMaximo);
+                        command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
+                        command.ExecuteNonQuery();
+                    }
+                    // Sincroniza serviços: apaga todos e insere os atuais (se houver)
+                    DeletarServicosEvento(evento.Id, conectaDataBase, transactionDataBase);
+                    if (evento.ServicosIds != null && evento.ServicosIds.Count > 0)
+                    {
+                        InserirServicosEvento(evento.Id, evento.ServicosIds, conectaDataBase, transactionDataBase);
+                    }
+                    transactionDataBase.Commit();
+                }
+                catch
+                {
+                    transactionDataBase.Rollback();
+                    throw;
                 }
             }
+        }
+        //private void InserirServicosEvento(int eventoId, List<int> servicosIds, SqlConnection conectaDataBase, SqlTransaction transactioDataBase)
+        //{
+        //    const string insertSql = @"INSERT INTO EVENTO_SERVICOS (EVENTO_ID, SERVICO_ID) VALUES (@EVENTO_ID, @SERVICO_ID)";
+        //    foreach (var servicoId in servicosIds.Distinct())
+        //    {
+        //        using (var command = new SqlCommand(insertSql, conectaDataBase, transactioDataBase))
+        //        {
+        //            command.Parameters.AddWithValue("@EVENTO_ID", eventoId);
+        //            command.Parameters.AddWithValue("@SERVICO_ID", servicoId);
+        //            command.ExecuteNonQuery();
+        //        }
+        //    }
+        //}
+        private void InserirServicosEvento(int eventoId, List<int> servicosIds, SqlConnection conn, SqlTransaction tx)
+        {
+            if (servicosIds == null || servicosIds.Count == 0)
+                return;
+            const string insertSql = @"INSERT INTO EVENTO_SERVICOS (EVENTO_ID, SERVICO_ID) VALUES (@EVENTO_ID, @SERVICO_ID)";
+            foreach (var servicoId in servicosIds.Distinct())
+            {
+                using (var cmd = new SqlCommand(insertSql, conn, tx))
+                {
+                    cmd.Parameters.AddWithValue("@EVENTO_ID", eventoId);
+                    cmd.Parameters.AddWithValue("@SERVICO_ID", servicoId);
+                    int result = cmd.ExecuteNonQuery();
+                    if (result == 0)
+                    {
+                        throw new Exception($"Falha ao inserir vínculo Evento={eventoId}, Servico={servicoId}");
+                    }
+                }
+            }
+        }
+        private void DeletarServicosEvento(int eventoId, SqlConnection conectaDataBase, SqlTransaction transactioDataBase)
+        {
+            const string deleteSql = @"DELETE FROM EVENTO_SERVICOS WHERE EVENTO_ID=@EVENTO_ID";
+            using (var command = new SqlCommand(deleteSql, conectaDataBase, transactioDataBase))
+            {
+                command.Parameters.AddWithValue("@EVENTO_ID", eventoId);
+                command.ExecuteNonQuery();
+            }
+        }
+        public List<int> ListarServicosIdsPorEvento(int eventoId)
+        {
+            var ids = new List<int>();
+
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = @"SELECT SERVICO_ID 
+                       FROM EVENTO_SERVICOS 
+                       WHERE EVENTO_ID = @EVENTO_ID";
+
+                using (var command = new SqlCommand(sql, conectaDataBase))
+                {
+                    command.Parameters.AddWithValue("@EVENTO_ID", eventoId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ids.Add(reader.GetInt32(0));
+                        }
+                    }
+                }
+            }
+            return ids;
         }
     }
 }

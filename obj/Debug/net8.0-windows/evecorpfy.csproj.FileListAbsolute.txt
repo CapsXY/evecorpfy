@@ -123,12 +123,10 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\MenuParticipa
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\CadastroEventos.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\DashboardOrganizador.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\GestaoEventos.g.cs
-C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\Negociacoes.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\PerfilOrganizador.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\CadastroEventos.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\DashboardOrganizador.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\GestaoEventos.baml
-C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\Negociacoes.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\PerfilOrganizador.baml
 C:\Users\Lenovo\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.exe
 C:\Users\Lenovo\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.dll.config
@@ -238,3 +236,13 @@ C:\Users\Lenovo\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\refint\eveco
 C:\Users\Lenovo\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy.pdb
 C:\Users\Lenovo\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\evecorpfy.genruntimeconfig.cache
 C:\Users\Lenovo\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ref\evecorpfy.dll
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\NegociacaoWindow.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\NegociacaoWindow.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\OrcamentoWindow.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\OrcamentoWindow.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\Eventos.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\PerfilParticipante.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\TelaPrincipal.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\Eventos.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\PerfilParticipante.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\TelaPrincipal.baml

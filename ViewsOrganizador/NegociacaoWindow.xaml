@@ -1,0 +1,34 @@
+﻿<Window x:Class="evecorpfy.ViewsOrganizador.NegociacaoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Negociação de Serviços"
+        Height="350" Width="600"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock x:Name="TxtEvento" FontWeight="Bold" FontSize="16" Margin="0 0 0 10"/>
+
+            <DataGrid x:Name="DataGridServicos"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      Margin="0 10 0 0">
+                <DataGrid.Columns>
+                    <!-- Nome do serviço -->
+                    <DataGridTextColumn Header="Serviço" Binding="{Binding Nome}" Width="*"/>
+
+                    <!-- Botão para abrir orçamentos -->
+                    <DataGridTemplateColumn Header="Orçamentos">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Ver Orçamentos"
+                                        Click="VerOrcamentos_Click"
+                                        Tag="{Binding Id}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

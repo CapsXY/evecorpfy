@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="evecorpfy.ViewsParticipante.Eventos"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:evecorpfy.ViewsParticipante"
+             mc:Ignorable="d" 
+             d:DesignHeight="684"
+             d:DesignWidth="1010"
+             Background="White">
+    <Grid>
+        <!--Background-->
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFBA0FDF" Offset="1"/>
+                <GradientStop Color="White" Offset="0.84"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!--Logo-->
+        <Image HorizontalAlignment="Center"
+    Height="68"
+    Margin="0,10,0,0"
+    VerticalAlignment="Top"
+    Width="70"
+    Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\calendar-pink.png"/>
+        <!--Título e Subtítulo-->
+        <Label Content="EVENTOS"
+    HorizontalAlignment="Center"
+    Margin="0,63,0,0"
+    VerticalAlignment="Top"
+    FontWeight="Bold"
+    FontSize="36"/>
+        <Label Content="Participe de um evento a sua escolha"
+    HorizontalAlignment="Center"
+    Margin="0,104,0,0"
+    VerticalAlignment="Top"
+    FontSize="16" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.139"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <DataGrid x:Name="DataGridEventos"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          IsReadOnly="True"
+          Margin="10,140,10,124" Background="White">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Evento" Binding="{Binding Nome}" Width="2*" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*" />
+                <DataGridTextColumn Header="Vagas" Binding="{Binding Capacidade}" Width="*" />
+
+                <!-- Novas colunas -->
+                <DataGridTextColumn Header="Data Início" Binding="{Binding DataInicio, StringFormat=\{0:dd/MM/yyyy\}}" Width="*" />
+                <DataGridTextColumn Header="Data Fim" Binding="{Binding DataFim, StringFormat=\{0:dd/MM/yyyy\}}" Width="*" />
+
+                <DataGridTemplateColumn Header="Inscrição">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Inscrever-se"
+                            Click="Inscrever_Click"
+                            Tag="{Binding Id}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Sair do Evento">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Sair"
+                            Click="Sair_Click"
+                            Tag="{Binding Id}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

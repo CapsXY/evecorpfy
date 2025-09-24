@@ -19,5 +19,6 @@
         public int OrganizadorId { get; set; }
         public int TipoEventoId { get; set; }
         public string Status { get; set; }
+        public List<int> ServicosIds { get; set; } = new List<int>();
     }
 }

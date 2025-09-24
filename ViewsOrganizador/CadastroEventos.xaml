@@ -152,12 +152,11 @@
         <TextBox x:Name="TextBoxOrcamento"
                  HorizontalAlignment="Left"
                  Margin="392,271,0,0"
-                 MaxLength="9"
                  VerticalAlignment="Top"
                  Width="90"
                  FontSize="16"
                  PreviewTextInput="TextBoxOrcamento_PreviewTextInput"
-                 LostFocus="TextBoxOrcamento_LostFocus"/>
+                 TextChanged="TextBoxOrcamento_TextChanged"/>
         <Label Content="Tipo do evento"
                HorizontalAlignment="Left"
                Margin="40,305,0,0"
@@ -228,13 +227,25 @@
                                  Opacity="0"/>
             </Button.BorderBrush>
         </Button>
+        <Button Content="🧹"
+                x:Name="ButtonLimpar"           
+                HorizontalAlignment="Center"
+                Margin="0,526,0,0"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Background="#FFDF800F"
+                Width="38"
+                Click="ButtonLimpar_Click" Height="40">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
         <Label Content="Selecione um evento já cadastrado"
                HorizontalAlignment="Left"
-               Margin="598,139,0,0"
+               Margin="517,139,0,0"
                VerticalAlignment="Top"
                FontSize="18"
                FontWeight="Bold"/>
-
         <ComboBox x:Name="ComboBoxEventos"
                   HorizontalAlignment="Left"
                   Margin="517,171,0,0"
@@ -244,69 +255,22 @@
                   DisplayMemberPath="Nome"
                   SelectedValuePath="Id"
                   SelectionChanged="ComboBoxEventos_SelectionChanged"/>
+        <Label Content="Lista de serviços para o evento"
+               Margin="517,240,221,409"
+               FontSize="18"
+               FontWeight="Bold"/>
+        <ListBox x:Name="ListBoxServicos"
+                 SelectionMode="Multiple"
+                 Margin="517,275,45,220">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsSelecionado, Mode=TwoWay}" 
+                                  Content="{Binding Nome}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-        <!-- ComboBox + Botão Excluir -->
-
-        <!--<StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Left"
-                    Margin="123,247,0,0"
-                    VerticalAlignment="Top"
-                    Width="481"
-                    Height="274">
-            <ComboBox
-              x:Name="ComboBoxEventos"
-              Margin="517,171,0,0"
-              VerticalAlignment="Top"
-              Width="448"
-              FontSize="16"
-              DisplayMemberPath="Nome"
-              SelectedValuePath="Id"
-              SelectionChanged="ComboBoxEventos_SelectionChanged"
-              IsEditable="True"
-              IsTextSearchEnabled="True"
-              IsTextSearchCaseSensitive="False" Height="100">
-                <ComboBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ComboBoxItem}">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Ativo}" Value="False">
-                                <Setter Property="Foreground" Value="Gray"/>
-                                <Setter Property="FontStyle" Value="Italic"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </ComboBox.ItemContainerStyle>
-            </ComboBox>
-            <Button Content="✖"
-            Width="28"
-            Height="28"
-            Background="Transparent"
-            BorderThickness="0"
-            Foreground="Red"
-            FontWeight="Bold"
-            ToolTip="Inativar evento selecionado"
-            Click="ButtonExcluir_Click"/>
-            <Button Content="✅"
-            Width="28"
-            Height="28"
-            Background="Transparent"
-            BorderThickness="0"
-            Foreground="Green"
-            FontWeight="Bold"
-            ToolTip="Ativar evento selecionado"
-            Click="ButtonReativar_Click"/>
-        </StackPanel>-->
-        <Button Content="🧹"
-            x:Name="ButtonLimpar"           
-            HorizontalAlignment="Center"
-            Margin="0,526,0,0"
-            VerticalAlignment="Top"
-            FontSize="16"
-            Background="#FFDF800F"
-            Width="38"
-            Click="ButtonLimpar_Click" Height="40">
-            <Button.BorderBrush>
-                <SolidColorBrush Color="#FF707070" Opacity="0"/>
-            </Button.BorderBrush>
-        </Button>
     </Grid>
 </UserControl>

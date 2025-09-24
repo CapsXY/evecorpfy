@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>evecorpfy</id>
+    <version>1.0.0</version>
+    <authors>evecorpfy</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="95044e1f2fe8a4493e3268a7b5ccf19d3aecb851" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0">
+        <dependency id="Microsoft.Data.SqlClient" version="6.1.1" exclude="Build,Analyzers" />
+        <dependency id="System.Configuration.ConfigurationManager" version="9.0.9" exclude="Build,Analyzers" />
+        <dependency id="System.Data.SqlClient" version="4.9.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.runtimeconfig.json" target="lib\net8.0-windows7.0\evecorpfy.runtimeconfig.json" />
+    <file src="C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Debug\net8.0-windows\evecorpfy.dll" target="lib\net8.0-windows7.0\evecorpfy.dll" />
+  </files>
+</package>

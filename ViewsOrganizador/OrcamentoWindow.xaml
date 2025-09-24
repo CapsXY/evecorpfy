@@ -1,0 +1,23 @@
+﻿<Window x:Class="evecorpfy.ViewsOrganizador.OrcamentoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Orçamentos"
+        Height="300" Width="500"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <StackPanel>
+            <TextBlock x:Name="TxtServico" FontWeight="Bold" FontSize="16" Margin="0 0 0 10"/>
+
+            <!-- Aqui no futuro você lista os fornecedores/orçamentos -->
+            <DataGrid x:Name="DataGridOrcamentos"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      Margin="0 10 0 0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding FornecedorNome}" Width="2*"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -4,7 +4,6 @@ using evecorpfy.Services;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media;
 namespace evecorpfy.ViewsOrganizador
 {
     /// <summary>
@@ -16,6 +15,7 @@ namespace evecorpfy.ViewsOrganizador
         {
             InitializeComponent();
             CarregarTiposEvento();
+            CarregarServicos();
             this.Loaded += CadastroEventos_Loaded;
         }
         private void CadastroEventos_Loaded(object sender, RoutedEventArgs e)
@@ -86,6 +86,7 @@ namespace evecorpfy.ViewsOrganizador
             }
         }
 
+
         // Validação dos campos do formulário
         private Evento? ValidarEvento(bool isUpdate = false)
         {
@@ -153,6 +154,11 @@ namespace evecorpfy.ViewsOrganizador
                 MessageBox.Show("Selecione o tipo de evento.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return null;
             }
+            var servicosSelecionados = ((List<Servico>)ListBoxServicos.ItemsSource)
+                            .Where(s => s.IsSelecionado)
+                            .Select(s => s.Id)
+                            .ToList();
+            // Recupera os serviços selecionados no ListBox           
             return new Evento
             {
                 Id = isUpdate ? eventoSelecionado!.Id : 0,
@@ -171,8 +177,12 @@ namespace evecorpfy.ViewsOrganizador
                 Estado = $"{enderecoAtual?.Localidade} - {enderecoAtual?.Uf}",
                 Observacoes = string.IsNullOrWhiteSpace(TextBoxObservacoes.Text) ? null : TextBoxObservacoes.Text.Trim(),
                 Status = isUpdate ? eventoSelecionado!.Status : "EM CADASTRAMENTO",
-                OrganizadorId = Sessao.UsuarioId
+                OrganizadorId = Sessao.UsuarioId,
+
+                // Agora os serviços selecionados vão junto
+                ServicosIds = servicosSelecionados
             };
+
         }
         private void ButtonCadastrarEvento_Click(object sender, RoutedEventArgs e)
         {
@@ -236,6 +246,17 @@ namespace evecorpfy.ViewsOrganizador
                 };
                 TextBlockStatus.Text = evento.Status;
                 Panel.SetZIndex(ButtonAtualizarEvento, 1);
+                var repo = new RepositorioEvento();
+                var servicosIds = repo.ListarServicosIdsPorEvento(evento.Id);
+                if (ListBoxServicos.ItemsSource is IEnumerable<Servico> servicos)
+                {
+                    foreach (var servico in servicos)
+                    {
+                        servico.IsSelecionado = servicosIds.Contains(servico.Id);
+                    }
+                    // Atualiza a UI
+                    ListBoxServicos.Items.Refresh();
+                }
             }
         }
         private void ButtonLimpar_Click(object sender, RoutedEventArgs e)
@@ -258,7 +279,18 @@ namespace evecorpfy.ViewsOrganizador
             enderecoAtual = null;
             ComboBoxEventos.SelectedIndex = -1;
             Panel.SetZIndex(ButtonAtualizarEvento, -1);
+
+            // Limpa checkboxes de serviços
+            if (ListBoxServicos.ItemsSource is IEnumerable<Servico> servicos)
+            {
+                foreach (var servico in servicos)
+                {
+                    servico.IsSelecionado = false;
+                }
+                ListBoxServicos.Items.Refresh(); // Força atualização na UI
+            }
         }
+
         private void DatePickerFim_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DatePickerInicio.SelectedDate.HasValue && DatePickerFim.SelectedDate.HasValue)
@@ -274,42 +306,87 @@ namespace evecorpfy.ViewsOrganizador
                 }
             }
         }
+        //private void TextBoxOrcamento_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        //{
+        //    // Permitir apenas números e vírgula
+        //    e.Handled = !char.IsDigit(e.Text, 0) && e.Text != ",";
+        //}
+        //private void TextBoxOrcamento_LostFocus(object sender, RoutedEventArgs e)
+        //{
+        //    var cultura = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
+
+        //    // Remove "R$" e espaços antes de tentar converter
+        //    string texto = TextBoxOrcamento.Text.Replace("R$", "").Trim();
+
+        //    if (decimal.TryParse(texto,
+        //                         System.Globalization.NumberStyles.Any,
+        //                         cultura,
+        //                         out decimal valor))
+        //    {
+        //        // Reaplica formatação em R$
+        //        TextBoxOrcamento.Text = string.Format(cultura, "{0:C}", valor);
+        //    }
+        //    else
+        //    {
+        //        if (string.IsNullOrWhiteSpace(texto))
+        //        {
+        //            TextBoxOrcamento.Text = "R$ 0,00";
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Valor inválido. Informe um número válido.",
+        //                            "Erro de Formatação",
+        //                            MessageBoxButton.OK,
+        //                            MessageBoxImage.Warning);
+        //            TextBoxOrcamento.Text = "R$ 0,00";
+        //        }
+        //    }
+        //}
         private void TextBoxOrcamento_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            // Permitir apenas números e vírgula
-            e.Handled = !char.IsDigit(e.Text, 0) && e.Text != ",";
+            // Permite apenas números
+            e.Handled = !char.IsDigit(e.Text, 0);
         }
 
-        private void TextBoxOrcamento_LostFocus(object sender, RoutedEventArgs e)
+        private void TextBoxOrcamento_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var cultura = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
+            var txt = TextBoxOrcamento.Text
+                .Replace("R$", "")
+                .Replace(".", "")
+                .Replace(",", "")
+                .Trim();
 
-            // Remove "R$" e espaços antes de tentar converter
-            string texto = TextBoxOrcamento.Text.Replace("R$", "").Trim();
+            if (string.IsNullOrEmpty(txt))
+            {
+                TextBoxOrcamento.Text = "R$ 0,00";
+                TextBoxOrcamento.CaretIndex = TextBoxOrcamento.Text.Length;
+                return;
+            }
 
-            if (decimal.TryParse(texto,
-                                 System.Globalization.NumberStyles.Any,
-                                 cultura,
-                                 out decimal valor))
+            // Converte para decimal dividindo por 100 (para controlar casas decimais)
+            if (decimal.TryParse(txt, out decimal valor))
             {
-                // Reaplica formatação em R$
-                TextBoxOrcamento.Text = string.Format(cultura, "{0:C}", valor);
+                valor /= 100;
+                TextBoxOrcamento.Text = string.Format(
+                    System.Globalization.CultureInfo.GetCultureInfo("pt-BR"),
+                    "{0:C}", valor);
+                TextBoxOrcamento.CaretIndex = TextBoxOrcamento.Text.Length;
             }
-            else
-            {
-                if (string.IsNullOrWhiteSpace(texto))
-                {
-                    TextBoxOrcamento.Text = "R$ 0,00";
-                }
-                else
-                {
-                    MessageBox.Show("Valor inválido. Informe um número válido.",
-                                    "Erro de Formatação",
-                                    MessageBoxButton.OK,
-                                    MessageBoxImage.Warning);
-                    TextBoxOrcamento.Text = "R$ 0,00";
-                }
-            }
+        }
+
+        private void CarregarServicos()
+        {
+            var repo = new RepositorioTipoServico();
+            var servicos = repo.ListarTodos()
+                               .Where(s => s.Ativo)
+                               .Select(s => new Servico
+                               {
+                                   Id = s.Id,
+                                   Nome = s.Nome,
+                                   IsSelecionado = false
+                               })
+                               .ToList();
+            ListBoxServicos.ItemsSource = servicos;
         }
     }
 }

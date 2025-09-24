@@ -1,10 +1,10 @@
 ﻿<UserControl x:Class="evecorpfy.ViewsOrganizador.GestaoEventos"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:evecorpfy.ViewsOrganizador"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="684"
              d:DesignWidth="1010"
              Background="White">
@@ -16,5 +16,78 @@
                 <GradientStop Color="White" Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <!--Logo-->
+        <Image HorizontalAlignment="Center"
+            Height="68"
+            Margin="0,10,0,0"
+            VerticalAlignment="Top"
+            Width="70"
+            Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\calendar-orange.png"/>
+        <!--Título e Subtítulo-->
+        <Label Content="GESTÃO DE EVENTOS"
+            HorizontalAlignment="Center"
+            Margin="0,63,0,0"
+            VerticalAlignment="Top"
+            FontWeight="Bold"
+            FontSize="36"/>
+        <Label Content="Faça a gestão de seus eventos"
+            HorizontalAlignment="Center"
+            Margin="0,104,0,0"
+            VerticalAlignment="Top"
+            FontSize="16" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.139"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <DataGrid x:Name="DataGridEventos"
+          AutoGenerateColumns="False"
+          CanUserAddRows="False"
+          IsReadOnly="True"
+          Margin="10,140,10,117" Background="White">
+            <DataGrid.Columns>
+                <!-- Nome do evento -->
+                <DataGridTextColumn Header="Evento" Binding="{Binding Nome}" Width="*" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*" />
+                <DataGridTextColumn Header="Qtd. Participantes" Binding="{Binding Participantes}" Width="105" />
+
+                <!-- Botão Negociação -->
+                <DataGridTemplateColumn Header="Negociação">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Negociação"
+                            Click="Negociacao_Click"
+                            Tag="{Binding Id}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Botão Participantes -->
+                <DataGridTemplateColumn Header="Participantes">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Participantes"
+                            Click="Participantes_Click"
+                            Tag="{Binding Id}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Botão Cancelar -->
+                <DataGridTemplateColumn Header="Cancelar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Cancelar Evento"
+                            Click="Cancelar_Click"
+                            Tag="{Binding Id}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

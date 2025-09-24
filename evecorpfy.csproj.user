@@ -35,10 +35,22 @@
     <Compile Update="ViewsOrganizador\GestaoEventos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewsOrganizador\Negociacoes.xaml.cs">
+    <Compile Update="ViewsOrganizador\NegociacaoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsOrganizador\OrcamentoWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewsOrganizador\PerfilOrganizador.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsParticipante\Eventos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsParticipante\PerfilParticipante.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsParticipante\TelaPrincipal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
