@@ -4,6 +4,7 @@
         Title="Negociação de Serviços"
         Height="450" Width="700"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
         ResizeMode="NoResize">
     <Grid Margin="12">
         <Grid.RowDefinitions>
@@ -20,7 +21,6 @@
                    FontSize="18"
                    FontWeight="Bold"
                    Margin="0,0,0,10"/>
-
         <!-- Grid de Serviços -->
         <DataGrid x:Name="DataGridServicos"
                   Grid.Row="1"
@@ -29,7 +29,7 @@
                   Margin="0,0,0,10"
                   IsReadOnly="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Serviço" Binding="{Binding NomeServico}" Width="*"/>
+                <DataGridTextColumn Header="Serviço" Binding="{Binding NomeServico}" IsReadOnly="True" Width="*"/>
                 <DataGridTextColumn Header="Minha Proposta (R$)" Binding="{Binding ValorProposta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -38,12 +38,18 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Right"
                     Margin="0,10,0,0">
-            <TextBlock Text="Orçamento Total: " VerticalAlignment="Center"/>
+            <TextBlock Text="Orçamento Total: "
+                       VerticalAlignment="Center"/>
             <TextBlock x:Name="TextBlockOrcamentoRestante"
                        Text="R$ 0,00"
                        FontWeight="Bold"
                        Margin="5,0,20,0"
                        VerticalAlignment="Center"/>
+            <Separator Width="10" Opacity="0"/>
+            <Button Content="Voltar"
+                    Width="150"
+                    Click="Voltar_Click"/>
+            <Separator Width="10" Opacity="0"/>
             <Button Content="Enviar Orçamento"
                     Width="150"
                     Click="EnviarOrcamento_Click"/>

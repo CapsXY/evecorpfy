@@ -34,9 +34,14 @@ namespace evecorpfy.ViewsFornecedor
                 }
 
                 var janela = new NegociacaoWindow(evento.Id, evento.OrcamentoMaximo, fornecedor.Id);
-                janela.ShowDialog();
+                bool? result = janela.ShowDialog();
 
-                evento.TemOrcamento = true; // marcar que já tem proposta
+                if (result == true)
+                {
+                    // Só marca como enviado se clicou em "Enviar Orçamento"
+                    evento.TemOrcamento = true;
+                }
+
                 DataGridEventos.Items.Refresh();
             }
         }

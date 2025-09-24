@@ -16,5 +16,5 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\App.xaml
 218-1471212189
 Login.xaml;MenuAdministrador.xaml;MenuFornecedor.xaml;MenuOrganizador.xaml;MenuParticipante.xaml;ViewsAdministrador\DashboardAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;ViewsFornecedor\Negociacao.xaml;ViewsFornecedor\NegociacaoWindow.xaml;ViewsFornecedor\PerfilFornecedor.xaml;ViewsFornecedor\TelaPrincipal.xaml;ViewsOrganizador\CadastroEventos.xaml;ViewsOrganizador\DashboardOrganizador.xaml;ViewsOrganizador\GestaoEventos.xaml;ViewsOrganizador\NegociacaoWindow.xaml;ViewsOrganizador\OrcamentoWindow.xaml;ViewsOrganizador\PerfilOrganizador.xaml;ViewsParticipante\Eventos.xaml;ViewsParticipante\PerfilParticipante.xaml;ViewsParticipante\TelaPrincipal.xaml;
 
-True
+False
 

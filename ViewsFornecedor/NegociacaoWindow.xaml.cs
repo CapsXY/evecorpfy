@@ -78,7 +78,7 @@ namespace evecorpfy.ViewsFornecedor
 
                 MessageBox.Show("Proposta enviada com sucesso!",
                                 "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
-
+                this.DialogResult = true;
                 this.Close();
             }
             catch (Exception ex)
@@ -86,6 +86,12 @@ namespace evecorpfy.ViewsFornecedor
                 MessageBox.Show($"Erro ao salvar propostas: {ex.Message}",
                                 "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void Voltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.DialogResult = false;
+            this.Close();
         }
 
 
