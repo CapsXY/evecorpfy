@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\CaioA\Documents\GitHub\evecorpfy\App.xaml
-191782931044
+23302251958
 
-41877994241
+50-289888548
 218-1471212189
-Login.xaml;MenuAdministrador.xaml;MenuFornecedor.xaml;MenuOrganizador.xaml;MenuParticipante.xaml;ViewsAdministrador\DashboardAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;ViewsOrganizador\CadastroEventos.xaml;ViewsOrganizador\DashboardOrganizador.xaml;ViewsOrganizador\GestaoEventos.xaml;ViewsOrganizador\NegociacaoWindow.xaml;ViewsOrganizador\OrcamentoWindow.xaml;ViewsOrganizador\PerfilOrganizador.xaml;ViewsParticipante\Eventos.xaml;ViewsParticipante\PerfilParticipante.xaml;ViewsParticipante\TelaPrincipal.xaml;
+Login.xaml;MenuAdministrador.xaml;MenuFornecedor.xaml;MenuOrganizador.xaml;MenuParticipante.xaml;ViewsAdministrador\DashboardAdministrador.xaml;ViewsAdministrador\GestaoEventos.xaml;ViewsAdministrador\PerfilAdministrador.xaml;ViewsAdministrador\TipoEvento.xaml;ViewsAdministrador\TipoServico.xaml;ViewsFornecedor\Negociacao.xaml;ViewsFornecedor\NegociacaoWindow.xaml;ViewsFornecedor\PerfilFornecedor.xaml;ViewsFornecedor\TelaPrincipal.xaml;ViewsOrganizador\CadastroEventos.xaml;ViewsOrganizador\DashboardOrganizador.xaml;ViewsOrganizador\GestaoEventos.xaml;ViewsOrganizador\NegociacaoWindow.xaml;ViewsOrganizador\OrcamentoWindow.xaml;ViewsOrganizador\PerfilOrganizador.xaml;ViewsParticipante\Eventos.xaml;ViewsParticipante\PerfilParticipante.xaml;ViewsParticipante\TelaPrincipal.xaml;
 
 False
 

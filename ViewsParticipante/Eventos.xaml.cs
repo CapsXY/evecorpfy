@@ -1,6 +1,5 @@
 ﻿using evecorpfy.Data;
 using evecorpfy.Models;
-using Microsoft.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
 namespace evecorpfy.ViewsParticipante
@@ -18,12 +17,19 @@ namespace evecorpfy.ViewsParticipante
         private void CarregarEventosDisponiveis()
         {
             var repo = new RepositorioEvento();
-            DataGridEventos.ItemsSource = repo.ListarTodos();
+            DataGridEventos.ItemsSource = repo.ListarTodosComVagas();
         }
         private void Inscrever_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.DataContext is Evento evento)
             {
+                if (evento.VagasDisponiveis <= 0)
+                {
+                    MessageBox.Show("Não há mais vagas disponíveis para este evento!",
+                                    "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
                 var repo = new RepositorioEventoParticipante();
                 if (repo.PossuiConflito(Sessao.UsuarioId, evento.DataInicio, evento.DataFim))
                 {
@@ -31,13 +37,14 @@ namespace evecorpfy.ViewsParticipante
                                     "Conflito de Datas", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
+
                 try
                 {
                     repo.Inscrever(evento.Id, Sessao.UsuarioId);
                     MessageBox.Show($"Inscrição confirmada no evento: {evento.Nome}",
                                     "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    CarregarEventosDisponiveis(); // 🔥 Atualiza a grid
+                    CarregarEventosDisponiveis(); // Atualiza o grid
                 }
                 catch (Exception ex)
                 {
@@ -45,6 +52,7 @@ namespace evecorpfy.ViewsParticipante
                 }
             }
         }
+
         private void Sair_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.DataContext is Evento evento)
@@ -52,10 +60,9 @@ namespace evecorpfy.ViewsParticipante
                 var repo = new RepositorioEventoParticipante();
                 repo.Sair(evento.Id, Sessao.UsuarioId);
 
-                MessageBox.Show($"Você saiu do evento: {evento.Nome}",
-                                "Cancelamento", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show($"Você saiu do evento: {evento.Nome}", "Cancelamento", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                CarregarEventosDisponiveis(); // 🔥 Atualiza a grid
+                CarregarEventosDisponiveis();
             }
         }
     }

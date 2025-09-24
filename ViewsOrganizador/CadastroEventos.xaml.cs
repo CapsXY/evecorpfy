@@ -85,8 +85,6 @@ namespace evecorpfy.ViewsOrganizador
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-
         // Validação dos campos do formulário
         private Evento? ValidarEvento(bool isUpdate = false)
         {
@@ -306,42 +304,6 @@ namespace evecorpfy.ViewsOrganizador
                 }
             }
         }
-        //private void TextBoxOrcamento_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        //{
-        //    // Permitir apenas números e vírgula
-        //    e.Handled = !char.IsDigit(e.Text, 0) && e.Text != ",";
-        //}
-        //private void TextBoxOrcamento_LostFocus(object sender, RoutedEventArgs e)
-        //{
-        //    var cultura = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
-
-        //    // Remove "R$" e espaços antes de tentar converter
-        //    string texto = TextBoxOrcamento.Text.Replace("R$", "").Trim();
-
-        //    if (decimal.TryParse(texto,
-        //                         System.Globalization.NumberStyles.Any,
-        //                         cultura,
-        //                         out decimal valor))
-        //    {
-        //        // Reaplica formatação em R$
-        //        TextBoxOrcamento.Text = string.Format(cultura, "{0:C}", valor);
-        //    }
-        //    else
-        //    {
-        //        if (string.IsNullOrWhiteSpace(texto))
-        //        {
-        //            TextBoxOrcamento.Text = "R$ 0,00";
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Valor inválido. Informe um número válido.",
-        //                            "Erro de Formatação",
-        //                            MessageBoxButton.OK,
-        //                            MessageBoxImage.Warning);
-        //            TextBoxOrcamento.Text = "R$ 0,00";
-        //        }
-        //    }
-        //}
         private void TextBoxOrcamento_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             // Permite apenas números

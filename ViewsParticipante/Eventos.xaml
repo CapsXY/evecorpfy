@@ -52,12 +52,10 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Evento" Binding="{Binding Nome}" Width="2*" />
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*" />
-                <DataGridTextColumn Header="Vagas" Binding="{Binding Capacidade}" Width="*" />
-
-                <!-- Novas colunas -->
+                <DataGridTextColumn Header="Capacidade Máx." Binding="{Binding Capacidade}" Width="*" />
+                <DataGridTextColumn Header="Vagas Disponíveis" Binding="{Binding VagasDisponiveis}"  Width="*" />
                 <DataGridTextColumn Header="Data Início" Binding="{Binding DataInicio, StringFormat=\{0:dd/MM/yyyy\}}" Width="*" />
                 <DataGridTextColumn Header="Data Fim" Binding="{Binding DataFim, StringFormat=\{0:dd/MM/yyyy\}}" Width="*" />
-
                 <DataGridTemplateColumn Header="Inscrição">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -67,7 +65,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
                 <DataGridTemplateColumn Header="Sair do Evento">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -79,6 +76,5 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </UserControl>

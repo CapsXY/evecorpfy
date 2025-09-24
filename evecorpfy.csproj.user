@@ -26,6 +26,18 @@
     <Compile Update="ViewsAdministrador\TipoServico.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ViewsFornecedor\Negociacao.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsFornecedor\NegociacaoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsFornecedor\PerfilFornecedor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsFornecedor\TelaPrincipal.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ViewsOrganizador\CadastroEventos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

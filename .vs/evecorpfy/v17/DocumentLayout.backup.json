@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\cadastroeventos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\cadastroeventos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsfornecedor\\negociacao.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsfornecedor\\negociacao.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\cadastroeventos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\cadastroeventos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsfornecedor\\negociacao.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsfornecedor\\negociacao.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\booltovisibilityconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsfornecedor\\negociacaowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsfornecedor\\negociacaowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsfornecedor\\negociacaowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsfornecedor\\negociacaowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\eventoproposta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\eventoproposta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,31 +38,95 @@
       "DocumentGroups": [
         {
           "DockedWidth": 144,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CadastroEventos.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml.cs",
-              "RelativeDocumentMoniker": "ViewsOrganizador\\CadastroEventos.xaml.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml.cs",
-              "RelativeToolTip": "ViewsOrganizador\\CadastroEventos.xaml.cs",
-              "ViewState": "AgIAAEYBAAAAAAAAAAAYwHcBAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Evento.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Evento.cs",
+              "RelativeDocumentMoniker": "Models\\Evento.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Evento.cs",
+              "RelativeToolTip": "Models\\Evento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T06:29:44.812Z",
+              "WhenOpened": "2025-09-24T20:23:27.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BoolToVisibilityConverter.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\BoolToVisibilityConverter.cs",
+              "RelativeDocumentMoniker": "Models\\BoolToVisibilityConverter.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\BoolToVisibilityConverter.cs",
+              "RelativeToolTip": "Models\\BoolToVisibilityConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T20:19:23.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Negociacao.xaml",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\Negociacao.xaml",
+              "RelativeDocumentMoniker": "ViewsFornecedor\\Negociacao.xaml",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\Negociacao.xaml",
+              "RelativeToolTip": "ViewsFornecedor\\Negociacao.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-24T19:37:20.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CadastroEventos.xaml",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml",
-              "RelativeDocumentMoniker": "ViewsOrganizador\\CadastroEventos.xaml",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\CadastroEventos.xaml",
-              "RelativeToolTip": "ViewsOrganizador\\CadastroEventos.xaml",
+              "Title": "Negociacao.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\Negociacao.xaml.cs",
+              "RelativeDocumentMoniker": "ViewsFornecedor\\Negociacao.xaml.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\Negociacao.xaml.cs",
+              "RelativeToolTip": "ViewsFornecedor\\Negociacao.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowDEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:22:38.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NegociacaoWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\NegociacaoWindow.xaml",
+              "RelativeDocumentMoniker": "ViewsFornecedor\\NegociacaoWindow.xaml",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\NegociacaoWindow.xaml",
+              "RelativeToolTip": "ViewsFornecedor\\NegociacaoWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-24T06:29:33.072Z",
+              "WhenOpened": "2025-09-24T19:31:26.626Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NegociacaoWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\NegociacaoWindow.xaml.cs",
+              "RelativeDocumentMoniker": "ViewsFornecedor\\NegociacaoWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsFornecedor\\NegociacaoWindow.xaml.cs",
+              "RelativeToolTip": "ViewsFornecedor\\NegociacaoWindow.xaml.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwCEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:22:41.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventoProposta.cs",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\EventoProposta.cs",
+              "RelativeDocumentMoniker": "Models\\EventoProposta.cs",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\EventoProposta.cs",
+              "RelativeToolTip": "Models\\EventoProposta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:26:36.755Z",
               "EditorCaption": ""
             }
           ]

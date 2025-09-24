@@ -20,5 +20,11 @@
         public int TipoEventoId { get; set; }
         public string Status { get; set; }
         public List<int> ServicosIds { get; set; } = new List<int>();
+        public int VagasDisponiveis { get; set; }
+
+        // 🔹 Controle de negociação
+        public bool TemOrcamento { get; set; } = false;
+
+        public string TextoBotao => TemOrcamento ? "Cancelar Proposta" : "Negociar Serviços";
     }
 }

@@ -183,19 +183,6 @@ namespace evecorpfy.Data
                 }
             }
         }
-        //private void InserirServicosEvento(int eventoId, List<int> servicosIds, SqlConnection conectaDataBase, SqlTransaction transactioDataBase)
-        //{
-        //    const string insertSql = @"INSERT INTO EVENTO_SERVICOS (EVENTO_ID, SERVICO_ID) VALUES (@EVENTO_ID, @SERVICO_ID)";
-        //    foreach (var servicoId in servicosIds.Distinct())
-        //    {
-        //        using (var command = new SqlCommand(insertSql, conectaDataBase, transactioDataBase))
-        //        {
-        //            command.Parameters.AddWithValue("@EVENTO_ID", eventoId);
-        //            command.Parameters.AddWithValue("@SERVICO_ID", servicoId);
-        //            command.ExecuteNonQuery();
-        //        }
-        //    }
-        //}
         private void InserirServicosEvento(int eventoId, List<int> servicosIds, SqlConnection conn, SqlTransaction tx)
         {
             if (servicosIds == null || servicosIds.Count == 0)
@@ -248,6 +235,69 @@ namespace evecorpfy.Data
                 }
             }
             return ids;
+        }
+        public List<Evento> ListarTodosComVagas()
+        {
+            var lista = new List<Evento>();
+            using (var conn = DbConnectionFactory.GetOpenConnection())
+            {
+                string sql = @"
+            SELECT e.ID, e.NOME, e.DATA_INICIO, e.DATA_FIM, e.STATUS, e.CAPACIDADE,
+                   (e.CAPACIDADE - COUNT(ep.ID)) AS VAGAS_DISPONIVEIS
+            FROM EVENTOS e
+            LEFT JOIN EVENTO_PARTICIPANTES ep ON e.ID = ep.EVENTO_ID
+            GROUP BY e.ID, e.NOME, e.DATA_INICIO, e.DATA_FIM, e.STATUS, e.CAPACIDADE
+            ORDER BY e.DATA_INICIO DESC";
+
+                using (var cmd = new SqlCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new Evento
+                        {
+                            Id = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            DataInicio = reader.GetDateTime(2),
+                            DataFim = reader.GetDateTime(3),
+                            Status = reader.GetString(4),
+                            Capacidade = reader.GetInt32(5),
+                            VagasDisponiveis = reader.GetInt32(6)
+                        });
+                    }
+                }
+            }
+            return lista;
+        }
+        public List<TipoServico> ListarServicosDoEvento(int eventoId)
+        {
+            var lista = new List<TipoServico>();
+            using (var conn = DbConnectionFactory.GetOpenConnection())
+            {
+                const string sql = @"
+            SELECT ts.ID, ts.NOME, ts.ATIVO
+            FROM EVENTO_SERVICOS es
+            INNER JOIN TIPO_SERVICOS ts ON ts.ID = es.SERVICO_ID
+            WHERE es.EVENTO_ID = @EVENTO_ID
+            ORDER BY ts.NOME";
+                using (var cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@EVENTO_ID", eventoId);
+                    using (var r = cmd.ExecuteReader())
+                    {
+                        while (r.Read())
+                        {
+                            lista.Add(new TipoServico
+                            {
+                                Id = r.GetInt32(0),
+                                Nome = r.GetString(1),
+                                Ativo = r.GetBoolean(2)
+                            });
+                        }
+                    }
+                }
+            }
+            return lista;
         }
     }
 }

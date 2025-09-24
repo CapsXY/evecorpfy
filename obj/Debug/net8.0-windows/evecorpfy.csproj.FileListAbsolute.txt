@@ -246,3 +246,12 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticip
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\Eventos.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\PerfilParticipante.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsParticipante\TelaPrincipal.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\PerfilFornecedor.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\Negociacao.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\TelaPrincipal.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\PerfilFornecedor.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\Negociacao.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\TelaPrincipal.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\NegociacaoWindow.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\NegociacaoWindow.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs

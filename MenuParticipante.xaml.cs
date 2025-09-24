@@ -15,7 +15,7 @@ namespace evecorpfy
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
             if (sender is System.Windows.Controls.Grid grid)
-                grid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFBA0FDF"));
+                grid.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFDE86F1"));
         }
         // Efeito hover nos botões do menu ao sair com o mouse
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
