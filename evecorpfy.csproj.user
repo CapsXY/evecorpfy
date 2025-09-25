@@ -53,6 +53,9 @@
     <Compile Update="ViewsOrganizador\OrcamentoWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ViewsOrganizador\ParticipanteWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ViewsOrganizador\PerfilOrganizador.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

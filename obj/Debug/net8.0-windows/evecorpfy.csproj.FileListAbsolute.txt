@@ -255,3 +255,5 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsForneced
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\NegociacaoWindow.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsFornecedor\NegociacaoWindow.g.cs
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\ParticipanteWindow.baml
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Debug\net8.0-windows\ViewsOrganizador\ParticipanteWindow.g.cs

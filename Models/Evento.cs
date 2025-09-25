@@ -21,10 +21,8 @@
         public string Status { get; set; }
         public List<int> ServicosIds { get; set; } = new List<int>();
         public int VagasDisponiveis { get; set; }
-
-        // 🔹 Controle de negociação
+        public int QuantidadeParticipantes { get; set; }
         public bool TemOrcamento { get; set; } = false;
-
         public string TextoBotao => TemOrcamento ? "Cancelar Proposta" : "Negociar Serviços";
     }
 }

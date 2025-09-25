@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using evecorpfy.Models;
+using Microsoft.Data.SqlClient;
 
 namespace evecorpfy.Data
 {
@@ -63,6 +64,48 @@ namespace evecorpfy.Data
                     int count = (int)cmd.ExecuteScalar();
                     return count > 0;
                 }
+            }
+        }
+        public List<ParticipanteEvento> ListarPorEvento(int eventoId)
+        {
+            var participantes = new List<ParticipanteEvento>();
+
+            using (var conn = DbConnectionFactory.GetOpenConnection())
+            using (var cmd = new SqlCommand(@"
+                SELECT ep.EVENTO_ID, u.USERNAME, up.CPF
+                FROM EVENTO_PARTICIPANTES ep
+                INNER JOIN USUARIOS u ON ep.USUARIO_ID = u.ID
+                INNER JOIN USUARIO_PARTICIPANTE up ON up.USUARIO_ID = u.ID
+                WHERE ep.EVENTO_ID = @EventoId", conn))
+            {
+                cmd.Parameters.AddWithValue("@EventoId", eventoId);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        participantes.Add(new ParticipanteEvento
+                        {
+                            EventoId = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            Cpf = reader.GetString(2)
+                        });
+                    }
+                }
+            }
+
+            return participantes;
+        }
+        public int ContarParticipantes(int eventoId)
+        {
+            using (var conn = DbConnectionFactory.GetOpenConnection())
+            using (var cmd = new SqlCommand(@"
+                SELECT COUNT(*) 
+                FROM EVENTO_PARTICIPANTES
+                WHERE EVENTO_ID = @EventoId", conn))
+            {
+                cmd.Parameters.AddWithValue("@EventoId", eventoId);
+                return (int)cmd.ExecuteScalar();
             }
         }
     }

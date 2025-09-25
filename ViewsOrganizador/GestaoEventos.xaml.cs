@@ -2,7 +2,6 @@
 using evecorpfy.Models;
 using System.Windows;
 using System.Windows.Controls;
-
 namespace evecorpfy.ViewsOrganizador
 {
     /// <summary>
@@ -17,9 +16,19 @@ namespace evecorpfy.ViewsOrganizador
         }
         private void CarregarEventosGrid()
         {
-            var repo = new RepositorioEvento();
-            DataGridEventos.ItemsSource = repo.ListarPorOrganizador(Sessao.UsuarioId);
+            var repoEvento = new RepositorioEvento();
+            var eventos = repoEvento.ListarPorOrganizador(Sessao.UsuarioId);
+
+            var repoParticipantes = new RepositorioEventoParticipante();
+
+            foreach (var ev in eventos)
+            {
+                ev.QuantidadeParticipantes = repoParticipantes.ContarParticipantes(ev.Id);
+            }
+
+            DataGridEventos.ItemsSource = eventos;
         }
+
         private void Negociacao_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.DataContext is Evento evento)
@@ -31,10 +40,22 @@ namespace evecorpfy.ViewsOrganizador
         }
         private void Participantes_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button btn)
+            if (sender is Button btn && btn.Tag is int eventoId)
             {
-                MessageBox.Show($"Botão Participantes clicado para o evento ID={btn.Tag}",
-                                "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
+                var repo = new RepositorioEventoParticipante();
+                var participantes = repo.ListarPorEvento(eventoId);
+
+                if (participantes.Count == 0)
+                {
+                    MessageBox.Show("Nenhum participante encontrado para este evento.",
+                                    "Aviso", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    // Abre a nova janela
+                    var win = new ParticipantesWindow(participantes);
+                    win.ShowDialog();
+                }
             }
         }
         private void Cancelar_Click(object sender, RoutedEventArgs e)
@@ -45,5 +66,6 @@ namespace evecorpfy.ViewsOrganizador
                                 "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
     }
 }
