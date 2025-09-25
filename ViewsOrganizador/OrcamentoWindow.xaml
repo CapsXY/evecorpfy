@@ -14,8 +14,12 @@
                       CanUserAddRows="False"
                       Margin="0 10 0 0">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding FornecedorNome}" Width="2*"/>
-                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}" Width="*"/>
+                    <DataGridTextColumn Header="Fornecedor" Binding="{Binding FornecedorNome}" Width="*"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor, StringFormat=R$ {0:N2}}" Width="150"/>
+                    <DataGridTextColumn Header="Data Proposta"
+                    Binding="{Binding DataProposta, StringFormat={}{0:dd/MM/yyyy HH:mm}}"
+                    Width="180"/>
+
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

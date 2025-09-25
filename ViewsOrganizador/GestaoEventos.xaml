@@ -52,8 +52,8 @@
             <DataGrid.Columns>
                 <!-- Nome do evento -->
                 <DataGridTextColumn Header="Evento" Binding="{Binding Nome}" Width="*" />
-                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="*" />
-                <DataGridTextColumn Header="Incritos" Binding="{Binding Participantes}" Width="105" />
+                <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="150" />
+                <DataGridTextColumn Header="Inscritos" Binding="{Binding QuantidadeParticipantes}" Width="55" />
 
                 <!-- Botão Negociação -->
                 <DataGridTemplateColumn Header="Negociação">

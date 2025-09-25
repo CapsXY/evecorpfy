@@ -34,7 +34,7 @@
          VerticalAlignment="Top"
          FontWeight="Bold"
          FontSize="36"/>
-        <Label Content="Negocie, orçe os valores com os Organizadores do Evento"
+        <Label Content="Negocie, orce os valores com os Organizadores do Evento"
          HorizontalAlignment="Center"
          Margin="0,104,0,0"
          VerticalAlignment="Top"
@@ -59,25 +59,24 @@
                 <DataGridTextColumn Header="Fim" Binding="{Binding DataFim, StringFormat=d}" Width="120"/>
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="150"/>
                 <DataGridTextColumn Header="Orçamento Máximo" Binding="{Binding OrcamentoMaximo, StringFormat=R$ {0:N2}}" Width="150"/>
-                <DataGridTemplateColumn Header="Ações" Width="180">
+                <DataGridTemplateColumn Header="Ações" Width="150">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <!-- Botão de Negociar -->
-                                <Button Content="Negociar Serviços"
-                        Tag="{Binding}"
-                        Click="Negociar_Click"
-                        Panel.ZIndex="0"
-                        Visibility="{Binding TemOrcamento, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=Invert}"/>
-
-                                <!-- Botão de Cancelar -->
-                                <Button Content="Cancelar Proposta"
-                        Tag="{Binding}"
-                        Click="Cancelar_Click"
-                        Background="Red" Foreground="White"
-                        Panel.ZIndex="1"
-                        Visibility="{Binding TemOrcamento, Converter={StaticResource BoolToVisibilityConverter}}"/>
-                            </Grid>
+                            <Button Content="{Binding TextoBotao}"
+                                    Tag="{Binding}"
+                                    Click="NegociarOuCancelar_Click">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="LightGray"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding TemOrcamento}" Value="True">
+                                                <Setter Property="Background" Value="Red"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

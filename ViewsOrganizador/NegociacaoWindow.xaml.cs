@@ -31,8 +31,10 @@ namespace evecorpfy.ViewsOrganizador
             {
                 var servico = ((List<TipoServico>)DataGridServicos.ItemsSource)
                                 .FirstOrDefault(s => s.Id == servicoId);
+
                 if (servico != null)
                 {
+                    // Abre a janela de orçamentos já com dados reais
                     var win = new OrcamentoWindow(servico, _evento);
                     win.Owner = this;
                     win.ShowDialog();

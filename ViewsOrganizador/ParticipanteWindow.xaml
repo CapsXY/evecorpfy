@@ -9,7 +9,7 @@
         <DataGrid x:Name="DataGridParticipantes"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
-                  IsReadOnly="True">
+                  IsReadOnly="True" Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
                 <DataGridTextColumn Header="CPF" Binding="{Binding Cpf}" Width="200"/>

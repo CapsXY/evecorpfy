@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\gestaoeventos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\gestaoeventos.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\data\\repositorioeventoparticipante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:data\\repositorioeventoparticipante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\negociacaowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\negociacaowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\viewsorganizador\\gestaoeventos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:viewsorganizador\\gestaoeventos.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|c:\\users\\caioa\\documents\\github\\evecorpfy\\models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D2DEAF10-E013-43A6-9CD6-74A61B18091F}|evecorpfy.csproj|solutionrelative:models\\evento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,57 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 144,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Evento.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Evento.cs",
-              "RelativeDocumentMoniker": "Models\\Evento.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Models\\Evento.cs",
-              "RelativeToolTip": "Models\\Evento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T09:13:15.668Z",
+              "DocumentIndex": 0,
+              "Title": "NegociacaoWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\NegociacaoWindow.xaml",
+              "RelativeDocumentMoniker": "ViewsOrganizador\\NegociacaoWindow.xaml",
+              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\NegociacaoWindow.xaml",
+              "RelativeToolTip": "ViewsOrganizador\\NegociacaoWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-25T22:37:55.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RepositorioEventoParticipante.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioEventoParticipante.cs",
-              "RelativeDocumentMoniker": "Data\\RepositorioEventoParticipante.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\Data\\RepositorioEventoParticipante.cs",
-              "RelativeToolTip": "Data\\RepositorioEventoParticipante.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwG0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T09:12:19.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "GestaoEventos.xaml",
               "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\GestaoEventos.xaml",
               "RelativeDocumentMoniker": "ViewsOrganizador\\GestaoEventos.xaml",
               "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\GestaoEventos.xaml",
               "RelativeToolTip": "ViewsOrganizador\\GestaoEventos.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-25T08:34:05.263Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GestaoEventos.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\GestaoEventos.xaml.cs",
-              "RelativeDocumentMoniker": "ViewsOrganizador\\GestaoEventos.xaml.cs",
-              "ToolTip": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\ViewsOrganizador\\GestaoEventos.xaml.cs",
-              "RelativeToolTip": "ViewsOrganizador\\GestaoEventos.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T09:10:15.498Z",
+              "WhenOpened": "2025-09-25T22:37:52.666Z",
               "EditorCaption": ""
             }
           ]

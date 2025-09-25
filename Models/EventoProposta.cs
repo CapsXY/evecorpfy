@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public int EventoId { get; set; }
         public int ServicoId { get; set; }
-        public int FornecedorId { get; set; }
+        public int FornecedorUsuarioId { get; set; }
         public decimal ValorProposta { get; set; }
         public DateTime DataProposta { get; set; }
         public string NomeServico { get; set; }

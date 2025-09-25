@@ -1,21 +1,20 @@
 ﻿using evecorpfy.Data;
-using System.Windows;
 using evecorpfy.Models;
+using System.Windows;
+
 namespace evecorpfy.ViewsFornecedor
 {
     public partial class NegociacaoWindow : Window
     {
         private readonly int eventoId;
         private readonly decimal orcamentoMaximo;
-        private readonly int fornecedorId;
         private List<EventoProposta> servicos;
 
-        public NegociacaoWindow(int eventoId, decimal orcamentoMaximo, int fornecedorId)
+        public NegociacaoWindow(int eventoId, decimal orcamentoMaximo)
         {
             InitializeComponent();
             this.eventoId = eventoId;
             this.orcamentoMaximo = orcamentoMaximo;
-            this.fornecedorId = fornecedorId;
 
             CarregarServicos();
         }
@@ -27,14 +26,13 @@ namespace evecorpfy.ViewsFornecedor
 
             servicos = servicosEvento.Select(s => new EventoProposta
             {
-                ServicoId = s.Id,           // ID do serviço do evento
+                ServicoId = s.Id,
                 EventoId = eventoId,
-                FornecedorId = fornecedorId,
+                FornecedorUsuarioId = Sessao.UsuarioId,
                 NomeServico = s.Nome,
                 ValorProposta = 0,
                 DataProposta = DateTime.Now
             }).ToList();
-
 
             DataGridServicos.ItemsSource = servicos;
             AtualizarOrcamentoRestante();
@@ -46,14 +44,20 @@ namespace evecorpfy.ViewsFornecedor
             decimal restante = orcamentoMaximo - totalPropostas;
             TextBlockOrcamentoRestante.Text = restante.ToString("C");
 
-            if (restante < 0)
-                TextBlockOrcamentoRestante.Foreground = System.Windows.Media.Brushes.Red;
-            else
-                TextBlockOrcamentoRestante.Foreground = System.Windows.Media.Brushes.Black;
+            TextBlockOrcamentoRestante.Foreground =
+                restante < 0 ? System.Windows.Media.Brushes.Red
+                             : System.Windows.Media.Brushes.Black;
         }
 
         private void EnviarOrcamento_Click(object sender, RoutedEventArgs e)
         {
+            if (!Sessao.FornecedorId.HasValue)
+            {
+                MessageBox.Show("Fornecedor não identificado na sessão.",
+                                "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             decimal soma = servicos.Sum(s => s.ValorProposta);
             if (soma > orcamentoMaximo)
             {
@@ -66,11 +70,10 @@ namespace evecorpfy.ViewsFornecedor
             {
                 var repo = new RepositorioEventoProposta();
 
-                // Aqui já temos os dados necessários
                 foreach (var s in servicos)
                 {
                     s.EventoId = eventoId;
-                    s.FornecedorId = fornecedorId;
+                    s.FornecedorUsuarioId = Sessao.UsuarioId;
                     s.DataProposta = DateTime.Now;
                 }
 
@@ -78,6 +81,7 @@ namespace evecorpfy.ViewsFornecedor
 
                 MessageBox.Show("Proposta enviada com sucesso!",
                                 "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 this.DialogResult = true;
                 this.Close();
             }
@@ -94,8 +98,6 @@ namespace evecorpfy.ViewsFornecedor
             this.Close();
         }
 
-
-        // Atualiza o orçamento restante quando o valor de alguma célula mudar
         private void DataGridServicos_CellEditEnding(object sender, System.Windows.Controls.DataGridCellEditEndingEventArgs e)
         {
             Dispatcher.BeginInvoke(new Action(AtualizarOrcamentoRestante),
