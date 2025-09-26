@@ -73,22 +73,36 @@ namespace evecorpfy.Data
                 }
             }
         }
-        //public HashSet<int> ListarEventosComPropostaFornecedor(int FornecedorUsuarioId)
-        //{
-        //    var ids = new HashSet<int>();
-        //    using (var conn = DbConnectionFactory.GetOpenConnection())
-        //    using (var cmd = new SqlCommand(
-        //        @"SELECT DISTINCT EVENTO_ID 
-        //  FROM EVENTO_PROPOSTAS 
-        //  WHERE USUARIO_ID = @FornecedorUsuarioId", conn))
-        //    {
-        //        cmd.Parameters.AddWithValue("@FornecedorUsuarioId", FornecedorUsuarioId);
-        //        using (var rd = cmd.ExecuteReader())
-        //            while (rd.Read())
-        //                ids.Add(rd.GetInt32(0));
-        //    }
-        //    return ids;
-        //}
+        public List<OrcamentoView> ListarOrcamentosPorEvento(int eventoId)
+        {
+            var lista = new List<OrcamentoView>();
+
+            using (var conn = DbConnectionFactory.GetOpenConnection())
+            using (var cmd = new SqlCommand(@"
+        SELECT u.USERNAME, ep.VALOR, ep.DATA_PROPOSTA
+        FROM EVENTO_PROPOSTAS ep
+        INNER JOIN USUARIOS u ON ep.USUARIO_ID = u.ID
+        WHERE ep.EVENTO_ID = @EventoId", conn))
+            {
+                cmd.Parameters.AddWithValue("@EventoId", eventoId);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        lista.Add(new OrcamentoView
+                        {
+                            FornecedorNome = reader.GetString(0),
+                            Valor = reader.GetDecimal(1),
+                            DataProposta = reader.GetDateTime(2)
+                        });
+                    }
+                }
+            }
+
+            return lista;
+        }
+
         public HashSet<int> ListarEventosComPropostaFornecedor(int fornecedorUsuarioId)
         {
             var ids = new HashSet<int>();

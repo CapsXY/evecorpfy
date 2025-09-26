@@ -18,12 +18,16 @@ namespace evecorpfy.ViewsOrganizador
         {
             var repo = new RepositorioEvento();
             var servicosIds = repo.ListarServicosIdsPorEvento(_evento.Id);
-            // Aqui você ainda pode precisar de RepositorioTipoServico
             var repoServicos = new RepositorioTipoServico();
             var servicos = repoServicos.ListarTodos()
                                        .Where(s => servicosIds.Contains(s.Id))
                                        .ToList();
             DataGridServicos.ItemsSource = servicos;
+            var repoPropostas = new RepositorioEventoProposta();
+            var propostas = repoPropostas.ListarOrcamentosPorEvento(_evento.Id);
+
+            decimal total = propostas.Sum(p => p.Valor);
+            TxtTotal.Content = $"Total Orçamento: {total:C}";
         }
         private void VerOrcamentos_Click(object sender, RoutedEventArgs e)
         {
@@ -40,6 +44,31 @@ namespace evecorpfy.ViewsOrganizador
                     win.ShowDialog();
                 }
             }
+        }
+        private void AtualizarTotalOrcamento()
+        {
+            var itens = DataGridServicos.ItemsSource as List<OrcamentoView>;
+            if (itens != null && itens.Count > 0)
+            {
+                decimal total = itens.Sum(x => x.Valor);
+                TxtTotal.Content = $"Total Orçamento: {total:C}";
+            }
+            else
+            {
+                TxtTotal.Content = "Total Orçamento: R$ 0,00";
+            }
+        }
+
+        private void Aceitar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Orçamento ACEITO com sucesso!", "Confirmação",
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Orçamento CANCELADO.", "Aviso",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
         }
     }
 }
