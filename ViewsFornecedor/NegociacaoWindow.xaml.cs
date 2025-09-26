@@ -1,11 +1,17 @@
 ﻿using evecorpfy.Data;
 using evecorpfy.Models;
+using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 namespace evecorpfy.ViewsFornecedor
 {
     public partial class NegociacaoWindow : Window
     {
         private readonly int eventoId;
+        private static readonly Regex _regex = new Regex("[^0-9,]+");
+        private static readonly decimal ValorMaximo = 999999999.99m;
         private readonly decimal orcamentoMaximo;
         private List<EventoProposta> servicos;
         public NegociacaoWindow(int eventoId, decimal orcamentoMaximo)
@@ -85,6 +91,34 @@ namespace evecorpfy.ViewsFornecedor
         {
             Dispatcher.BeginInvoke(new Action(AtualizarOrcamentoRestante),
                                    System.Windows.Threading.DispatcherPriority.Background);
+        }
+        private void ValorProposta_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = _regex.IsMatch(e.Text);
+        }
+        private void ValorProposta_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (sender is TextBox txt && !string.IsNullOrWhiteSpace(txt.Text))
+            {
+                if (decimal.TryParse(txt.Text, NumberStyles.Any, new CultureInfo("pt-BR"), out decimal valor))
+                {
+                    if (valor > ValorMaximo)
+                        valor = ValorMaximo;
+                    txt.Text = valor.ToString("N2", new CultureInfo("pt-BR"));
+                }
+                else
+                {
+                    txt.Text = "0,00";
+                }
+            }
+        }
+        private void DataGridServicos_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                var dataGrid = sender as DataGrid;
+                dataGrid.BeginEdit();
+            }), System.Windows.Threading.DispatcherPriority.Background);
         }
     }
 }

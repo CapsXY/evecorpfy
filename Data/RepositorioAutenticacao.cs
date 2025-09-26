@@ -1,37 +1,41 @@
 ﻿using evecorpfy.Models;
+using evecorpfy.Security;
 using Microsoft.Data.SqlClient;
-namespace evecorpfy.Data;
-public class RepositorioAutenticacao
+namespace evecorpfy.Data
 {
-    public Usuario Autenticar(string username, string senha)
+    public class RepositorioAutenticacao
     {
-        using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+        public Usuario Autenticar(string username, string senha)
         {
-            string sql = @"SELECT ID, USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO
-                               FROM USUARIOS 
-                               WHERE USERNAME = @u AND SENHA_HASH = @s AND ATIVO = 1";
-            using (var command = new SqlCommand(sql, conectaDataBase))
+            using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
             {
-                command.Parameters.AddWithValue("@u", username);
-                command.Parameters.AddWithValue("@s", senha);
-                using (var reader = command.ExecuteReader())
+                string sql = @"SELECT ID, USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO
+                               FROM USUARIOS 
+                               WHERE USERNAME = @u AND ATIVO = 1";
+                using (var command = new SqlCommand(sql, conectaDataBase))
                 {
-                    if (reader.Read())
+                    command.Parameters.AddWithValue("@u", username);
+                    using (var reader = command.ExecuteReader())
                     {
-                        return new Usuario
+                        if (reader.Read())
                         {
-                            Id = reader.GetInt32(0),
-                            Username = reader.GetString(1),
-                            SenhaHash = reader.GetString(2),
-                            Email = reader.GetString(3),
-                            Role = reader.GetString(4),
-                            Ativo = reader.GetBoolean(5),
-                            DataCriacao = reader.GetDateTime(6)
-                        };
+                            var usuario = new Usuario
+                            {
+                                Id = reader.GetInt32(0),
+                                Username = reader.GetString(1),
+                                SenhaHash = reader.GetString(2),
+                                Email = reader.GetString(3),
+                                Role = reader.GetString(4),
+                                Ativo = reader.GetBoolean(5),
+                                DataCriacao = reader.GetDateTime(6)
+                            };
+                            if (PasswordHasher.Verify(senha, usuario.SenhaHash))
+                                return usuario;
+                        }
                     }
                 }
             }
+            return null;
         }
-        return null;
     }
 }

@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\CaioA\Documents\GitHub\evecorpfy\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="CadastroUsuario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ConfiguracaoBanco.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

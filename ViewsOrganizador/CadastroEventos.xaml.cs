@@ -1,8 +1,10 @@
 ﻿using evecorpfy.Data;
 using evecorpfy.Models;
 using evecorpfy.Services;
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 namespace evecorpfy.ViewsOrganizador
 {
@@ -49,13 +51,54 @@ namespace evecorpfy.ViewsOrganizador
             TextBoxCEP.CaretIndex = TextBoxCEP.Text.Length;
         }
         private Endereco? enderecoAtual;
+        //private async void ButtonBuscarCEP_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        var service = new ViaCepService();
+        //        var cep = TextBoxCEP.Text.Replace("-", "").Trim();
+        //        enderecoAtual = await service.BuscarCepAsync(cep);
+        //        if (enderecoAtual != null && !string.IsNullOrWhiteSpace(enderecoAtual.Cep))
+        //        {
+        //            enderecoAtual.Numero = TextBoxNumero.Text.Trim();
+        //            if (string.IsNullOrWhiteSpace(enderecoAtual.Numero))
+        //            {
+        //                enderecoAtual.Numero = "S/N";
+        //                TextBoxNumero.Text = "S/N";
+        //            }
+        //            TextBoxEndereco.Text =
+        //                $"{enderecoAtual.Logradouro ?? ""}, {enderecoAtual.Numero} - {enderecoAtual.Bairro ?? ""} - {enderecoAtual.Localidade ?? ""}/{enderecoAtual.Uf ?? ""} - {enderecoAtual.Cep}";
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("CEP não encontrado!", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Erro ao buscar CEP: {ex.Message}", "Erro",
+        //            MessageBoxButton.OK, MessageBoxImage.Error);
+        //    }
+        //}
         private async void ButtonBuscarCEP_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                var service = new ViaCepService();
-                // Remove o hífen para não salvar no banco
                 var cep = TextBoxCEP.Text.Replace("-", "").Trim();
+                // 🔹 Validação antes da chamada
+                if (string.IsNullOrWhiteSpace(cep))
+                {
+                    MessageBox.Show("Informe um CEP antes de buscar.", "Aviso",
+                                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                if (cep.Length != 8 || !cep.All(char.IsDigit))
+                {
+                    MessageBox.Show("CEP inválido! Informe 8 dígitos numéricos.", "Aviso",
+                                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+                var service = new ViaCepService();
                 enderecoAtual = await service.BuscarCepAsync(cep);
                 if (enderecoAtual != null && !string.IsNullOrWhiteSpace(enderecoAtual.Cep))
                 {
@@ -66,7 +109,8 @@ namespace evecorpfy.ViewsOrganizador
                         TextBoxNumero.Text = "S/N";
                     }
                     TextBoxEndereco.Text =
-                        $"{enderecoAtual.Logradouro ?? ""}, {enderecoAtual.Numero} - {enderecoAtual.Bairro ?? ""} - {enderecoAtual.Localidade ?? ""}/{enderecoAtual.Uf ?? ""} - {enderecoAtual.Cep}";
+                        $"{enderecoAtual.Logradouro ?? ""}, {enderecoAtual.Numero} - " +
+                        $"{enderecoAtual.Bairro ?? ""} - {enderecoAtual.Localidade ?? ""}/{enderecoAtual.Uf ?? ""} - {enderecoAtual.Cep}";
                 }
                 else
                 {
@@ -76,7 +120,7 @@ namespace evecorpfy.ViewsOrganizador
             catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao buscar CEP: {ex.Message}", "Erro",
-                    MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         private Evento? ValidarEvento(bool isUpdate = false)
@@ -322,6 +366,19 @@ namespace evecorpfy.ViewsOrganizador
                                })
                                .ToList();
             ListBoxServicos.ItemsSource = servicos;
+        }
+        private void datePicker_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DatePickerInicio.Template.FindName("PART_TextBox", DatePickerInicio) is DatePickerTextBox textBoxInicio)
+            {
+                textBoxInicio.IsReadOnly = true;
+                textBoxInicio.PreviewKeyDown += (s, ev) => ev.Handled = true;
+            }
+            if (DatePickerFim.Template.FindName("PART_TextBox", DatePickerFim) is DatePickerTextBox textBoxFim)
+            {
+                textBoxFim.IsReadOnly = true;
+                textBoxFim.PreviewKeyDown += (s, ev) => ev.Handled = true;
+            }
         }
     }
 }

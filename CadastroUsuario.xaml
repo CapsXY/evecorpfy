@@ -1,0 +1,30 @@
+﻿<Window x:Class="evecorpfy.CadastroUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:evecorpfy"
+        mc:Ignorable="d"
+        Title="Cadastro de Usuário"
+        Height="295"
+        Width="385"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="10,10,10,9">
+        <Image HorizontalAlignment="Center" Height="57" VerticalAlignment="Top" Width="72" Source="/Resources/logo.png"/>
+        <Label Content="E-mail:" HorizontalAlignment="Left" Margin="69,66,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="115,70,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Usuário:" HorizontalAlignment="Left" Margin="62,97,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Margin="115,101,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Senha:" HorizontalAlignment="Left" Margin="70,125,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtSenha" HorizontalAlignment="Left" Margin="115,130,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label Content="Tipo de usuário:" HorizontalAlignment="Left" Margin="20,160,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboTipoUsuario" HorizontalAlignment="Left" Margin="115,164,0,0" VerticalAlignment="Top" Width="175">
+            <ComboBoxItem Content="ADMINISTRADOR"/>
+            <ComboBoxItem Content="ORGANIZADOR"/>
+            <ComboBoxItem Content="FORNECEDOR"/>
+            <ComboBoxItem Content="PARTICIPANTE"/>
+        </ComboBox>
+        <Button x:Name="BtnCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="200,199,0,0" VerticalAlignment="Top" Width="90" FontWeight="Bold" Click="BtnCadastrar_Click"/>
+    </Grid>
+</Window>

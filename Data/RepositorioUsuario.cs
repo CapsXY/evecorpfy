@@ -88,4 +88,21 @@ public class RepositorioUsuario
             }
         }
     }
+    public static async Task Inserir(Usuario usuario)
+    {
+        const string sql = @"
+        INSERT INTO USUARIOS (USERNAME, SENHA_HASH, EMAIL, ROLE, ATIVO, DATA_CRIACAO)
+        VALUES (@USERNAME, @SENHA_HASH, @EMAIL, @ROLE, @ATIVO, @DATA_CRIACAO);";
+        using var cn = new SqlConnection(ConexaoFactory.GetConnectionString());
+        await cn.OpenAsync();
+        using var cmd = new SqlCommand(sql, cn);
+        cmd.Parameters.AddWithValue("@USERNAME", usuario.Username);
+        cmd.Parameters.AddWithValue("@SENHA_HASH", usuario.SenhaHash);
+        cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
+        cmd.Parameters.AddWithValue("@ROLE", usuario.Role);
+        cmd.Parameters.AddWithValue("@ATIVO", usuario.Ativo);
+        cmd.Parameters.AddWithValue("@DATA_CRIACAO", usuario.DataCriacao);
+        await cmd.ExecuteNonQueryAsync();
+    }
+
 }

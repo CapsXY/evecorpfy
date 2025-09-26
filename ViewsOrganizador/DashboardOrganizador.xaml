@@ -18,25 +18,36 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="10">
             <TextBlock Text="Agenda dos Participantes"
-                       FontSize="18" FontWeight="Bold"
+                       FontSize="18"
+                       FontWeight="Bold"
                        Margin="0,0,0,10"/>
-            <lvc:CartesianChart Series="{Binding AgendaSeries}" Height="206" Width="360">
+            <lvc:CartesianChart Series="{Binding AgendaSeries}"
+                                Height="206"
+                                Width="360">
                 <lvc:CartesianChart.AxisX>
-                    <lvc:Axis Title="Participantes" Labels="{Binding AgendaLabels}" />
+                    <lvc:Axis Title="Participantes"
+                              Labels="{Binding AgendaLabels}" />
                 </lvc:CartesianChart.AxisX>
                 <lvc:CartesianChart.AxisY>
                     <lvc:Axis Title="Eventos" />
                 </lvc:CartesianChart.AxisY>
             </lvc:CartesianChart>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="10">
             <TextBlock Text="Fornecedores mais utilizados"
-                       FontSize="18" FontWeight="Bold"
+                       FontSize="18"
+                       FontWeight="Bold"
                        Margin="0,0,0,10"/>
             <lvc:PieChart Series="{Binding FornecedoresSeries}"
-                          LegendLocation="Right" Height="206" Width="360"/>
+                          LegendLocation="Right"
+                          Height="206"
+                          Width="360"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
             <TextBlock Text="Tipos de Participantes"
@@ -72,10 +83,10 @@
                     VerticalAlignment="Top"
                     Margin="0,-42,0,0" Grid.ColumnSpan="2" Height="27">
             <TextBlock Text="De:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-            <DatePicker x:Name="DateInicio" Width="110"/>
+            <DatePicker x:Name="DateInicio" Width="110" Loaded="datePicker_Loaded"/>
             <TextBlock Text="Até:" VerticalAlignment="Center" Margin="10,0,5,0"/>
-            <DatePicker x:Name="DateFim" Width="110"/>
-            <Button Content="Filtrar"
+            <DatePicker x:Name="DateFim" Width="110" Loaded="datePicker_Loaded"/>
+            <Button Content="Pesquisar"
                     Width="80"
                     Height="25"
                     Margin="10,0,0,0"

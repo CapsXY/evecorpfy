@@ -1,5 +1,6 @@
 ﻿using evecorpfy.Data;
 using evecorpfy.Models;
+using evecorpfy.Security;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows;
@@ -89,7 +90,7 @@ namespace evecorpfy.ViewsFornecedor
                 usuario.Email = TextBoxEmail.Text.Trim();
                 usuario.Ativo = CheckboxHabilitado.IsChecked ?? false;
                 if (!string.IsNullOrWhiteSpace(PasswordboxSenha.Password))
-                    usuario.SenhaHash = PasswordboxSenha.Password.Trim();
+                    usuario.SenhaHash = PasswordHasher.Hash(PasswordboxSenha.Password.Trim());
                 repo.AtualizarUsuario(usuario);
                 string cnpj = TextBoxCNPJ.Text.Trim();
                 if (!System.Text.RegularExpressions.Regex.IsMatch(cnpj, @"^\d{2}\.\d{3}\.\d{3}/\d{4}\-\d{2}$"))

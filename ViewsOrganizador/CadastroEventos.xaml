@@ -9,6 +9,10 @@
              d:DesignWidth="1010"
              Background="White">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFDF800F" Offset="1"/>
@@ -60,7 +64,8 @@
                     HorizontalAlignment="Left"
                     Margin="95,229,0,0"
                     VerticalAlignment="Top"
-                    FontSize="16"/>
+                    FontSize="16"
+                    Loaded="datePicker_Loaded"/>
         <Label Content="Fim"
                HorizontalAlignment="Left"
                Margin="272,227,0,0"
@@ -70,63 +75,9 @@
                     HorizontalAlignment="Left"
                     Margin="310,229,0,0"
                     VerticalAlignment="Top"
-                    FontSize="16" SelectedDateChanged="DatePickerFim_SelectedDateChanged"/>
-        <Label Content="Informações sobre o local do evento"
-               HorizontalAlignment="Left"
-               Margin="40,344,0,0"
-               VerticalAlignment="Top"
-               FontSize="18"
-               FontWeight="Bold"/>
-        <Label Content="CEP" 
-               HorizontalAlignment="Left"
-               Margin="40,372,0,0"
-               VerticalAlignment="Top"
-               FontSize="18"
-               FontWeight="Bold"/>
-        <TextBox x:Name="TextBoxCEP"
-                 HorizontalAlignment="Left"
-                 Margin="82,377,0,0"
-                 VerticalAlignment="Top"               
-                 MaxLength="9"
-                 Width="120"
-                 FontSize="16"
-                 PreviewTextInput="TextBoxCEPPrevisualizar"
-                 TextChanged="TextBoxCEPIdentador"/>
-        <Label Content="Nº"
-               HorizontalAlignment="Left"
-               Margin="248,372,0,0"
-               VerticalAlignment="Top"
-               FontSize="18"
-               FontWeight="Bold"/>
-        <TextBox x:Name="TextBoxNumero"
-                 HorizontalAlignment="Left"
-                 Margin="285,377,0,0"
-                 VerticalAlignment="Top"
-                 Width="109"             
-                 MaxLength="10"
-                 FontSize="16"/>
-        <Button Content="OK"
-                x:Name="ButtonBuscarCEP"           
-                HorizontalAlignment="Left"
-                Margin="399,375,0,0"
-                VerticalAlignment="Top"
-                FontSize="16"
-                Background="#FFDF800F"
-                Width="83"
-                Click="ButtonBuscarCEP_Click">
-            <Button.BorderBrush>
-                <SolidColorBrush Color="#FF707070" Opacity="0"/>
-            </Button.BorderBrush>
-        </Button>
-        <TextBox x:Name="TextBoxEndereco"
-                 TextWrapping="Wrap"
-                 HorizontalAlignment="Left"
-                 Margin="42,405,0,0"
-                 VerticalAlignment="Top"
-                 Width="440"               
-                 MaxLength="208"
-                 FontSize="16"
-                 Height="56"/>
+                    FontSize="16"
+                    SelectedDateChanged="DatePickerFim_SelectedDateChanged"
+                    Loaded="datePicker_Loaded"/>
         <Label Content="Capacidade máx."
                HorizontalAlignment="Left"
                Margin="40,266,0,0"
@@ -159,49 +110,105 @@
                Margin="40,305,0,0"
                VerticalAlignment="Top"
                FontSize="18"
-               FontWeight="Bold"/>
+               FontWeight="Bold" Grid.RowSpan="2"/>
         <ComboBox x:Name="ComboBoxTipoEvento"
                   HorizontalAlignment="Left"
                   Margin="183,308,0,0"
                   VerticalAlignment="Top"
                   Width="299"
-                  FontSize="16"/>
-        <Label Content="Observações" 
+                  FontSize="16" Grid.RowSpan="2"/>
+        <Label Content="Informações sobre o local do evento"
                HorizontalAlignment="Left"
-               Margin="42,461,0,0"
+               Margin="40,14,0,0"
                VerticalAlignment="Top"
                FontSize="18"
-               FontWeight="Bold"/>
+               FontWeight="Bold" Grid.Row="1"/>
+        <Label Content="CEP" 
+               HorizontalAlignment="Left"
+               Margin="40,42,0,0"
+               VerticalAlignment="Top"
+               FontSize="18"
+               FontWeight="Bold" Grid.Row="1"/>
+        <TextBox x:Name="TextBoxCEP"
+                 HorizontalAlignment="Left"
+                 Margin="82,47,0,0"
+                 VerticalAlignment="Top"               
+                 MaxLength="9"
+                 Width="120"
+                 FontSize="16"
+                 PreviewTextInput="TextBoxCEPPrevisualizar"
+                 TextChanged="TextBoxCEPIdentador" Grid.Row="1"/>
+        <Label Content="Nº"
+               HorizontalAlignment="Left"
+               Margin="248,42,0,0"
+               VerticalAlignment="Top"
+               FontSize="18"
+               FontWeight="Bold" Grid.Row="1"/>
+        <TextBox x:Name="TextBoxNumero"
+                 HorizontalAlignment="Left"
+                 Margin="285,47,0,0"
+                 VerticalAlignment="Top"
+                 Width="109"             
+                 MaxLength="10"
+                 FontSize="16" Grid.Row="1"/>
+        <Button Content="OK"
+                x:Name="ButtonBuscarCEP"           
+                HorizontalAlignment="Left"
+                Margin="399,45,0,0"
+                VerticalAlignment="Top"
+                FontSize="16"
+                Background="#FFDF800F"
+                Width="83"
+                Click="ButtonBuscarCEP_Click" Grid.Row="1">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBox x:Name="TextBoxEndereco"
+                 TextWrapping="Wrap"
+                 HorizontalAlignment="Left"
+                 Margin="42,75,0,0"
+                 VerticalAlignment="Top"
+                 Width="440"               
+                 MaxLength="208"
+                 FontSize="16"
+                 Height="56" Grid.Row="1"/>
+        <Label Content="Observações" 
+               HorizontalAlignment="Left"
+               Margin="42,131,0,0"
+               VerticalAlignment="Top"
+               FontSize="18"
+               FontWeight="Bold" Grid.Row="1"/>
         <TextBox x:Name="TextBoxObservacoes"
                  HorizontalAlignment="Left"
                  TextWrapping="Wrap"
-                 Margin="42,495,0,0"
+                 Margin="42,165,0,0"
                  VerticalAlignment="Top"
                  MaxLength="165"
                  Width="269"
-                 Height="71"/>
+                 Height="71" Grid.Row="1"/>
         <Label Content="Status"
                HorizontalAlignment="Left"
-               Margin="325,461,0,0"
+               Margin="325,131,0,0"
                VerticalAlignment="Top"
                FontSize="18"
-               FontWeight="Bold"/>
+               FontWeight="Bold" Grid.Row="1"/>
         <TextBlock x:Name="TextBlockStatus"                
                    HorizontalAlignment="Left"
-                   Margin="332,490,0,0"
+                   Margin="332,160,0,0"
                    VerticalAlignment="Top"
-                   FontSize="14" Width="150"/>
+                   FontSize="14" Width="150" Grid.Row="1"/>
         <Button Content="Cadastrar evento"
                 x:Name="ButtonCadastrarEvento"           
                 HorizontalAlignment="Left"
-                Margin="332,526,0,0"
+                Margin="332,196,0,0"
                 Height="40"
                 Width="149"
                 VerticalAlignment="Top"
                 FontSize="16"
                 Background="#FFDF800F"
                 FontWeight="Bold"
-                Click="ButtonCadastrarEvento_Click">
+                Click="ButtonCadastrarEvento_Click" Grid.Row="1">
             <Button.BorderBrush>
                 <SolidColorBrush Color="#FF707070"
                                  Opacity="0"/>
@@ -210,7 +217,7 @@
         <Button Content="Atualizar Evento"
                 x:Name="ButtonAtualizarEvento"           
                 HorizontalAlignment="Left"
-                Margin="332,526,0,0"
+                Margin="332,196,0,0"
                 Height="40"
                 Width="149"
                 VerticalAlignment="Top"
@@ -218,7 +225,7 @@
                 Background="#FFDF800F"
                 FontWeight="Bold"
                 Click="ButtonAtualizarEvento_Click"
-                Panel.ZIndex="-1">
+                Panel.ZIndex="-1" Grid.Row="1">
             <Button.BorderBrush>
                 <SolidColorBrush Color="#FF707070"
                                  Opacity="0"/>
@@ -227,12 +234,12 @@
         <Button Content="🧹"
                 x:Name="ButtonLimpar"           
                 HorizontalAlignment="Center"
-                Margin="0,526,0,0"
+                Margin="0,196,0,0"
                 VerticalAlignment="Top"
                 FontSize="16"
                 Background="#FFDF800F"
                 Width="38"
-                Click="ButtonLimpar_Click" Height="40">
+                Click="ButtonLimpar_Click" Height="40" Grid.Row="1">
             <Button.BorderBrush>
                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
             </Button.BorderBrush>
@@ -253,12 +260,12 @@
                   SelectedValuePath="Id"
                   SelectionChanged="ComboBoxEventos_SelectionChanged"/>
         <Label Content="Lista de serviços para o evento"
-               Margin="517,240,221,409"
+               Margin="517,240,221,55"
                FontSize="18"
                FontWeight="Bold"/>
         <ListBox x:Name="ListBoxServicos"
                  SelectionMode="Multiple"
-                 Margin="517,275,45,220">
+                 Margin="517,275,45,220" Grid.RowSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

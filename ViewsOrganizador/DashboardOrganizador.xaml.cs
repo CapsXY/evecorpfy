@@ -4,6 +4,8 @@ using LiveCharts;
 using LiveCharts.Wpf;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 namespace evecorpfy.ViewsOrganizador
 {
     public partial class DashboardOrganizador : UserControl
@@ -88,5 +90,19 @@ namespace evecorpfy.ViewsOrganizador
             DataContext = null;
             DataContext = this;
         }
+        private void datePicker_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (DateInicio.Template.FindName("PART_TextBox", DateInicio) is DatePickerTextBox textBoxInicio)
+            {
+                textBoxInicio.IsReadOnly = true;
+                textBoxInicio.PreviewKeyDown += (s, ev) => ev.Handled = true;
+            }
+            if (DateFim.Template.FindName("PART_TextBox", DateFim) is DatePickerTextBox textBoxFim)
+            {
+                textBoxFim.IsReadOnly = true;
+                textBoxFim.PreviewKeyDown += (s, ev) => ev.Handled = true;
+            }
+        }
+
     }
 }

@@ -22,10 +22,31 @@
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
                   Margin="0,0,0,10"
-                  IsReadOnly="False" Background="White">
+                  IsReadOnly="False"
+                   BeginningEdit="DataGridServicos_BeginningEdit"
+                  Background="White">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Serviço" Binding="{Binding NomeServico}" IsReadOnly="True" Width="*"/>
-                <DataGridTextColumn Header="Minha Proposta (R$)" Binding="{Binding ValorProposta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
+                <DataGridTemplateColumn Header="Minha Proposta (R$)" Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ValorProposta, StringFormat=R$ {0:N2}, ConverterCulture=pt-BR}" 
+                       HorizontalAlignment="Right"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding ValorProposta, Mode=TwoWay, 
+                                           UpdateSourceTrigger=PropertyChanged, 
+                                           StringFormat=N2,
+                                           ConverterCulture=pt-BR}"
+                                     HorizontalAlignment="Right"
+                                     PreviewTextInput="ValorProposta_PreviewTextInput"
+                                     LostFocus="ValorProposta_LostFocus"
+                                     MaxLength="12"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="2"

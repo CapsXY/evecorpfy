@@ -86,7 +86,7 @@
                 VerticalAlignment="Top"
                 Width="85"
                 FontWeight="Bold"
-                FontSize="14">
+                FontSize="14" Click="BtnCadastrese_Click">
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD"
                                  Opacity="0"/>

@@ -1,5 +1,6 @@
 ﻿using evecorpfy.Data;
 using evecorpfy.Models;
+using evecorpfy.Security;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows;
@@ -95,7 +96,7 @@ namespace evecorpfy.ViewsParticipante
                 usuario.Ativo = CheckboxHabilitado.IsChecked ?? false;
                 if (!string.IsNullOrWhiteSpace(PasswordboxSenha.Password))
                 {
-                    usuario.SenhaHash = PasswordboxSenha.Password.Trim();
+                    usuario.SenhaHash = PasswordHasher.Hash(PasswordboxSenha.Password.Trim());
                 }
                 repo.AtualizarUsuario(usuario);
                 string cpf = TextBoxCPF.Text.Trim();

@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using evecorpfy.Security;
 namespace evecorpfy.ViewsOrganizador
 {
     /// <summary>
@@ -72,7 +73,7 @@ namespace evecorpfy.ViewsOrganizador
                 usuario.Ativo = CheckboxHabilitado.IsChecked ?? false;
                 if (!string.IsNullOrWhiteSpace(PasswordboxSenha.Password))
                 {
-                    usuario.SenhaHash = PasswordboxSenha.Password.Trim();
+                    usuario.SenhaHash = PasswordHasher.Hash(PasswordboxSenha.Password.Trim());
                 }
                 repo.AtualizarUsuario(usuario);
                 MessageBox.Show("Perfil atualizado com sucesso!", "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
