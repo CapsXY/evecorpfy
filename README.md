@@ -1,23 +1,23 @@
 # EVERCORPFY - Sistema de Eventos Corporativos
 
-![Logo](https://github.com/CapsXY/evecorpfy/blob/main/Images/logo-screen.png)
+![Logo](https://github.com/CapsXY/evecorpfy/blob/main/Resources/GithubImage/logo-screen.png)
 
 ## Screenshots 
 
 ### Tela de login: 
-![Login](https://github.com/CapsXY/evecorpfy/blob/main/Images/login-screen.png)
+![Login](https://github.com/CapsXY/evecorpfy/blob/main/Resources/GithubImage/login-screen.png)
 
 ### Menu do Administrador:
-![Principal](https://github.com/CapsXY/evecorpfy/blob/main/Images/administrador-screen.png)
+![Principal](https://github.com/CapsXY/evecorpfy/blob/main/Resources/GithubImage/administrador-screen.png)
 
 ### Menu do Organizador:
-![Produtos](https://github.com/CapsXY/evecorpfy/blob/main/Images/organizador-screen.png)
+![Produtos](https://github.com/CapsXY/evecorpfy/blob/main/Resources/GithubImage/organizador-screen.png)
 
 ### Menu do Fornecedor:
-![Funcionarios](https://github.com/CapsXY/evecorpfy/blob/main/Images/fornecedor-screen.png)
+![Funcionarios](https://github.com/CapsXY/evecorpfy/blob/main/Resources/GithubImage/fornecedor-screen.png)
 
 ### Menu do Participante:
-![Clientes](https://github.com/CapsXY/evecorpfy/blob/main/Images/participante-screen.png)
+![Clientes](https://github.com/CapsXY/evecorpfy/blob/main/Resources/GithubImage/participante-screen.png)
 
 ### Configuração
 #### Banco de Dados: https://www.dropbox.com/scl/fi/dh8ycusoxzkh22g9cbs5c/EvercorpfyDB.zip?rlkey=9roeoudljhlnb0kq7er1h3pah&st=szavp9e1&dl=1
@@ -27,8 +27,6 @@
 #### Ao iniciar o executável, sistema irá solicitar uma configuração de acordo com a disponibilidade do SQL SERVER. É importante restaurar o .db antes.
 #### O arquivo.json com o acesso fica disponibilizado em AppData/Roaming.
 
-### Acessos
-#### Atualmente não temos acesso via JWT.
 #### Lista dos usuários para teste:
   #### - Acesso: Administrador, Organizador e Participante
   #### - Senha: 123
