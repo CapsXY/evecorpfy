@@ -30,5 +30,5 @@
 ### Acessos
 #### Atualmente não temos acesso via JWT.
 #### Lista dos usuários para teste:
-  #### - Senha: Administrador, Organizador e Participante
+  #### - Acesso: Administrador, Organizador e Participante
   #### - Senha: 123
