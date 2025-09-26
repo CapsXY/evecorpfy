@@ -24,7 +24,8 @@
 #### Executável: https://www.dropbox.com/scl/fi/tlcefbhlualtr692e30m8/Evecorpfy.zip?rlkey=bxvjso6pwdflqeytp37ii8dmv&st=rsrcpfyx&dl=1
 
 ### Instalação
-#### É necessário ter uma instância com nome PDVNET
+#### Ao iniciar o executável, sistema irá solicitar uma configuração de acordo com a disponibilidade do SQL SERVER. É importante restaurar o .db antes.
+#### O arquivo.json com o acesso fica disponibilizado em AppData/Roaming.
 
 ### Acessos
 #### Atualmente não temos acesso via JWT.
