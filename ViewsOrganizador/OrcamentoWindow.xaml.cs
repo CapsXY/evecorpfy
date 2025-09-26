@@ -12,7 +12,6 @@ namespace evecorpfy.ViewsOrganizador
             InitializeComponent();
             _servico = servico;
             _evento = evento;
-
             TxtServico.Text = $"Serviço: {servico.Nome} (Evento: {evento.Nome})";
             CarregarOrcamentos();
         }
@@ -20,7 +19,6 @@ namespace evecorpfy.ViewsOrganizador
         {
             var repo = new RepositorioEventoProposta();
             var propostas = repo.ListarPropostasPorServico(_evento.Id, _servico.Id);
-
             DataGridOrcamentos.ItemsSource = propostas;
         }
     }

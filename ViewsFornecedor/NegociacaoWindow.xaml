@@ -9,19 +9,14 @@
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Cabeçalho -->
             <RowDefinition Height="*"/>
-            <!-- Grid -->
             <RowDefinition Height="Auto"/>
-            <!-- Rodapé -->
         </Grid.RowDefinitions>
-        <!-- Cabeçalho -->
         <TextBlock Grid.Row="0"
                    Text="Serviços do Evento"
                    FontSize="18"
                    FontWeight="Bold"
                    Margin="0,0,0,10"/>
-        <!-- Grid de Serviços -->
         <DataGrid x:Name="DataGridServicos"
                   Grid.Row="1"
                   AutoGenerateColumns="False"
@@ -33,7 +28,6 @@
                 <DataGridTextColumn Header="Minha Proposta (R$)" Binding="{Binding ValorProposta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
-        <!-- Rodapé -->
         <StackPanel Grid.Row="2"
                     Orientation="Horizontal"
                     HorizontalAlignment="Right"

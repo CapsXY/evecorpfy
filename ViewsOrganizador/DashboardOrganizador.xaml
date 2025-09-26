@@ -9,7 +9,6 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Background="white">
-
     <Grid Margin="30,50,10,10">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,8 +18,6 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-
-        <!-- 1) Agenda dos participantes -->
         <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
             <TextBlock Text="Agenda dos Participantes"
                        FontSize="18" FontWeight="Bold"
@@ -34,8 +31,6 @@
                 </lvc:CartesianChart.AxisY>
             </lvc:CartesianChart>
         </StackPanel>
-
-        <!-- 2) Fornecedores mais utilizados -->
         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
             <TextBlock Text="Fornecedores mais utilizados"
                        FontSize="18" FontWeight="Bold"
@@ -43,8 +38,6 @@
             <lvc:PieChart Series="{Binding FornecedoresSeries}"
                           LegendLocation="Right" Height="206" Width="360"/>
         </StackPanel>
-
-        <!-- 3) Tipos de participantes -->
         <StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
             <TextBlock Text="Tipos de Participantes"
                        FontSize="18" FontWeight="Bold"
@@ -52,8 +45,6 @@
             <lvc:PieChart Series="{Binding TiposParticipantesSeries}"
                           LegendLocation="Bottom" Height="206" Width="365"/>
         </StackPanel>
-
-        <!-- 4) Saldo de orçamento -->
         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
             <TextBlock Text="Saldo de Orçamento por Evento"
                        FontSize="18" FontWeight="Bold"
@@ -67,8 +58,6 @@
                 </lvc:CartesianChart.AxisY>
             </lvc:CartesianChart>
         </StackPanel>
-
-        <!-- Cabeçalho -->
         <Label Content="DASHBOARD DO ORGANIZADOR"
                HorizontalAlignment="Left"
                Margin="10,-42,0,0"
@@ -78,18 +67,14 @@
                Height="35"
                Width="295"
                Grid.ColumnSpan="2"/>
-
-        <!-- Filtros -->
         <StackPanel Orientation="Horizontal"
                     HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                     Margin="0,-42,0,0" Grid.ColumnSpan="2" Height="27">
             <TextBlock Text="De:" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <DatePicker x:Name="DateInicio" Width="110"/>
-
             <TextBlock Text="Até:" VerticalAlignment="Center" Margin="10,0,5,0"/>
             <DatePicker x:Name="DateFim" Width="110"/>
-
             <Button Content="Filtrar"
                     Width="80"
                     Height="25"

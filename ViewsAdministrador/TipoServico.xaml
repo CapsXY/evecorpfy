@@ -9,7 +9,6 @@
              d:DesignWidth="1010"
              Background="White">
     <Grid>
-        <!--Background-->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1"
                                  StartPoint="0.5,0">
@@ -19,14 +18,12 @@
                               Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Logo-->
         <Image HorizontalAlignment="Center"
             Height="155"
             Margin="0,34,0,0"
             VerticalAlignment="Top"
             Width="153"
-            Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\truck.png"/>
-        <!--Título e Subtítulo-->
+            Source="/Resources/truck.png"/>
         <Label Content="TIPO DE SERVIÇO"
             HorizontalAlignment="Left"
             Margin="304,165,0,0"
@@ -38,7 +35,6 @@
             Margin="0,239,0,0"
             VerticalAlignment="Top"
             FontSize="16"/>
-        <!--Nome do Serviço-->
         <Label Content="Nome do tipo de serviço"
             HorizontalAlignment="Left"
             Margin="288,303,0,0"
@@ -53,7 +49,6 @@
             Width="434"
             FontSize="16"
             Height="28"/>
-        <!--Botão Cadastrar-->
         <Button x:Name="ButtonCadastrar"
             Content="Cadastrar/Atualizar"
             HorizontalAlignment="Left"
@@ -66,14 +61,12 @@
             Height="33"
             Width="158"
             Click="ButtonCadastrar_Click"/>
-        <!--Pesquisar Serviço-->
         <Label Content="Pesquisar tipo de serviço"
             HorizontalAlignment="Left"
             Margin="288,414,0,0"
             VerticalAlignment="Top"
             FontWeight="Bold"
             FontSize="18"/>
-        <!-- ComboBox + Botão Excluir -->
         <StackPanel Orientation="Horizontal"
             HorizontalAlignment="Center"
             Margin="0,453,0,0"

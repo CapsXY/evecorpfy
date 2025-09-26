@@ -12,10 +12,7 @@
         public string Gia { get; set; }
         public string Ddd { get; set; }
         public string Siafi { get; set; }
-        // Número do endereço (não vem na API do ViaCEP)
         public string Numero { get; set; }
-
-        // Salvando apenas o que interessa da API do ViaCEP
         public string EnderecoCompleto
         {
             get

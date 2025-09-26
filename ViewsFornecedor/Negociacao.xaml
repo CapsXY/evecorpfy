@@ -13,21 +13,18 @@
         <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
     </UserControl.Resources>
     <Grid>
-        <!--Background-->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF0FDF45" Offset="1"/>
                 <GradientStop Color="White" Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Logo-->
         <Image HorizontalAlignment="Center"
          Height="68"
          Margin="0,10,0,0"
          VerticalAlignment="Top"
          Width="70"
-         Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\handshake-green.png"/>
-        <!--Título e Subtítulo-->
+         Source="/Resources/handshake-green.png"/>
         <Label Content="NEGOCIAÇÃO DE EVENTOS"
          HorizontalAlignment="Center"
          Margin="0,63,0,0"

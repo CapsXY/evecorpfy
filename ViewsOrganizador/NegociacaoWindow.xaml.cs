@@ -38,33 +38,17 @@ namespace evecorpfy.ViewsOrganizador
 
                 if (servico != null)
                 {
-                    // Abre a janela de orçamentos já com dados reais
                     var win = new OrcamentoWindow(servico, _evento);
                     win.Owner = this;
                     win.ShowDialog();
                 }
             }
         }
-        private void AtualizarTotalOrcamento()
-        {
-            var itens = DataGridServicos.ItemsSource as List<OrcamentoView>;
-            if (itens != null && itens.Count > 0)
-            {
-                decimal total = itens.Sum(x => x.Valor);
-                TxtTotal.Content = $"Total Orçamento: {total:C}";
-            }
-            else
-            {
-                TxtTotal.Content = "Total Orçamento: R$ 0,00";
-            }
-        }
-
         private void Aceitar_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Orçamento ACEITO com sucesso!", "Confirmação",
                             MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Orçamento CANCELADO.", "Aviso",

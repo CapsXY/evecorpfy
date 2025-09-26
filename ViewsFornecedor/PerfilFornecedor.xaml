@@ -9,7 +9,6 @@
              d:DesignWidth="1010"
              Background="White">
     <Grid>
-        <!--Grid, Linear Gradient e Gradient Stop do Background-->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1"
                                  StartPoint="0.5,0">
@@ -19,7 +18,6 @@
                               Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Ellipse do Perfil-->
         <Ellipse x:Name="EllipseFoto"
                  HorizontalAlignment="Center"
                  Height="168"
@@ -28,7 +26,6 @@
                  Width="168"
                  StrokeThickness="3"
                  MouseLeftButtonUp="EllipseFoto_MouseLeftButtonUp">
-            <!--Ellipse, Image e Linear Gradient do Usuário-->
             <Ellipse.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1"
                                      StartPoint="0.5,0"
@@ -41,11 +38,10 @@
             </Ellipse.Stroke>
             <Ellipse.Fill>
                 <ImageBrush x:Name="ImagemPerfil"
-                            ImageSource="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\photo.png"
+                            ImageSource="/Resources/photo.png"
                             Stretch="UniformToFill"/>
             </Ellipse.Fill>
         </Ellipse>
-        <!--TextBlock Nome do Usuário-->
         <TextBlock x:Name="TextBlockNomeUsuario"
                    HorizontalAlignment="Center"
                    Margin="0,200,0,0"
@@ -53,14 +49,12 @@
                    Text="NomeUsuario"
                    VerticalAlignment="Top"
                    FontSize="20"/>
-        <!--Checkbox Habilitado-->
         <CheckBox x:Name="CheckboxHabilitado"
                   Content="Habilitado"
                   HorizontalAlignment="Left"
                   Margin="462,236,0,0"
                   VerticalAlignment="Top"
                   Width="78"/>
-        <!--Label e TextBox Usuário-->
         <Label Content="Nome:"
                HorizontalAlignment="Left"
                Margin="247,260,0,0"
@@ -73,7 +67,6 @@
                  VerticalAlignment="Top"
                  Width="435"
                  FontSize="20"/>
-        <!--Label e TextBox Senha-->
         <Label Content="Senha:"
                HorizontalAlignment="Left"
                Margin="249,297,0,0"
@@ -85,7 +78,6 @@
                      VerticalAlignment="Top"
                      Width="435"
                      FontSize="20"/>
-        <!--Label e TextBox Email-->
         <Label Content="E-mail:"
                HorizontalAlignment="Left"
                Margin="247,339,0,0"
@@ -99,7 +91,6 @@
                  VerticalAlignment="Top"
                  Width="435"
                  FontSize="20"/>
-        <!--Label e TextBox CNPJ-->
         <Label Content="CNPJ:"
                HorizontalAlignment="Left"
                Margin="258,388,0,0"
@@ -113,7 +104,6 @@
                  FontSize="20"
                  PreviewTextInput="TextBoxCNPJ_PreviewTextInput"
                  TextChanged="TextBoxCNPJ_TextChanged"/>
-        <!--Label e TextBox Telefone-->
         <Label Content="Telefone:"
                HorizontalAlignment="Left"
                Margin="514,388,0,0"
@@ -127,7 +117,6 @@
                  FontSize="20"
                  PreviewTextInput="TextBoxTelefone_PreviewTextInput"
                  TextChanged="TextBoxTelefone_TextChanged"/>
-        <!--Label e Label Tipo Role-->
         <Label Content="Tipo:"
                HorizontalAlignment="Left"
                Margin="263,430,0,0"
@@ -142,7 +131,6 @@
                Width="181"
                FontSize="20"
                FontWeight="Bold"/>
-        <!--Button Confirmar-->
         <Button x:Name="ButtonConfirmar"
                 Click="ButtonConfirmar_Click"
                 Content="CONFIRMAR"

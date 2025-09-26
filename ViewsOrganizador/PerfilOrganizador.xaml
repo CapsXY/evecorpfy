@@ -9,14 +9,12 @@
              d:DesignWidth="1010"
              Background="White">
     <Grid>
-        <!--Background-->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFDF800F" Offset="1"/>
                 <GradientStop Color="White" Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Ellipse do Perfil-->
         <Ellipse x:Name="EllipseFoto"
             HorizontalAlignment="Center"
             Height="168"
@@ -36,13 +34,11 @@
                 </LinearGradientBrush>
             </Ellipse.Stroke>
             <Ellipse.Fill>
-                <!--Imagem do Perfil-->
                 <ImageBrush x:Name="ImagemPerfil"
-                    ImageSource="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\photo.png"
+                    ImageSource="/Resources/photo.png"
                     Stretch="UniformToFill"/>
             </Ellipse.Fill>
         </Ellipse>
-        <!--Nome do Perfil-->
         <TextBlock x:Name="TextBlockNomeUsuario"
             HorizontalAlignment="Center"
             Margin="0,200,0,0"
@@ -50,14 +46,12 @@
             Text="NomeUsuario"
             VerticalAlignment="Top"
             FontSize="20"/>
-        <!--Checkbox Habilitado-->
         <CheckBox x:Name="CheckboxHabilitado"
             Content="Habilitado"
             HorizontalAlignment="Center"
             Margin="0,236,0,0"
             VerticalAlignment="Top"
             Width="78"/>
-        <!--Usuário-->
         <Label Content="Nome:"
             HorizontalAlignment="Left"
             Margin="252,260,0,0"
@@ -70,7 +64,6 @@
             VerticalAlignment="Top"
             Width="372"
             FontSize="20"/>
-        <!--Senha-->
         <Label Content="Senha:"
             HorizontalAlignment="Left"
             Margin="254,297,0,0"
@@ -82,7 +75,6 @@
             VerticalAlignment="Top"
             Width="372"
             FontSize="20"/>
-        <!--Email-->
         <Label Content="E-mail:"
             HorizontalAlignment="Left"
             Margin="252,339,0,0"
@@ -96,7 +88,6 @@
             VerticalAlignment="Top"
             Width="372"
             FontSize="20"/>
-        <!--Tipo-->
         <Label Content="Tipo:"
             HorizontalAlignment="Left"
             Margin="268,383,0,0"
@@ -111,7 +102,6 @@
             Width="181"
             FontSize="20"
             FontWeight="Bold"/>
-        <!--Botão Confirmar-->
         <Button x:Name="ButtonConfirmar"
             Click="ButtonConfirmar_Click"
             Content="CONFIRMAR"
@@ -124,6 +114,5 @@
             BorderBrush="{x:Null}"
             Background="#FFDF800F"
             FontWeight="Bold"/>
-
     </Grid>
 </UserControl>

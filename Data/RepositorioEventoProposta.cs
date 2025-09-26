@@ -43,19 +43,15 @@ namespace evecorpfy.Data
                                      FROM EVENTO_PROPOSTAS 
                                      WHERE EVENTO_ID = @EventoId 
                                        AND USUARIO_ID = @FornecedorUsuarioId";
-
                 using (var cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@EventoId", eventoId);
                     cmd.Parameters.AddWithValue("@FornecedorUsuarioId", FornecedorUsuarioId);
-
                     int count = (int)cmd.ExecuteScalar();
                     return count > 0;
                 }
             }
         }
-
-        // 🔹 Excluir propostas de um fornecedor para um evento (cancelamento)
         public void ExcluirPropostas(int eventoId, int FornecedorUsuarioId)
         {
             using (var conn = DbConnectionFactory.GetOpenConnection())
@@ -63,12 +59,10 @@ namespace evecorpfy.Data
                 const string sql = @"DELETE FROM EVENTO_PROPOSTAS 
                                      WHERE EVENTO_ID = @EventoId 
                                        AND USUARIO_ID = @FornecedorUsuarioId";
-
                 using (var cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@EventoId", eventoId);
                     cmd.Parameters.AddWithValue("@FornecedorUsuarioId", FornecedorUsuarioId);
-
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -76,7 +70,6 @@ namespace evecorpfy.Data
         public List<OrcamentoView> ListarOrcamentosPorEvento(int eventoId)
         {
             var lista = new List<OrcamentoView>();
-
             using (var conn = DbConnectionFactory.GetOpenConnection())
             using (var cmd = new SqlCommand(@"
         SELECT u.USERNAME, ep.VALOR, ep.DATA_PROPOSTA
@@ -85,7 +78,6 @@ namespace evecorpfy.Data
         WHERE ep.EVENTO_ID = @EventoId", conn))
             {
                 cmd.Parameters.AddWithValue("@EventoId", eventoId);
-
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -99,14 +91,11 @@ namespace evecorpfy.Data
                     }
                 }
             }
-
             return lista;
         }
-
         public HashSet<int> ListarEventosComPropostaFornecedor(int fornecedorUsuarioId)
         {
             var ids = new HashSet<int>();
-
             using (var conn = DbConnectionFactory.GetOpenConnection())
             using (var cmd = new SqlCommand(@"
         SELECT DISTINCT EVENTO_ID
@@ -114,20 +103,17 @@ namespace evecorpfy.Data
         WHERE USUARIO_ID = @FornecedorUsuarioId", conn))
             {
                 cmd.Parameters.AddWithValue("@FornecedorUsuarioId", fornecedorUsuarioId);
-
                 using (var rd = cmd.ExecuteReader())
                 {
                     while (rd.Read())
                         ids.Add(rd.GetInt32(0));
                 }
             }
-
             return ids;
         }
         public List<OrcamentoView> ListarOrcamentosPorServico(int eventoId, int servicoId)
         {
             var lista = new List<OrcamentoView>();
-
             using (var conn = DbConnectionFactory.GetOpenConnection())
             using (var cmd = new SqlCommand(@"
                 SELECT u.USERNAME, ep.VALOR, ep.DATA_PROPOSTA
@@ -138,7 +124,6 @@ namespace evecorpfy.Data
             {
                 cmd.Parameters.AddWithValue("@EventoId", eventoId);
                 cmd.Parameters.AddWithValue("@ServicoId", servicoId);
-
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -152,13 +137,11 @@ namespace evecorpfy.Data
                     }
                 }
             }
-
             return lista;
         }
         public List<OrcamentoView> ListarPropostasPorServico(int eventoId, int servicoId)
         {
             var lista = new List<OrcamentoView>();
-
             using (var conn = DbConnectionFactory.GetOpenConnection())
             using (var cmd = new SqlCommand(@"
         SELECT u.USERNAME, ep.VALOR, ep.DATA_PROPOSTA
@@ -168,7 +151,6 @@ namespace evecorpfy.Data
             {
                 cmd.Parameters.AddWithValue("@EventoId", eventoId);
                 cmd.Parameters.AddWithValue("@ServicoId", servicoId);
-
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -182,7 +164,6 @@ namespace evecorpfy.Data
                     }
                 }
             }
-
             return lista;
         }
     }

@@ -18,24 +18,20 @@ namespace evecorpfy.ViewsOrganizador
         {
             var repoEvento = new RepositorioEvento();
             var eventos = repoEvento.ListarPorOrganizador(Sessao.UsuarioId);
-
             var repoParticipantes = new RepositorioEventoParticipante();
-
             foreach (var ev in eventos)
             {
                 ev.QuantidadeParticipantes = repoParticipantes.ContarParticipantes(ev.Id);
             }
-
             DataGridEventos.ItemsSource = eventos;
         }
-
         private void Negociacao_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.DataContext is Evento evento)
             {
                 var win = new NegociacaoWindow(evento);
-                win.Owner = Window.GetWindow(this); // seta a janela atual como "pai"
-                win.ShowDialog(); // abre como popup modal
+                win.Owner = Window.GetWindow(this);
+                win.ShowDialog();
             }
         }
         private void Participantes_Click(object sender, RoutedEventArgs e)
@@ -44,7 +40,6 @@ namespace evecorpfy.ViewsOrganizador
             {
                 var repo = new RepositorioEventoParticipante();
                 var participantes = repo.ListarPorEvento(eventoId);
-
                 if (participantes.Count == 0)
                 {
                     MessageBox.Show("Nenhum participante encontrado para este evento.",
@@ -52,7 +47,6 @@ namespace evecorpfy.ViewsOrganizador
                 }
                 else
                 {
-                    // Abre a nova janela
                     var win = new ParticipantesWindow(participantes);
                     win.ShowDialog();
                 }
@@ -66,6 +60,5 @@ namespace evecorpfy.ViewsOrganizador
                                 "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
-
     }
 }

@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\CaioA\Documents\GitHub\evecorpfy\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Update="MenuFornecedor.xaml.cs">
       <SubType>Code</SubType>
@@ -11,13 +13,13 @@
     <Compile Update="MenuParticipante.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewsAdministrador\DashboardAdministrador.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="ViewsAdministrador\GestaoEventos.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewsAdministrador\PerfilAdministrador.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ViewsAdministrador\TelaPrincipal.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ViewsAdministrador\TipoEvento.xaml.cs">

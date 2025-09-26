@@ -4,7 +4,6 @@
         Title="Participantes do Evento" Height="400" Width="500"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
-
     <Grid Margin="10">
         <DataGrid x:Name="DataGridParticipantes"
                   AutoGenerateColumns="False"

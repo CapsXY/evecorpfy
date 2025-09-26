@@ -5,8 +5,24 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:evecorpfy.ViewsFornecedor"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="684"
+             d:DesignWidth="1010"
+             Background="White">
     <Grid>
-            
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1"
+                                 StartPoint="0.5,0">
+                <GradientStop Color="#FF0FDF45"
+                              Offset="1"/>
+                <GradientStop Color="White"
+                              Offset="0.84"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="EM DESENVOLVIMENTO"
+               HorizontalAlignment="Center"
+               Margin="0,225,0,0"
+               VerticalAlignment="Top"
+               FontWeight="Bold"
+               FontSize="48"/>
     </Grid>
 </UserControl>

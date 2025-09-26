@@ -42,7 +42,6 @@ namespace evecorpfy.Data
                         command.Parameters.Add("@STATUS", SqlDbType.NVarChar, 20).Value = status;
                         novoId = (int)command.ExecuteScalar();
                     }
-                    // Insere serviços vinculados (se houver)
                     if (evento.ServicosIds != null && evento.ServicosIds.Count > 0)
                     {
                         InserirServicosEvento(novoId, evento.ServicosIds, conectaDataBase, transactionDataBase);
@@ -168,7 +167,6 @@ namespace evecorpfy.Data
                         command.Parameters.AddWithValue("@TIPO_EVENTO_ID", evento.TipoEventoId);
                         command.ExecuteNonQuery();
                     }
-                    // Sincroniza serviços: apaga todos e insere os atuais (se houver)
                     DeletarServicosEvento(evento.Id, conectaDataBase, transactionDataBase);
                     if (evento.ServicosIds != null && evento.ServicosIds.Count > 0)
                     {
@@ -295,8 +293,7 @@ namespace evecorpfy.Data
                             });
                         }
                     }
-                }
-            }
+                }            }
             return lista;
         }
     }

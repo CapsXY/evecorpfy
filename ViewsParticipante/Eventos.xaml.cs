@@ -29,7 +29,6 @@ namespace evecorpfy.ViewsParticipante
                                     "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
-
                 var repo = new RepositorioEventoParticipante();
                 if (repo.PossuiConflito(Sessao.UsuarioId, evento.DataInicio, evento.DataFim))
                 {
@@ -37,14 +36,12 @@ namespace evecorpfy.ViewsParticipante
                                     "Conflito de Datas", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
-
                 try
                 {
                     repo.Inscrever(evento.Id, Sessao.UsuarioId);
                     MessageBox.Show($"Inscrição confirmada no evento: {evento.Nome}",
                                     "Confirmação", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                    CarregarEventosDisponiveis(); // Atualiza o grid
+                    CarregarEventosDisponiveis();
                 }
                 catch (Exception ex)
                 {
@@ -52,16 +49,13 @@ namespace evecorpfy.ViewsParticipante
                 }
             }
         }
-
         private void Sair_Click(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn && btn.DataContext is Evento evento)
             {
                 var repo = new RepositorioEventoParticipante();
                 repo.Sair(evento.Id, Sessao.UsuarioId);
-
                 MessageBox.Show($"Você saiu do evento: {evento.Nome}", "Cancelamento", MessageBoxButton.OK, MessageBoxImage.Information);
-
                 CarregarEventosDisponiveis();
             }
         }

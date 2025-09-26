@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-
 namespace evecorpfy.Converters
 {
     public class BoolToVisibilityConverter : IValueConverter
@@ -17,10 +16,8 @@ namespace evecorpfy.Converters
 
                 return boolValue ? Visibility.Visible : Visibility.Collapsed;
             }
-
             return Visibility.Collapsed;
         }
-
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

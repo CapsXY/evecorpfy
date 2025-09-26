@@ -5,7 +5,6 @@ namespace evecorpfy.Data
 {
     public class RepositorioDashboardOrganizador
     {
-        // 1) Agenda dos participantes
         public List<ParticipanteAgendaResumo> ContarEventosPorParticipante(DateTime? inicio = null, DateTime? fim = null)
         {
             var lista = new List<ParticipanteAgendaResumo>();
@@ -42,7 +41,6 @@ namespace evecorpfy.Data
             return lista;
         }
 
-        // 2) Fornecedores mais utilizados
         public List<FornecedorResumo> ContarPorFornecedor(DateTime? inicio = null, DateTime? fim = null)
         {
             var lista = new List<FornecedorResumo>();
@@ -79,7 +77,6 @@ namespace evecorpfy.Data
             return lista;
         }
 
-        // 3) Tipos de participantes
         public List<TipoParticipanteResumo> ContarPorTipoParticipante(DateTime? inicio = null, DateTime? fim = null)
         {
             var lista = new List<TipoParticipanteResumo>();
@@ -117,7 +114,6 @@ namespace evecorpfy.Data
             return lista;
         }
 
-        // 4) Saldo de orçamento dos eventos
         public List<SaldoEventoResumo> ObterSaldoEventos(int organizadorId, DateTime? inicio = null, DateTime? fim = null)
         {
             var lista = new List<SaldoEventoResumo>();
@@ -131,7 +127,6 @@ namespace evecorpfy.Data
                     FROM EVENTOS e
                     LEFT JOIN EVENTO_PROPOSTAS ep ON e.ID = ep.EVENTO_ID
                     WHERE e.ORGANIZADOR_ID = @OrganizadorId";
-
                 if (inicio.HasValue) sql += " AND e.DATA_INICIO >= @Inicio";
                 if (fim.HasValue) sql += " AND e.DATA_FIM <= @Fim";
                 sql += " GROUP BY e.NOME, e.ORCAMENTO_MAXIMO";

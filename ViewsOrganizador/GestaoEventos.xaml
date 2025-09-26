@@ -9,21 +9,18 @@
              d:DesignWidth="1010"
              Background="White">
     <Grid>
-        <!--Background-->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FFDF800F" Offset="1"/>
                 <GradientStop Color="White" Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Logo-->
         <Image HorizontalAlignment="Center"
             Height="68"
             Margin="0,10,0,0"
             VerticalAlignment="Top"
             Width="70"
-            Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\calendar-orange.png"/>
-        <!--Título e Subtítulo-->
+            Source="/Resources/calendar-orange.png"/>
         <Label Content="GESTÃO DE EVENTOS"
             HorizontalAlignment="Center"
             Margin="0,63,0,0"
@@ -50,12 +47,9 @@
           IsReadOnly="True"
           Margin="10,140,10,117" Background="White">
             <DataGrid.Columns>
-                <!-- Nome do evento -->
                 <DataGridTextColumn Header="Evento" Binding="{Binding Nome}" Width="*" />
                 <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="150" />
                 <DataGridTextColumn Header="Inscritos" Binding="{Binding QuantidadeParticipantes}" Width="55" />
-
-                <!-- Botão Negociação -->
                 <DataGridTemplateColumn Header="Negociação">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -65,8 +59,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
-                <!-- Botão Participantes -->
                 <DataGridTemplateColumn Header="Participantes">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -76,8 +68,6 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
-                <!-- Botão Cancelar -->
                 <DataGridTemplateColumn Header="Cancelar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

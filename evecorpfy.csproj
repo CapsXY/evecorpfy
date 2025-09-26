@@ -6,12 +6,14 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UseWPF>true</UseWPF>
+		<ApplicationIcon>Resources\logo.ico</ApplicationIcon>
 	</PropertyGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="LiveCharts" Version="0.9.7" />
 		<PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.1" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -23,26 +25,141 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Update="Properties\Resources.Designer.cs">
-			<DesignTime>True</DesignTime>
-			<AutoGen>True</AutoGen>
-			<DependentUpon>Resources.resx</DependentUpon>
-		</Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Update="Properties\Resources.resx">
-			<Generator>ResXFileCodeGenerator</Generator>
-			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
-		</EmbeddedResource>
-	</ItemGroup>
-
-	<ItemGroup>
 		<EditorConfigFiles Remove="C:\Users\CaioA\Documents\GitHub\evecorpfy\.editorconfig" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\balloon.png" />
+	  <None Remove="Resources\calendar-orange.png" />
+	  <None Remove="Resources\calendar-pink.png" />
+	  <None Remove="Resources\calendar.png" />
+	  <None Remove="Resources\group.png" />
+	  <None Remove="Resources\handshake-green.png" />
+	  <None Remove="Resources\handshake-orange.png" />
+	  <None Remove="Resources\handshake.png" />
+	  <None Remove="Resources\lock-gray.png" />
+	  <None Remove="Resources\lock.png" />
+	  <None Remove="Resources\logo-blue.png" />
+	  <None Remove="Resources\logo-green.png" />
+	  <None Remove="Resources\logo-orange.png" />
+	  <None Remove="Resources\logo-pink.png" />
+	  <None Remove="Resources\logo.png" />
+	  <None Remove="Resources\logout-green.png" />
+	  <None Remove="Resources\logout-orange.png" />
+	  <None Remove="Resources\logout-pink.png" />
+	  <None Remove="Resources\logout.png" />
+	  <None Remove="Resources\photo.png" />
+	  <None Remove="Resources\table-orange.png" />
+	  <None Remove="Resources\table.png" />
+	  <None Remove="Resources\truck.png" />
+	  <None Remove="Resources\upload.png" />
+	  <None Remove="Resources\user-gray.png" />
+	  <None Remove="Resources\user-green.png" />
+	  <None Remove="Resources\user-orange.png" />
+	  <None Remove="Resources\user-pink.png" />
+	  <None Remove="Resources\user.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\logo.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Include="C:\Users\CaioA\Documents\GitHub\evecorpfy\.editorconfig" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="Resources\balloon.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\calendar-orange.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\calendar-pink.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\calendar.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\group.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\handshake-green.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\handshake-orange.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\handshake.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\lock-gray.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\lock.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logo-blue.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logo-green.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logo-orange.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logo-pink.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logo.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logout-green.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logout-orange.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logout-pink.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\logout.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\photo.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\table-orange.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\table.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\truck.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\upload.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\user-gray.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\user-green.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\user-orange.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\user-pink.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\user.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
 	</ItemGroup>
 	
 </Project>

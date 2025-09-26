@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using evecorpfy.Models;
-
 namespace evecorpfy.ViewsOrganizador
 {
     public partial class ParticipantesWindow : Window

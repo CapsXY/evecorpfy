@@ -41,12 +41,12 @@ namespace evecorpfy
         public MenuAdministrador()
         {
             InitializeComponent();
-            EfeitoTrocaTela(new DashboardAdministrador());
+            EfeitoTrocaTela(new TelaPrincipal());
         }
         // Navegação entre telas ao clicar na logo do menu
         private void GridLogo_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            EfeitoTrocaTela(new DashboardAdministrador());
+            EfeitoTrocaTela(new TelaPrincipal());
         }
         // Navegação entre telas ao clicar no botão de Perfil do menu
         private void GridButtonPerfil_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

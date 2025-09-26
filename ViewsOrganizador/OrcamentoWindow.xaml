@@ -7,8 +7,6 @@
     <Grid Margin="10">
         <StackPanel>
             <TextBlock x:Name="TxtServico" FontWeight="Bold" FontSize="16" Margin="0 0 0 10"/>
-
-            <!-- Aqui no futuro você lista os fornecedores/orçamentos -->
             <DataGrid x:Name="DataGridOrcamentos"
                       AutoGenerateColumns="False"
                       CanUserAddRows="False"
@@ -19,7 +17,6 @@
                     <DataGridTextColumn Header="Data Proposta"
                     Binding="{Binding DataProposta, StringFormat={}{0:dd/MM/yyyy HH:mm}}"
                     Width="180"/>
-
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

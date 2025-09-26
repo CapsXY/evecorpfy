@@ -9,7 +9,6 @@
              d:DesignWidth="1010"
              Background="White">
     <Grid>
-        <!--Background-->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1"
                                  StartPoint="0.5,0">
@@ -19,14 +18,12 @@
                               Offset="0.84"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Logo-->
         <Image HorizontalAlignment="Center"
                Height="81"
                Margin="0,13,0,0"
                VerticalAlignment="Top"
                Width="82"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\group.png"/>
-        <!--Título e Subtítulo-->
+               Source="/Resources/group.png"/>
         <Label Content="GESTÃO DE EVENTOS"
                HorizontalAlignment="Center"
                Margin="0,62,0,0"

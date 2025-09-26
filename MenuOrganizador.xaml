@@ -10,7 +10,7 @@
         Width="1280"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
-        Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png">
+        Icon="/Resources/logo.png">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1"
                           StartPoint="0.5,0">
@@ -20,16 +20,12 @@
                        Offset="0.84"/>
         </LinearGradientBrush>
     </Window.Background>
-    <!--Grid Principal-->
     <Grid>
-        <!--Definição de tamanho do Menu Lateral-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <!--Menu Lateral-->
         <StackPanel Grid.Column="0">
-            <!--Background do Menu Lateral-->
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1"
                                      StartPoint="0.5,0">
@@ -39,7 +35,6 @@
                                   Offset="0.84"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <!--Logo-->
             <Grid x:Name="GridLogo"
                 Height="180"
                 Width="250"
@@ -50,13 +45,12 @@
                 <Image x:Name="Logo"
                     Stretch="Uniform"
                     Margin="39,19,39,20"
-                    Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo-orange.png"
+                    Source="/Resources/logo-orange.png"
                     Cursor="Hand"/>
             </Grid>
             <Separator Height="8"
                 Background="#FFDF800F"
                 Opacity="0.5"/>
-            <!--Opção de Perfil -->
             <Grid x:Name="GridButtonPerfil"
                 Height="68"
                 Width="250"
@@ -74,12 +68,11 @@
                     Margin="28,0,0,0"
                     VerticalAlignment="Center"
                     Width="39"
-                    Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user-orange.png"/>
+                    Source="/Resources/user-orange.png"/>
             </Grid>
             <Separator Height="8"
                 Background="#FFDF800F"
                 Opacity="0.5"/>
-            <!--Opção de Cadastro de Eventos -->
             <Grid x:Name="GridButtonCadastroEventos"
                 Height="68"
                 Width="250"
@@ -97,10 +90,9 @@
                     Margin="28,0,0,0"
                     VerticalAlignment="Center"
                     Width="39"
-                    Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\table-orange.png"/>
+                    Source="/Resources/table-orange.png"/>
             </Grid>
             <Separator Height="8" Background="#FFDF800F" Opacity="0.5"/>
-            <!--Opção de Gestão de Eventos -->
             <Grid x:Name="GridButtonGestaoEventos"
                 Height="68"
                 Width="250"
@@ -118,10 +110,9 @@
                     Margin="28,0,0,0"
                     VerticalAlignment="Center"
                     Width="39"
-                    Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\calendar-orange.png"/>
+                    Source="/Resources/calendar-orange.png"/>
             </Grid>
             <Separator Height="8" Background="#FFDF800F" Opacity="0.5"/>
-            <!--Opção de Sair -->
             <Grid x:Name="GridButtonSair"
                 Height="68"
                 Width="250"
@@ -139,10 +130,9 @@
                     Margin="28,0,0,0"
                     VerticalAlignment="Center"
                     Width="39"
-                    Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logout-orange.png"/>
+                    Source="/Resources/logout-orange.png"/>
             </Grid>
         </StackPanel>
-        <!--Área de Conteúdo Principal-->
         <ContentControl x:Name="ContentArea"
                         Grid.Column="1"/>
     </Grid>

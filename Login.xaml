@@ -10,7 +10,7 @@
         Width="767"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Icon="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
+        Icon="/Resources/logo.png"
         WindowStyle="SingleBorderWindow">
     <!--Grid Principal-->
     <Grid>
@@ -23,7 +23,7 @@
         <!--Background-->
         <!--Logo-->
         <Image Margin="282,30,277,337"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\logo.png"
+               Source="/Resources/logo.png"
                Stretch="Fill"/>
         <!--Título-->
         <Label Content="Acesso ao Sistema"
@@ -38,7 +38,7 @@
                Margin="256,239,0,0"
                VerticalAlignment="Top"
                Width="28"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\user-gray.png"/>
+               Source="/Resources/user-gray.png"/>
         <TextBox x:Name="TextBoxUsuario"
                  HorizontalAlignment="Left"
                  TextWrapping="Wrap"
@@ -52,7 +52,7 @@
                Margin="256,276,0,0"
                VerticalAlignment="Top"
                Width="26"
-               Source="C:\Users\CaioA\Documents\GitHub\evecorpfy\Resources\lock-gray.png"/>
+               Source="/Resources/lock-gray.png"/>
         <PasswordBox x:Name="PasswordboxSenha"
                      HorizontalAlignment="Left"
                      Margin="287,276,0,0"

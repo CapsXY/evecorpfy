@@ -1,6 +1,5 @@
 ﻿using evecorpfy.Models;
 using Microsoft.Data.SqlClient;
-
 namespace evecorpfy.Data
 {
     public class RepositorioEventoParticipante
@@ -29,14 +28,12 @@ namespace evecorpfy.Data
                 }
             }
         }
-
         public void Sair(int eventoId, int usuarioId)
         {
             using (var conn = DbConnectionFactory.GetOpenConnection())
             {
                 string sql = @"DELETE FROM EVENTO_PARTICIPANTES
                                WHERE EVENTO_ID = @EVENTO_ID AND USUARIO_ID = @USUARIO_ID";
-
                 using (var cmd = new SqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("@EVENTO_ID", eventoId);
@@ -45,7 +42,6 @@ namespace evecorpfy.Data
                 }
             }
         }
-
         public bool PossuiConflito(int usuarioId, DateTime dataInicio, DateTime dataFim)
         {
             using (var conn = DbConnectionFactory.GetOpenConnection())
@@ -69,7 +65,6 @@ namespace evecorpfy.Data
         public List<ParticipanteEvento> ListarPorEvento(int eventoId)
         {
             var participantes = new List<ParticipanteEvento>();
-
             using (var conn = DbConnectionFactory.GetOpenConnection())
             using (var cmd = new SqlCommand(@"
                 SELECT ep.EVENTO_ID, u.USERNAME, up.CPF
@@ -79,7 +74,6 @@ namespace evecorpfy.Data
                 WHERE ep.EVENTO_ID = @EventoId", conn))
             {
                 cmd.Parameters.AddWithValue("@EventoId", eventoId);
-
                 using (var reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -93,7 +87,6 @@ namespace evecorpfy.Data
                     }
                 }
             }
-
             return participantes;
         }
         public int ContarParticipantes(int eventoId)

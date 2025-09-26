@@ -26,9 +26,8 @@ namespace evecorpfy.ViewsOrganizador
         {
             var repo = new RepositorioTipoEvento();
             var tiposAtivos = repo.ListarTodos()
-                      .Where(te => te.Ativo) // Apenas evento ativos
+                      .Where(te => te.Ativo)
                       .ToList();
-
             ComboBoxTipoEvento.ItemsSource = tiposAtivos;
             ComboBoxTipoEvento.DisplayMemberPath = "Nome";
             ComboBoxTipoEvento.SelectedValuePath = "Id";
@@ -40,7 +39,6 @@ namespace evecorpfy.ViewsOrganizador
         }
         private void TextBoxCEPPrevisualizar(object sender, TextCompositionEventArgs e)
         {
-            // Permitir apenas dígitos
             e.Handled = !char.IsDigit(e.Text, 0);
         }
         private void TextBoxCEPIdentador(object sender, TextChangedEventArgs e)
@@ -50,7 +48,6 @@ namespace evecorpfy.ViewsOrganizador
                 TextBoxCEP.Text = textCep.Insert(5, "-");
             TextBoxCEP.CaretIndex = TextBoxCEP.Text.Length;
         }
-        // Campo para guardar o último endereço retornado pelo ViaCep
         private Endereco? enderecoAtual;
         private async void ButtonBuscarCEP_Click(object sender, RoutedEventArgs e)
         {
@@ -62,15 +59,12 @@ namespace evecorpfy.ViewsOrganizador
                 enderecoAtual = await service.BuscarCepAsync(cep);
                 if (enderecoAtual != null && !string.IsNullOrWhiteSpace(enderecoAtual.Cep))
                 {
-                    // Número vem do textbox manual
                     enderecoAtual.Numero = TextBoxNumero.Text.Trim();
-                    // Padrão "S/N" se número estiver vazio
                     if (string.IsNullOrWhiteSpace(enderecoAtual.Numero))
                     {
                         enderecoAtual.Numero = "S/N";
-                        TextBoxNumero.Text = "S/N"; // garante que o campo seja atualizado na tela também
+                        TextBoxNumero.Text = "S/N";
                     }
-                    // Monta o endereço em formato único
                     TextBoxEndereco.Text =
                         $"{enderecoAtual.Logradouro ?? ""}, {enderecoAtual.Numero} - {enderecoAtual.Bairro ?? ""} - {enderecoAtual.Localidade ?? ""}/{enderecoAtual.Uf ?? ""} - {enderecoAtual.Cep}";
                 }
@@ -85,7 +79,6 @@ namespace evecorpfy.ViewsOrganizador
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        // Validação dos campos do formulário
         private Evento? ValidarEvento(bool isUpdate = false)
         {
             if (isUpdate && eventoSelecionado == null)
@@ -113,10 +106,8 @@ namespace evecorpfy.ViewsOrganizador
                 MessageBox.Show("Informe a capacidade máxima (número válido).", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return null;
             }
-            // Orçamento deve ser decimal, com vírgula
             var cultura = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
             string texto = TextBoxOrcamento.Text.Replace("R$", "").Trim();
-
             if (string.IsNullOrWhiteSpace(texto) ||
                 !decimal.TryParse(texto, System.Globalization.NumberStyles.Any, cultura, out decimal orc))
             {
@@ -135,7 +126,6 @@ namespace evecorpfy.ViewsOrganizador
                 MessageBox.Show("Informe o CEP.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return null;
             }
-            // Número pode ser inteiro ou "S/N"
             if (string.IsNullOrWhiteSpace(TextBoxNumero.Text))
             {
                 MessageBox.Show("Informe o número do endereço ou 'S/N'.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -156,7 +146,6 @@ namespace evecorpfy.ViewsOrganizador
                             .Where(s => s.IsSelecionado)
                             .Select(s => s.Id)
                             .ToList();
-            // Recupera os serviços selecionados no ListBox           
             return new Evento
             {
                 Id = isUpdate ? eventoSelecionado!.Id : 0,
@@ -176,11 +165,8 @@ namespace evecorpfy.ViewsOrganizador
                 Observacoes = string.IsNullOrWhiteSpace(TextBoxObservacoes.Text) ? null : TextBoxObservacoes.Text.Trim(),
                 Status = isUpdate ? eventoSelecionado!.Status : "EM CADASTRAMENTO",
                 OrganizadorId = Sessao.UsuarioId,
-
-                // Agora os serviços selecionados vão junto
                 ServicosIds = servicosSelecionados
             };
-
         }
         private void ButtonCadastrarEvento_Click(object sender, RoutedEventArgs e)
         {
@@ -232,7 +218,6 @@ namespace evecorpfy.ViewsOrganizador
                 TextBoxOrcamento.Text = evento.OrcamentoMaximo.ToString("F2");
                 ComboBoxTipoEvento.SelectedValue = evento.TipoEventoId;
                 TextBoxObservacoes.Text = evento.Observacoes;
-                // Recriando o enderecoAtual com dados do banco
                 enderecoAtual = new Endereco
                 {
                     Cep = evento.Cep,
@@ -252,7 +237,6 @@ namespace evecorpfy.ViewsOrganizador
                     {
                         servico.IsSelecionado = servicosIds.Contains(servico.Id);
                     }
-                    // Atualiza a UI
                     ListBoxServicos.Items.Refresh();
                 }
             }
@@ -277,39 +261,32 @@ namespace evecorpfy.ViewsOrganizador
             enderecoAtual = null;
             ComboBoxEventos.SelectedIndex = -1;
             Panel.SetZIndex(ButtonAtualizarEvento, -1);
-
-            // Limpa checkboxes de serviços
             if (ListBoxServicos.ItemsSource is IEnumerable<Servico> servicos)
             {
                 foreach (var servico in servicos)
                 {
                     servico.IsSelecionado = false;
                 }
-                ListBoxServicos.Items.Refresh(); // Força atualização na UI
+                ListBoxServicos.Items.Refresh();
             }
         }
-
         private void DatePickerFim_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             if (DatePickerInicio.SelectedDate.HasValue && DatePickerFim.SelectedDate.HasValue)
             {
                 var dataInicio = DatePickerInicio.SelectedDate.Value;
                 var dataFim = DatePickerFim.SelectedDate.Value;
-
                 if (dataFim < dataInicio)
                 {
                     MessageBox.Show("A data de término não pode ser anterior à data de início!", "Validação de Datas", MessageBoxButton.OK, MessageBoxImage.Warning);
-                    // Limpa o valor para forçar correção
                     DatePickerFim.SelectedDate = null;
                 }
             }
         }
         private void TextBoxOrcamento_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            // Permite apenas números
             e.Handled = !char.IsDigit(e.Text, 0);
         }
-
         private void TextBoxOrcamento_TextChanged(object sender, TextChangedEventArgs e)
         {
             var txt = TextBoxOrcamento.Text
@@ -317,15 +294,12 @@ namespace evecorpfy.ViewsOrganizador
                 .Replace(".", "")
                 .Replace(",", "")
                 .Trim();
-
             if (string.IsNullOrEmpty(txt))
             {
                 TextBoxOrcamento.Text = "R$ 0,00";
                 TextBoxOrcamento.CaretIndex = TextBoxOrcamento.Text.Length;
                 return;
             }
-
-            // Converte para decimal dividindo por 100 (para controlar casas decimais)
             if (decimal.TryParse(txt, out decimal valor))
             {
                 valor /= 100;
@@ -335,7 +309,6 @@ namespace evecorpfy.ViewsOrganizador
                 TextBoxOrcamento.CaretIndex = TextBoxOrcamento.Text.Length;
             }
         }
-
         private void CarregarServicos()
         {
             var repo = new RepositorioTipoServico();
