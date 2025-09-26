@@ -129,3 +129,6 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Release\net8.0-windows\ref\evecorp
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Release\net8.0-windows\ConfiguracaoBanco.baml
 C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Release\net8.0-windows\ConfiguracaoBanco.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Release\net8.0-windows\CadastroUsuario.g.cs
+C:\Users\CaioA\Documents\GitHub\evecorpfy\obj\Release\net8.0-windows\CadastroUsuario.baml

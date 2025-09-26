@@ -6,6 +6,7 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\eve
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\evecorpfy.pdb
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Azure.Core.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Azure.Identity.dll
+C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\BCrypt.Net-Next.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\LiveCharts.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\LiveCharts.Wpf.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Microsoft.Bcl.AsyncInterfaces.dll

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("evecorpfy")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+865fae0c17a7c12348dfaa763e4ac95567fd9532")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fcb3701b512ce3ddfe733240c3518b52e212267")]
 [assembly: System.Reflection.AssemblyProductAttribute("evecorpfy")]
 [assembly: System.Reflection.AssemblyTitleAttribute("evecorpfy")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
