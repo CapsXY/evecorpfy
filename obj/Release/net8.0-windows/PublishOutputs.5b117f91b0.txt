@@ -26,6 +26,7 @@ C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Mic
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Microsoft.IdentityModel.Tokens.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Microsoft.SqlServer.Server.dll
+C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\Newtonsoft.Json.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\System.ClientModel.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\System.Configuration.ConfigurationManager.dll
 C:\Users\CaioA\Documents\GitHub\evecorpfy\bin\Release\net8.0-windows\publish\System.Data.SqlClient.dll

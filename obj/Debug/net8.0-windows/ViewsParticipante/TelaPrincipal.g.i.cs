@@ -53,7 +53,7 @@ namespace evecorpfy.ViewsParticipante {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/viewsparticipante/telaprincipal.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/viewsparticipante/telaprincipal.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewsParticipante\TelaPrincipal.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -68,7 +68,7 @@ namespace evecorpfy.ViewsFornecedor {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/viewsfornecedor/negociacaowindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/viewsfornecedor/negociacaowindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewsFornecedor\NegociacaoWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -1,14 +1,24 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
-
+﻿using System.Windows;
+using evecorpfy.Views;
 namespace evecorpfy
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            var config = ConfigManager.Carregar();
+            if (config == null)
+            {
+                var janelaConfig = new ConfiguracaoBanco();
+                if (janelaConfig.ShowDialog() != true)
+                {
+                    Shutdown();
+                    return;
+                }
+            }
+            var login = new Login();
+            login.Show();
+        }
     }
-
 }
