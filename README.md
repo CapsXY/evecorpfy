@@ -1,7 +1,6 @@
 
-# EVERCORPFY - Sistema de Eventos Corporativos
-
-Um simples PDV feito em Visual Basic.
+# EVERCORPFY
+ Sistema de Eventos Corporativos
 ![Logo](https://github.com/CapsXY/evecorpfy/blob/main/Images/login-screen.png)
 
 ## Screenshots 
