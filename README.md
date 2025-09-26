@@ -1,7 +1,6 @@
-
 # EVERCORPFY - Sistema de Eventos Corporativos
 
-![Logo](https://github.com/CapsXY/evecorpfy/blob/main/Images/logo.png)
+![Logo](https://github.com/CapsXY/evecorpfy/blob/main/Images/logo-screen.png)
 
 ## Screenshots 
 
@@ -22,7 +21,7 @@
 
 ### Configuração
 #### Banco de Dados: https://www.dropbox.com/scl/fi/dh8ycusoxzkh22g9cbs5c/EvercorpfyDB.zip?rlkey=9roeoudljhlnb0kq7er1h3pah&st=szavp9e1&dl=1
-#### Executável: https://www.dropbox.com/scl/fi/gnervwlgcaqyndop5d49t/Evercorpfy.zip?rlkey=0u0jihs49hp9niktv24g8mgu5&st=9stutw3j&dl=1
+#### Executável: https://www.dropbox.com/scl/fi/tlcefbhlualtr692e30m8/Evecorpfy.zip?rlkey=bxvjso6pwdflqeytp37ii8dmv&st=rsrcpfyx&dl=1
 
 ### Instalação
 #### É necessário ter uma instância com nome PDVNET
