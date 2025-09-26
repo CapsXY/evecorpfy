@@ -101,7 +101,7 @@ namespace evecorpfy {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/menufornecedor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/menufornecedor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MenuFornecedor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

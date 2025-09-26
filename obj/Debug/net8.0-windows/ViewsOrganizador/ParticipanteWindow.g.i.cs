@@ -60,7 +60,7 @@ namespace evecorpfy.ViewsOrganizador {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/viewsorganizador/participantewindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/viewsorganizador/participantewindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewsOrganizador\ParticipanteWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

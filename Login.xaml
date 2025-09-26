@@ -12,7 +12,6 @@
         ResizeMode="NoResize"
         Icon="/Resources/logo.png"
         WindowStyle="SingleBorderWindow">
-    <!--Grid Principal-->
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -20,19 +19,15 @@
                 <GradientStop Offset="1" Color="#FF5D5D5D"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <!--Background-->
-        <!--Logo-->
         <Image Margin="282,30,277,337"
                Source="/Resources/logo.png"
                Stretch="Fill"/>
-        <!--Título-->
         <Label Content="Acesso ao Sistema"
                HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Margin="304,195,0,0"
                FontSize="18"
                FontWeight="Bold"/>
-        <!--Usuario-->
         <Image HorizontalAlignment="Left"
                Height="26"
                Margin="256,239,0,0"
@@ -41,12 +36,10 @@
                Source="/Resources/user-gray.png"/>
         <TextBox x:Name="TextBoxUsuario"
                  HorizontalAlignment="Left"
-                 TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  Width="205"
                  FontSize="18"
                  Margin="287,239,0,0"/>
-        <!--Senha-->
         <Image HorizontalAlignment="Left"
                Height="26"
                Margin="256,276,0,0"
@@ -59,20 +52,11 @@
                      VerticalAlignment="Top"
                      Width="204"
                      FontSize="18"/>
-        <!--Novo por Aqui? Cadastre-se-->
         <Label Content="Novo por aqui?"
                HorizontalAlignment="Left"
                Margin="295,307,0,0"
                VerticalAlignment="Top"
                FontSize="14"/>
-        <Label Content="Cadastre-se"
-               HorizontalAlignment="Left"
-               Margin="395,307,0,0"
-               VerticalAlignment="Top"
-               FontWeight="Bold"
-               FontSize="14"
-               Cursor="Hand"/>
-        <!--Esqueceu a sua Senha?-->
         <Label Content="Esqueceu a sua senha?"
                HorizontalAlignment="Left"
                Margin="312,333,0,0"
@@ -80,7 +64,6 @@
                FontSize="14"
                FontWeight="Bold"
                Cursor="Hand"/>
-        <!--Botão Acessasr-->
         <Button x:Name="ButtonAcessar"
                 Content="Acessar"
                 HorizontalAlignment="Left"
@@ -90,9 +73,27 @@
                 FontSize="16"
                 Height="40"
                 Width="206"
-                FontWeight="Bold" Background="#FFEDEDED">
+                FontWeight="Bold"
+                Background="#FFEDEDED">
             <Button.BorderBrush>
-                <SolidColorBrush Color="White" Opacity="0"/>
+                <SolidColorBrush Color="White"
+                                 Opacity="0"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button Content="Cadastre-se"
+                HorizontalAlignment="Left"
+                Margin="405,310,0,0"
+                VerticalAlignment="Top"
+                Width="85"
+                FontWeight="Bold"
+                FontSize="14">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD"
+                                 Opacity="0"/>
+            </Button.Background>
+            <Button.BorderBrush>
+                <SolidColorBrush Color="White"
+                                 Opacity="0"/>
             </Button.BorderBrush>
         </Button>
     </Grid>

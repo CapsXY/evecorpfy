@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rKvo6eV+p8w=",
+  "dgSpecHash": "y1sPqcnl0jQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\CaioA\\Documents\\GitHub\\evecorpfy\\evecorpfy.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CaioA\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\CaioA\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
+    "C:\\Users\\CaioA\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\CaioA\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\CaioA\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
     "C:\\Users\\CaioA\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",

@@ -53,7 +53,7 @@ namespace evecorpfy.ViewsAdministrador {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/viewsadministrador/gestaoeventos.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/viewsadministrador/gestaoeventos.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewsAdministrador\GestaoEventos.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

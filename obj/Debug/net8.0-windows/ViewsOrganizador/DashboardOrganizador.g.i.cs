@@ -78,7 +78,7 @@ namespace evecorpfy.ViewsOrganizador {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/viewsorganizador/dashboardorganizador.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/viewsorganizador/dashboardorganizador.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\ViewsOrganizador\DashboardOrganizador.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
