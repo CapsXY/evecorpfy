@@ -104,5 +104,23 @@ public class RepositorioUsuario
         cmd.Parameters.AddWithValue("@DATA_CRIACAO", usuario.DataCriacao);
         await cmd.ExecuteNonQueryAsync();
     }
+    public bool UsuarioExiste(string username, string email)
+    {
+        using (var conectaDataBase = DbConnectionFactory.GetOpenConnection())
+        {
+            string sql = @"SELECT COUNT(*) 
+                       FROM USUARIOS 
+                       WHERE USERNAME = @USERNAME OR EMAIL = @EMAIL";
+
+            using (var command = new SqlCommand(sql, conectaDataBase))
+            {
+                command.Parameters.AddWithValue("@USERNAME", username);
+                command.Parameters.AddWithValue("@EMAIL", email);
+
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+    }
 
 }

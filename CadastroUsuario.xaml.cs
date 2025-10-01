@@ -18,9 +18,22 @@ namespace evecorpfy
                 string.IsNullOrWhiteSpace(txtSenha.Password) ||
                 comboTipoUsuario.SelectedItem == null)
             {
-                MessageBox.Show("Preencha todos os campos.", "Atenção", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Preencha todos os campos.", "Atenção",
+                                MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            var repo = new RepositorioUsuario();
+
+            if (repo.UsuarioExiste(txtUsuario.Text.Trim(), txtEmail.Text.Trim()))
+            {
+                MessageBox.Show("Já existe um usuário com esse nome ou e-mail.",
+                                "Duplicado",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Warning);
+                return;
+            }
+
             var novoUsuario = new Usuario
             {
                 Username = txtUsuario.Text.Trim(),
@@ -30,17 +43,25 @@ namespace evecorpfy
                 Ativo = true,
                 DataCriacao = DateTime.Now
             };
+
             try
             {
                 await RepositorioUsuario.Inserir(novoUsuario);
-                MessageBox.Show("Usuário cadastrado com sucesso!", "Sucesso", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Usuário cadastrado com sucesso!",
+                                "Sucesso",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Information);
                 this.DialogResult = true;
                 Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Erro ao cadastrar usuário: {ex.Message}",
+                                "Erro",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
             }
         }
+
     }
 }

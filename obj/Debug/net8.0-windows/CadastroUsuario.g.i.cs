@@ -93,7 +93,7 @@ namespace evecorpfy {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/evecorpfy;component/cadastrousuario.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/evecorpfy;V1.0.0.0;component/cadastrousuario.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\CadastroUsuario.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
